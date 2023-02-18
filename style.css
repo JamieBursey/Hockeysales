@@ -8,6 +8,13 @@ p1 {
         font-size: 500%;
         
  }
+ pd {
+    bottom: 5px;
+    position: relative;
+    text-align: center;
+    margin-right: 50%;
+    
+ }
 
 .items {
     color: red;
@@ -73,7 +80,9 @@ p1 {
     color: black;
 }
 .container ul a{
-    display: block;
+    background-color: transparent;
+    margin-top: 15px;
+    display:block;
     padding: 5px;
     color: black;
 }
@@ -86,6 +95,7 @@ p1 {
     clear:both;
     max-height:0;
     transition: max-height .2s ease-out;
+    margin-top: 5px;
 }
 
 .container .menu-icon{
@@ -93,6 +103,7 @@ p1 {
     position: relative;
     float:right;
     margin-right: 5%;
+    margin-top: 5px;
 
 }
 .container .menu-icon .nav-icon {
@@ -125,9 +136,9 @@ p1 {
     top:-5px;
 }
 
-.container .menu-btn{
+ .container .menu-btn{
     display:none;
-}
+} 
 
 .container .menu-btn:checked ~ .menu{
     max-height: 240px;
@@ -146,6 +157,24 @@ p1 {
     transform: rotate(45deg);
     top:0;
     
+}
+
+@media (min-width:48em) {
+    .container li {
+        float:left;
+    }
+    .container li a{
+        background-color: transparent;
+ 
+    }
+    .container .menu {
+        clear:none;
+        float:right;
+        max-height: none;
+    }
+    .container ul:hover{
+        background-color: transparent;
+    }
 }
 
 
