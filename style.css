@@ -64,7 +64,7 @@ p1 {
 
   .column {
     float: left;
-    width: 33.33%;
+    width: 25%;
     
     
   }
@@ -82,8 +82,7 @@ p1 {
 }
 
 .container ul {
-    margin:0;
-    padding:0;
+    margin: 20%;
     list-style: none;
     overflow: hidden;
     background-color: grey;

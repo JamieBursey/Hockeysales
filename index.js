@@ -1,109 +1,46 @@
-const skates = {
-    brand: "Bauer",
-    model: "vapor" ,
-    size: "size-10",
-    price: "$100",
-  };
-  
-  document.getElementById("skate-info").innerHTML = skates.brand + " " + skates.model + " " + skates.size + " " + skates.price;
-      
-  console.log(document.getElementById("skate-info"))
 
-const sticks = {
-    name: "twig",
-    brand: "warrior",
-    hand: "right-handed", 
-    flex: "85-flex",
-    price: "$80",
-};
- document.getElementById("stick-info").innerHTML = 
-sticks.name + " " + sticks.brand + " " + sticks.hand + " " + sticks.flex + " " + sticks.price;
+const stickItem = [
+            {type:"Stick",brand:"CCM",style:"Left Hand",size:"senior 90-Flex",price:"$100"},
+            {type:"Stick",brand:"Sherwood",style:"Left Hand",size:"Inermediate 70-Flex",price:"$45"},
+            {type:"Stick", brand:"True",style:"Right Hand",Size:"Jumior 100-flex", price:"$99"},
+            {type:"Stick", brand: "Warrior",style:"Right Hand", size:"Senior 80-flex", price:"$200"},
+];
+const skateItem = [
+    {type:"Skate", brand:"Bauer", style:"vapor",size:"10", price:"$400"},
+    {type:"Skate",brand:"CCM",style:"tacks", size:"9",price:"$210"},
+    {type:"Skate",brand:"Victory",style:"Hx1", size:"9",price:"$70"},
 
-
-const Helmets = {
-    brand: "CCM",
-    color: "black",
-    size: "medium", 
-    price: "$120",
-};
-document.getElementById("helmet-info").innerHTML = Helmets.brand + " " + Helmets.color + " " + Helmets.size + " " + Helmets.price;
-
-
-const equipment = {
-    style: "shin pads",
-    brand: "sheerwood",
-    size: "medium",
-    price: "$50",
-};
-document.getElementById("equip-info").innerHTML = 
-equipment.style + " " + equipment.brand + " " + equipment.size + " " + equipment.price;
-
-
-const apparel = {
-    style: "Jersey",
-    team: "New Jersey Devils",
-    size: "large",
-    name: "Mercer",
-    number: "number-18",
-
-};
-const myArray = Object.values(apparel);
-document.getElementById("cloths").innerHTML = myArray;
-
-
-
-const allItems = [
-            {type:"hockey glove",brand:"CCM",size:"senior-medium",price:"$100"},
-            {type:"Shirt",brand:"Colorado Avalanch",size:"Large",price:"$45"},
-            {type:"Stick", brand:"right-handed",style:"100-flex", price:"$299"},
-            {type:"skate", brand: "Bauer", size:"10", price:"$200"},
 ];
 
+const gloveItem = [
+    {type:"Glove", brand:"", style:"",size:"",price:""},
+    {type:"Glove", brand:"", style:"",size:"",price:""},
+    {type:"Glove", brand:"", style:"",size:"",price:""},
+];
 
-let text = "";
-allItems.forEach (function(value) {
-    text += value.type + "<br>";
-    console.log (text);
+const stickElement = document.getElementById("stick-column")
+stickItem.forEach (function(item) {
+  const Element = document.createElement("div")
+  Element.textContent=item.type + item.brand + item.style + item.size + item.price;
+  stickElement.appendChild(Element);
 
-})
-document.getElementById("test-info").innerHTML = text;
-
-
-const skateElement = document.getElementById("skate-column");
-allItems.forEach (function(item) {
-    const Element = document.createElement("div")
-    Element.textContent=item.type;
-    skateElement.appendChild(Element);
-    
 });
 
-
-
-
-
-const test = document.createElement("p");
-test.innerText = ("gloves CCM Senior-Small $60");
-document.body.appendChild(test);
-
-const test2 = document.createElement("p");
-test2.innerText = ("stick Vapor Right-Handed $120");
-document.getElementById("test2").appendChild(test2);
-
-const test3= document.createElement("p");
-test3.innerText = ("stick Vapor Right-Handed $120");
-document.body.appendChild(test3);
-
-const test4 = document.createElement("p");
-test4.innerText = ("stick Vapor Right-Handed $120");
-document.getElementById("test2").appendChild(test4);
-
-
-
-
-
-
-
-
-
-
-
+const skateElement = document.getElementById("skate-column")
+skateItem.forEach(function(item) {
+    const Element = document.createElement("div")
+    Element.textContent = item.type + item.brand + item.style + item.size + item.price;
+    skateElement.appendChild(Element);
+});
+// draws "glove-info" tag from HTML Page
+const gloveElement = document.getElementById("glove-info")
+// loops through gloveItem and adds a paramater (item) to each object in the element
+gloveItem.forEach(function(item){
+// creates a div for the object to be displayed in the HTML    
+    const Element=document.createElement("div")
+ // element.textContent is use to display inner strings of gloveElement?   
+    Element.textContent = item.type + item.brand + item.style + item.size + item.price;
+ // append child loops through gloveElement and adds its content to Element? 
+ // gloveElement being the parent and Element being the child? 
+    gloveElement.appendChild(Element);
+});
