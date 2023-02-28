@@ -27,7 +27,7 @@ const Helmets = {
     price: "$120",
 };
 document.getElementById("helmet-info").innerHTML = Helmets.brand + " " + Helmets.color + " " + Helmets.size + " " + Helmets.price;
-console.log (document.getElementById("helmet-info"))
+
 
 const equipment = {
     style: "shin pads",
@@ -37,7 +37,7 @@ const equipment = {
 };
 document.getElementById("equip-info").innerHTML = 
 equipment.style + " " + equipment.brand + " " + equipment.size + " " + equipment.price;
-console.log(document.getElementById("equip-info"))
+
 
 const apparel = {
     style: "Jersey",
@@ -45,8 +45,65 @@ const apparel = {
     size: "large",
     name: "Mercer",
     number: "number-18",
-}
+
+};
 const myArray = Object.values(apparel);
 document.getElementById("cloths").innerHTML = myArray;
+
+
+
+const allItems = [
+            {type:"hockey glove",brand:"CCM",size:"senior-medium",price:"$100"},
+            {type:"Shirt",brand:"Colorado Avalanch",size:"Large",price:"$45"},
+            {type:"Stick", brand:"right-handed",style:"100-flex", price:"$299"},
+            {type:"skate", brand: "Bauer", size:"10", price:"$200"},
+];
+
+
+let text = "";
+allItems.forEach (function(value) {
+    text += value.type + "<br>";
+    console.log (text);
+
+})
+document.getElementById("test-info").innerHTML = text;
+
+
+const skateElement = document.getElementById("skate-column");
+allItems.forEach (function(item) {
+    const Element = document.createElement("div")
+    Element.textContent=item.type;
+    skateElement.appendChild(Element);
+    
+});
+
+
+
+
+
+const test = document.createElement("p");
+test.innerText = ("gloves CCM Senior-Small $60");
+document.body.appendChild(test);
+
+const test2 = document.createElement("p");
+test2.innerText = ("stick Vapor Right-Handed $120");
+document.getElementById("test2").appendChild(test2);
+
+const test3= document.createElement("p");
+test3.innerText = ("stick Vapor Right-Handed $120");
+document.body.appendChild(test3);
+
+const test4 = document.createElement("p");
+test4.innerText = ("stick Vapor Right-Handed $120");
+document.getElementById("test2").appendChild(test4);
+
+
+
+
+
+
+
+
+
 
 

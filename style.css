@@ -65,7 +65,17 @@ p1 {
   .column {
     float: left;
     width: 33.33%;
+    
+    
   }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+   
+  }   
+  
 .right{
     margin-left: 80%;
     margin-right: 10%;
