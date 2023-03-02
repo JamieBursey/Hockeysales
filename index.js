@@ -14,7 +14,7 @@ const skateItem = [
 ];
 
 const gloveItem = [
-    {type:"Glove", brand:"Warrior", style:"Alpha",size:"senior-medium",price:"$249", imageUrl:"https://cdn.shopify.com/s/files/1/0020/1585/4658/p…1c1-4b6e-bec8-d6dbed329134_1400x.jpg?v=1642614363"},
+    {type:"Glove", brand:"Warrior", style:"Alpha",size:"senior-medium",price:"$249", imageUrl:"https://cdn.shopify.com/s/files/1/0020/1585/4658/products/warrior-alpha-pro-team-gloves-zone3_4b498a9a-61c1-4b6e-bec8-d6dbed329134_1400x.jpg?v=1642614363"},
     {type:"Glove", brand:"", style:"",size:"",price:""},
     {type:"Glove", brand:"", style:"",size:"",price:""},
 ];

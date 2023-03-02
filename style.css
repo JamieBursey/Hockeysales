@@ -24,6 +24,10 @@ p1 {
     width: 50%;
 
 }
+.img {
+    width: 100px;
+    height:100px;
+}
 .header {
     display: block;
     margin-left: auto;
