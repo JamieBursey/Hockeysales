@@ -1,6 +1,6 @@
 
 const stickItem = [
-            {type:"Stick",brand:"CCM",style:"Left Hand",size:"senior 90-Flex",price:"$100"},
+            {type:"Stick",brand:"CCM",style:"JetSpeed FT5 Pro North Edition",size:"intermediate (2023)",price:"379.99", stickImage:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/018e1e67022caf21f37384e38255a1f2_500x500_crop_center.jpg?v=1675422966"},
             {type:"Stick",brand:"Sherwood",style:"Left Hand",size:"Inermediate 70-Flex",price:"$45"},
             {type:"Stick", brand:"True",style:"Right Hand",Size:"Jumior 100-flex", price:"$99"},
             {type:"Stick", brand: "Warrior",style:"Right Hand", size:"Senior 80-flex", price:"$200"},
@@ -13,35 +13,63 @@ const skateItem = [
 
 ];
 
-const gloveItem = [
-    {type:"Glove", brand:"Warrior", style:"Alpha",size:"senior-medium",price:"$249", imageUrl:"https://cdn.shopify.com/s/files/1/0020/1585/4658/products/warrior-alpha-pro-team-gloves-zone3_4b498a9a-61c1-4b6e-bec8-d6dbed329134_1400x.jpg?v=1642614363"},
-    {type:"Glove", brand:"", style:"",size:"",price:""},
-    {type:"Glove", brand:"", style:"",size:"",price:""},
+const gloveItems = [
+    {type:"Glove", brand:"Warrior", style:"Alpha",size:"senior-medium",price:"$249", imageUrl:"./images/gloves.png"},
+    {type:"Glove", brand:"CCM", style:"Jetspeed",size:"Juior-large",price:"70",imageUrl:"https://cdn.shopify.com/s/files/1/0020/1585/4658/products/warrior-alpha-pro-team-gloves-zone3_4b498a9a-61c1-4b6e-bec8-d6dbed329134_1400x.jpg?v=1642614363"},
+    {type:"Glove", brand:"sheerwood", style:"rouge",size:"Intermediate-small",price:"$50",imageUrl1:"https://cdn.shopify.com/s/files/1/0020/1585/4658/p462a-802f-dd29d56801fc_1800x1800.jpg?v=1642614363"},
 ];
 
-const stickElement = document.getElementById("stick-column")
-stickItem.forEach (function(item) {
-  const Element = document.createElement("div")
-  Element.textContent=item.type + item.brand + item.style + item.size + item.price;
-  stickElement.appendChild(Element);
+const stickColumn = document.getElementById("stick-column")
+stickItem.forEach ((item) => {
+  const element = document.createElement("div")
+  const img = document.createElement("img");
+  img.src = item.stickImage;
+  element.textContent=item.type + item.brand + item.style + item.size + item.price;
+  element.appendChild(img);
+  const stickImg = document.querySelector("img");
+  img.setAttribute("src",item.stickImage);
+  img.setAttribute("width", "200");
+  img.setAttribute("height", "200");
+  stickColumn.appendChild(element);
+
+
+
 });
 
 const skateElement = document.getElementById("skate-column")
-skateItem.forEach(function(item) {
-    const Element = document.createElement("div")
-    Element.textContent = item.type + item.brand + item.style + item.size + item.price;
-    skateElement.appendChild(Element);
+skateItem.forEach((item) => {
+    const element = document.createElement("div")
+    element.textContent = item.type + item.brand + item.style + item.size + item.price;
+    skateElement.appendChild(element);
 });
 // draws "glove-info" tag from HTML Page
-const gloveElement = document.getElementById("glove-info");
-gloveItem.forEach(function(item){   
-    const Element=document.createElement("div");
-    // const img creates an img Element in html
+const gloveColumn = document.getElementById("glove-info");
+gloveItems.forEach(function(item){   
+    const element=document.createElement("div");
     const img = document.createElement("img");
-    // img.src loads the image from the URL and displays it as an item in the HTML webpage
-    img.src = item.imageUrl;   
-    Element.textContent = item.type + item.brand + item.style + item.size + item.price;
-    gloveElement.appendChild(Element);
-    gloveElement.appendChild(img);
+    img.src = item.imageUrl;  
+    element.textContent = item.type + item.brand + item.style + item.size + item.price;
+    element.appendChild(img);
+    const gloveImage = document.querySelector("img");
+    img.setAttribute("src",item.imageUrl);
+    img.setAttribute("width", "200");
+    img.setAttribute("height", "200");
+    gloveColumn.appendChild(element);
 });
+
+
+   const button = document.createElement("Button");
+    const onClickHandler = () => {
+        fetch('https://fakestoreapi.com/products/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json));
+    }
+    button.onclick = onClickHandler
+    button.innerHTML="test click";
+    gloveColumn.appendChild(button);
+
+    
+    
+    
+
 
