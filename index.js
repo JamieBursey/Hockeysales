@@ -49,35 +49,30 @@ const putItemsIntoContainers = (items, cutOffnumber) => {
             cutOff += cutOffnumber
             container=[];
         }
+    
      })
      return results;
+     
 }
 const itemsGroupByContainers = putItemsIntoContainers(items, 8);
 const itemsColumn = document.getElementById("item-container")
-items.forEach ((item) => {
+items.map ((item) => {
   const element = document.createElement("div")
   const link = document.createElement("a");
   const img = document.createElement("img");
   img.src = item.imageUrl;
-  element.textContent=item.length;
+  element.textContent=item.type;
   element.appendChild(img);
   const stickImg = document.querySelector("img");
   img.setAttribute("src",item.imageUrl);
-  img.setAttribute("width", "200");
-  img.setAttribute("height", "200");
+  img.setAttribute("width", "100");
+  img.setAttribute("height", "100");
   link.href = item.linkRef;
   link.appendChild(img);
   element.appendChild(link);
   itemsColumn.appendChild(element);
-  
-  
-
-
 
 });
-
-
-
 console.log(itemsGroupByContainers);
 
 // const stickColumn = document.getElementById("stick-column")
