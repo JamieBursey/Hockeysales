@@ -13,27 +13,27 @@ const items = [
     {type:"Glove", brand:"CCM", style:"Tacks Vector Premier (2022)",size:"Senior",price:"149.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195",linkRef:"https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022"},
     {type:"Glove", brand:"Warrior", style:"Covert Krypto Pro (2022)",size:"Senior",price:"$149.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445",linkRef:"https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive"},
     {type:"Glove", brand:"True Hockey", style:"Catalyst 9X (2021)",size:"Youth",price:"$59.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521",linkRef:"https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves"},
-    {type:"Helmet,",brand:"Warrior,",style:"Covert CF100,",size:"Senior",price:"199.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d2fabfa31a21f6f456e43eae7ba206d5_500x500_crop_center.jpg?v=1656671578",helmetLink:"https://www.sourceforsports.ca/products/warrior-covert-cf-100-hockey-helmet"},
-    {type:"Helmet,",brand:"CCM,",style:"Tacks 70 Combo,",size:"youth,",price:"84.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/0009dac6592ee52f8b99322269041fa3_6fd328fa-d0cb-4343-81c6-76c429b847c5_500x500_crop_center.jpg?v=1653042048",helmetLink:"https://www.sourceforsports.ca/products/ccm-tacks-70-youth-hockey-helmet-combo"},
-    {type:"Helmet,",brand:"CCM",style:"Tacks 70 combo,",size:"Senior,",price:"84.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/cd33d88ece570a9e144712d66d49c76e_500x500_crop_center.jpg?v=1653042006",helmetLink:"https://www.sourceforsports.ca/products/ccm-tacks-70-senior-hockey-helmet-combo"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
-    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",helmetLink:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Warrior,",style:"Covert CF100,",size:"Senior",price:"199.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d2fabfa31a21f6f456e43eae7ba206d5_500x500_crop_center.jpg?v=1656671578",linkRef:"https://www.sourceforsports.ca/products/warrior-covert-cf-100-hockey-helmet"},
+    {type:"Helmet,",brand:"CCM,",style:"Tacks 70 Combo,",size:"youth,",price:"84.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/0009dac6592ee52f8b99322269041fa3_6fd328fa-d0cb-4343-81c6-76c429b847c5_500x500_crop_center.jpg?v=1653042048",linkRef:"https://www.sourceforsports.ca/products/ccm-tacks-70-youth-hockey-helmet-combo"},
+    {type:"Helmet,",brand:"CCM",style:"Tacks 70 combo,",size:"Senior,",price:"84.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/cd33d88ece570a9e144712d66d49c76e_500x500_crop_center.jpg?v=1653042006",linkRef:"https://www.sourceforsports.ca/products/ccm-tacks-70-senior-hockey-helmet-combo"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
+    {type:"Helmet,",brand:"Bauer,",style:"HyperLite (2021)",size:"Senior,",price:"349.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566",linkRef:"https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet"},
 ];
 const putItemsIntoContainers = (items, cutOffnumber) => {
     let cutOff = cutOffnumber -1
@@ -76,78 +76,78 @@ items.forEach ((item) => {
 
 });
 
-const helmetColumn=document.getElementById("helmet-column");
+
 
 console.log(itemsGroupByContainers);
 
-const stickColumn = document.getElementById("stick-column")
-stickItems.forEach ((item) => {
-  const element = document.createElement("div")
-  const link = document.createElement("a");
-  const img = document.createElement("img");
-  img.src = item.imageUrl;
-  element.textContent=item.type + item.brand + item.style + item.size + item.price;
-  element.appendChild(img);
-  const stickImg = document.querySelector("img");
-  img.setAttribute("src",item.imageUrl);
-  img.setAttribute("width", "200");
-  img.setAttribute("height", "200");
-  link.href = item.linkRef;
-  link.appendChild(img);
-  element.appendChild(link);
-  stickColumn.appendChild(element);
+// const stickColumn = document.getElementById("stick-column")
+// items.forEach ((item) => {
+//   const element = document.createElement("div")
+//   const link = document.createElement("a");
+//   const img = document.createElement("img");
+//   img.src = item.imageUrl;
+//   element.textContent=item.type + item.brand + item.style + item.size + item.price;
+//   element.appendChild(img);
+//   const stickImg = document.querySelector("img");
+//   img.setAttribute("src",item.imageUrl);
+//   img.setAttribute("width", "200");
+//   img.setAttribute("height", "200");
+//   link.href = item.linkRef;
+//   link.appendChild(img);
+//   element.appendChild(link);
+//   stickColumn.appendChild(element);
   
   
 
 
 
-});
+// });
 
-const skateColumn = document.getElementById("skate-column")
-skateItems.forEach((item) => {
-    const element = document.createElement("div");
-    const link = document.createElement("a");
-    const img = document.createElement("img");
-    img.src= item.imageUrl;
-    element.textContent = item.type + item.brand + item.style + item.size + item.price;
-    const skateImg=document.querySelector("img");
-    img.setAttribute("src",item.imageUrl);
-    img.setAttribute("width","200");
-    img.setAttribute("height","200");
-    link.href=item.linkRef;
-    link.appendChild(img);
-    element.appendChild(link);
-    skateColumn.appendChild(element);
-});
-// draws "glove-info" tag from HTML Page
-const gloveColumn = document.getElementById("glove-info");
-gloveItems.forEach(function(item){   
-    const element=document.createElement("div");
-    const img = document.createElement("img");
-    const link =document.createElement("a");
-    img.src = item.imageUrl;  
-    element.textContent = item.type + item.brand + item.style + item.size + item.price;
-    element.appendChild(img);
-    const gloveImage = document.querySelector("img");
-    img.setAttribute("src",item.imageUrl);
-    img.setAttribute("width", "200");
-    img.setAttribute("height", "200");
-    link.href=item.linkRef;
-    link.appendChild(img);
-    element.appendChild(link);
-    gloveColumn.appendChild(element);
-});
+// const skateColumn = document.getElementById("skate-column")
+// skateItems.forEach((item) => {
+//     const element = document.createElement("div");
+//     const link = document.createElement("a");
+//     const img = document.createElement("img");
+//     img.src= item.imageUrl;
+//     element.textContent = item.type + item.brand + item.style + item.size + item.price;
+//     const skateImg=document.querySelector("img");
+//     img.setAttribute("src",item.imageUrl);
+//     img.setAttribute("width","200");
+//     img.setAttribute("height","200");
+//     link.href=item.linkRef;
+//     link.appendChild(img);
+//     element.appendChild(link);
+//     skateColumn.appendChild(element);
+// });
+// // draws "glove-info" tag from HTML Page
+// const gloveColumn = document.getElementById("glove-info");
+// gloveItems.forEach(function(item){   
+//     const element=document.createElement("div");
+//     const img = document.createElement("img");
+//     const link =document.createElement("a");
+//     img.src = item.imageUrl;  
+//     element.textContent = item.type + item.brand + item.style + item.size + item.price;
+//     element.appendChild(img);
+//     const gloveImage = document.querySelector("img");
+//     img.setAttribute("src",item.imageUrl);
+//     img.setAttribute("width", "200");
+//     img.setAttribute("height", "200");
+//     link.href=item.linkRef;
+//     link.appendChild(img);
+//     element.appendChild(link);
+//     gloveColumn.appendChild(element);
+// });
 
 
-   const button = document.createElement("Button");
-    const onClickHandler = () => {
-        fetch('https://fakestoreapi.com/products/1')
-            .then(res=>res.json())
-            .then(json=>console.log(json));
-    }
-    button.onclick = onClickHandler
-    button.innerHTML="test click";
-    gloveColumn.appendChild(button);
+//    const button = document.createElement("Button");
+//     const onClickHandler = () => {
+//         fetch('https://fakestoreapi.com/products/1')
+//             .then(res=>res.json())
+//             .then(json=>console.log(json));
+//     }
+//     button.onclick = onClickHandler
+//     button.innerHTML="test click";
+//     gloveColumn.appendChild(button);
 
     
     
