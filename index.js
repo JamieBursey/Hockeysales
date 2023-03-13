@@ -59,7 +59,7 @@ items.forEach ((item) => {
   const link = document.createElement("a");
   const img = document.createElement("img");
   img.src = item.imageUrl;
-  element.textContent=item.type + item.brand + item.style + item.size + item.price;
+  element.textContent=item.length;
   element.appendChild(img);
   const stickImg = document.querySelector("img");
   img.setAttribute("src",item.imageUrl);
