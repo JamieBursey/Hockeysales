@@ -55,15 +55,20 @@ const putItemsIntoContainers = (items, cutOffnumber) => {
      }
      
 const itemsGroupByContainers = putItemsIntoContainers(items, 8);
+console.log(itemsGroupByContainers);
+items.map((item) => {console.log(item)});
+
+
 
 
 const itemsContainer = document.getElementById("item-container")
 items.map ((item) => {
-  const element = document.createElement("div")
+  const element = document.createElement("container")
   const link = document.createElement("a");
   const img = document.createElement("img");
   img.src = item.imageUrl;
   element.textContent=item.type + item.brand + item.style + item.size + item.price;
+  itemsContainer.appendChild(element);
   element.appendChild(img);
   const stickImg = document.querySelector("img");
   img.setAttribute("src",item.imageUrl);
@@ -74,7 +79,6 @@ items.map ((item) => {
   element.appendChild(link);
   itemsContainer.appendChild(element);
 });
-
 
 
 
