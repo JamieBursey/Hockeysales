@@ -1,5 +1,4 @@
 
-
 const items = [
     {type:"Stick",brand:"CCM",style:"JetSpeed FT5 Pro North Edition",size:"intermediate (2023)",price:"379.99", imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/018e1e67022caf21f37384e38255a1f2_500x500_crop_center.jpg?v=1675422966",linkRef: "https://www.sourceforsports.ca/products/ccm-jetspeed-ft5-pro-north-edition-intermediate-hockey-stick-2023"},
     {type:"Stick,",brand:"Bauer,,",style:"Nexus Havok Grip,",size:"Senior,",price:"$209.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e35bdc0dadb8ef44a7e8490957873df9_c8896a10-ea08-4ac1-b16e-53141c04b3d5_500x500_crop_center.jpg?v=1659090157",linkRef:"https://www.sourceforsports.ca/products/bauer-nexus-havok-grip-senior-hockey-stick-source-exclusive-2022"},
@@ -49,19 +48,26 @@ const putItemsIntoContainers = (items, cutOffnumber) => {
             cutOff += cutOffnumber
             container=[];
         }
+        
     
-     })
-     return results;
+    })
+     return results
+     }
      
-}
 const itemsGroupByContainers = putItemsIntoContainers(items, 8);
-const itemsColumn = document.getElementById("item-container")
+console.log(itemsGroupByContainers);
+items.map((item) => {console.log(item)});
+
+
+
+
+const itemsContainer = document.getElementById("item-container")
 items.map ((item) => {
   const element = document.createElement("div")
   const link = document.createElement("a");
   const img = document.createElement("img");
   img.src = item.imageUrl;
-  element.textContent=item.type;
+  element.textContent=item.type + item.brand + item.style + item.size + item.price;
   element.appendChild(img);
   const stickImg = document.querySelector("img");
   img.setAttribute("src",item.imageUrl);
@@ -70,10 +76,10 @@ items.map ((item) => {
   link.href = item.linkRef;
   link.appendChild(img);
   element.appendChild(link);
-  itemsColumn.appendChild(element);
-
+  itemsContainer.appendChild(element);
 });
-console.log(itemsGroupByContainers);
+
+
 
 // const stickColumn = document.getElementById("stick-column")
 // items.forEach ((item) => {
