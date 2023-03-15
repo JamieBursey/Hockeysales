@@ -55,10 +55,6 @@ const putItemsIntoContainers = (items, cutOffnumber) => {
      }
      
 const itemsGroupByContainers = putItemsIntoContainers(items, 8);
-console.log(itemsGroupByContainers);
-items.map((item) => {console.log(item)});
-
-
 
 
 const itemsContainer = document.getElementById("item-container")
@@ -78,6 +74,7 @@ items.map ((item) => {
   element.appendChild(link);
   itemsContainer.appendChild(element);
 });
+
 
 
 
