@@ -53,7 +53,16 @@ p1 {
   .container {
     position: relative;
     text-align: center;
-    color: white;
+    color: black;
+    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10,.3);
+  }
+  .itemscontainer {
+    max-width:80%;
+    margin:auto;
+    margin-top: 50px;
+    max-height: 500px;
+    
+    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10,.3);
   }
 
   .bottom {
@@ -82,7 +91,7 @@ p1 {
     margin-right: 10%;
 }
 
-.container ul {
+/* .container ul {
     margin: 20%;
     list-style: none;
     overflow: hidden;
@@ -185,6 +194,6 @@ p1 {
     .container ul:hover{
         background-color: transparent;
     }
-}
+} */
 
 
