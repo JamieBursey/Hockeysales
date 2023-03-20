@@ -8,6 +8,11 @@ p1 {
         font-size: 500%;
         
  }
+ p2 {
+    color: black;
+    font-family: 'Calligrafiti',sans-serif;
+ }
+
  pd {
     bottom: 5px;
     position: relative;
