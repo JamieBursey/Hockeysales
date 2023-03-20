@@ -56,14 +56,30 @@ p1 {
     color: black;
     box-shadow: 5px 5px 5px 0 rgba(238, 10, 10,.3);
   }
-  .itemscontainer {
-    max-width:80%;
+  .parentContainer {
+    max-width:90%;
     margin:auto;
     margin-top: 50px;
-    max-height: 500px;
+    border-radius: 1rem;
     
-    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10,.3);
   }
+.items-containers {
+    height: 10rem;
+    margin-top:5rem;
+    margin-bottom:5rem;
+    overflow-x: hidden;
+    background-color: #ff000040;
+    overflow-y: scroll;
+    border-radius: .5rem;
+    
+}
+
+
+.items-column{
+    float:left;
+    width:50%
+}
+
 
   .bottom {
     position: fixed;     
