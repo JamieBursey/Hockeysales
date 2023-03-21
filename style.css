@@ -49,6 +49,10 @@ p1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%);
+    @media screen{
+        max-width: 640px;
+        
+    }
   }
   .main{
     position:relative;
@@ -76,7 +80,6 @@ p1 {
     background-color: #ff000040;
     overflow-y: scroll;
     border-radius: .5rem;
-    
 }
 
 
