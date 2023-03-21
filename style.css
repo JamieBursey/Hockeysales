@@ -11,13 +11,12 @@ p1 {
  p2 {
     color: black;
     font-family: Arial, Helvetica,sans-serif;
-    @media screen {
-        max-width: 480px;
-        max-height:100px;
-        
+ }
+ @media (max-width:48rem){
+    p1 {
+        font-size: 50px;
     }
  }
- 
 
  pd {
     bottom: 5px;
