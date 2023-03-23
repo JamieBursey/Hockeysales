@@ -67,7 +67,7 @@ itemsGroupByContainers.forEach((containerArray) => {
         img.setAttribute("width", "50");
         img.setAttribute("height", "50");
         img.src = item.imageUrl;
-        itemDiv.textContent = item.type + item.brand + item.style + item.size + item.price;
+        itemDiv.textContent = `${item.type} ${item.brand} ${item.style} ${item.size} $${item.price}\n`;
         itemDiv.appendChild(img);
         link.href = item.linkRef;
         link.appendChild(img);
@@ -181,18 +181,3 @@ itemsGroupByContainers.forEach((containerArray) => {
 //     button.onclick = onClickHandler
 //     button.innerHTML="test click";
 //     gloveColumn.appendChild(button);
-
-
-
-
-const shoppingItems = [
-{name: 'Skateboard', price: 100}, 
-{name: 'Keyboard', price: 20}, 
-{name: 'Ropes', price: 5}]
-
-shoppingItems.map(item => {
-    shoppingItems.textContent= item.name + item.price
-
-})
-console.log(shoppingItems)
-
