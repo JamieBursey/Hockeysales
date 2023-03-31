@@ -3,28 +3,31 @@ body {
 }
 
 p1 {
-        color:white;
-        font-family: 'Calligraffiti', sans-serif;
-        font-size: 500%;
-        
- }
- p2 {
+    color: white;
+    font-family: 'Calligraffiti', sans-serif;
+    font-size: 500%;
+
+}
+
+p2 {
     color: black;
-    font-family: Arial, Helvetica,sans-serif;
- }
- @media (max-width:48rem){
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media (max-width:48rem) {
     p1 {
         font-size: 50px;
     }
- }
+}
 
- pd {
+pd {
     bottom: 5px;
     position: relative;
     text-align: center;
     margin-right: 50%;
-    
- }
+
+}
 
 .items {
     color: black;
@@ -40,43 +43,48 @@ p1 {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10,.3);
-  }
+    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10, .3);
+}
+
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-  }
+}
 
-  .centered {
+.centered {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%);
-  }
-  .main{
-    position:relative;
+}
+
+.main {
+    position: relative;
     text-align: center;
-    color:white;
-  }
-  .container {
+    color: white;
+}
+
+.container {
     position: relative;
     text-align: center;
     color: black;
-    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10,.3);
-  }
-  .parentContainer {
-    max-width:90%;
-    margin:auto;
+    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10, .3);
+}
+
+.parentContainer {
+    max-width: 90%;
+    margin: auto;
     margin-top: 50px;
     border-radius: 1rem;
-    
-  }
+
+}
+
 .items-containers {
     height: 10rem;
-    margin-top:5rem;
-    margin-bottom:5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
     overflow-x: hidden;
     background-color: #ff000040;
     overflow-y: scroll;
@@ -84,34 +92,34 @@ p1 {
 }
 
 
-.items-column{
-    float:left;
-    width:50%
+.items-column {
+    float: left;
+    width: 50%
 }
 
 
-  .bottom {
-    position: fixed;     
-    text-align: center;    
-    bottom: 0px; 
+.bottom {
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
     width: 100%;
 }
 
-  .column {
+.column {
     float: left;
     width: 25%;
-    
-    
-  }
 
-  .row:after {
+
+}
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-   
-  }   
-  
-.right{
+
+}
+
+.right {
     margin-left: 80%;
     margin-right: 10%;
 }
@@ -220,5 +228,3 @@ p1 {
         background-color: transparent;
     }
 } */
-
-
