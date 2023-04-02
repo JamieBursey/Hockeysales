@@ -1,13 +1,13 @@
 
 const stickItems = [
-    { type: "Stick", brand: "CCM,", style: "Ribcor Trigger 6,", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
-    { type: "Stick,", brand: "Bauer,,", style: "Nexus Geo Grip,", size: "Senior,", price: "$244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
-    { type: "Stick,", brand: "CCM,", style: "Ribcor Trigger 6 Grip,", size: "Senior", price: "$174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
-    { type: "Stick,", brand: "True,", style: "AX5 Grip,", size: "Senior,", price: "$111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
-    { type: "Stick,", brand: "Bauer,", style: "Nexus Geo Grip,", size: "Intermediate,", price: "$223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
-    { type: "Stick,", brand: "Bauer,", style: "Vapor 2X Pro Grip,", size: "Senior,", price: "$209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
-    { type: "Stick,", brand: "Bauer,", style: "Nexus 3N Grip,", size: "Senior ", price: "$118.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/29c8c2ef224e52774e198d53cc207ab8_90b4bd9c-5226-458d-bd5f-c5fc2ec6d4ca_500x500_crop_center.jpg?v=1640215658", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-3n-grip-senior-hockey-stick-87-flex" },
-    { type: "Stick,", brand: "Bauer,", style: "TVapor X:Shift Pro Grip,", size: "Senior", price: "$139.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6452d07009adac4677152b6a8caeebb9_500x500_crop_center.jpg?v=1627460331", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-x-shift-pro-grip-senior-hockey-stick-3" },
+    { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
+    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "$244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
+    { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "$174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
+    { type: "Stick", brand: "True", style: "AX5 Grip", size: "Senior,", price: "$111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
+    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Intermediate", price: "$223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
+    { type: "Stick", brand: "Bauer", style: "Vapor 2X Pro Grip", size: "Senior", price: "$209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
+    { type: "Stick", brand: "Bauer", style: "Nexus 3N Grip", size: "Senior ", price: "$118.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/29c8c2ef224e52774e198d53cc207ab8_90b4bd9c-5226-458d-bd5f-c5fc2ec6d4ca_500x500_crop_center.jpg?v=1640215658", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-3n-grip-senior-hockey-stick-87-flex" },
+    { type: "Stick", brand: "Bauer", style: "TVapor X:Shift Pro Grip", size: "Senior", price: "$139.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6452d07009adac4677152b6a8caeebb9_500x500_crop_center.jpg?v=1627460331", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-x-shift-pro-grip-senior-hockey-stick-3" },
 ]
 const gloveItems = [{ type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "$169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
 { type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
@@ -67,6 +67,7 @@ stickGroupByContainers.forEach((containerArray) => {
 
     containerArray.forEach((item, index) => {
         const itemDiv = document.createElement("div")
+        const table = document.getElementById("itemTable");
         itemDiv.classList.add("item")
         itemDiv.classList.add("items-column")
         const link = document.createElement("a");
@@ -74,8 +75,8 @@ stickGroupByContainers.forEach((containerArray) => {
         img.setAttribute("width", "50");
         img.setAttribute("height", "50");
         img.src = item.imageUrl;
-        const itemDetails=document.createElement("p")//= `${item.type}${item.brand}${item.style}${item.size}$${item.price}`;
-        itemDetails.innerHTML= `${item.type}\n${item.brand}\n${item.style} ${item.size} $${item.price}`
+        const itemDetails=document.createElement("p")
+        itemDetails.innerHTML= `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
         itemDiv.appendChild(itemDetails)
         itemDiv.appendChild(img);
         link.href = item.linkRef;
@@ -125,7 +126,7 @@ gloveGroupByContainers.forEach((containerArray) => {
         img.setAttribute("height", "50");
         img.src = item.imageUrl;
         const itemDetails=document.createElement("p")
-        itemDetails.innerHTML = `${item.type} ${item.brand} ${item.style} ${item.size} $${item.price}\n`;
+        itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br> ${item.size}<br>$${item.price}\n`;
         itemDiv.appendChild(itemDetails)
         itemDiv.appendChild(img);
         link.href = item.linkRef;
@@ -174,7 +175,7 @@ helmetGroupByContainers.forEach((containerArray) => {
         img.setAttribute("height", "50");
         img.src = item.imageUrl;
         itemDetails=document.createElement("p")
-        itemDetails.innerHTML = `${item.type} ${item.brand} ${item.style} ${item.size} $${item.price}\n`;
+        itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}\n`;
         itemDiv.appendChild(itemDetails)
         itemDiv.appendChild(img);
         link.href = item.linkRef;
@@ -221,7 +222,7 @@ pantGroupByContainers.forEach((containerArray) => {
         img.setAttribute("height", "50");
         img.src = item.imageUrl;
         itemDetails=document.createElement("p")
-        itemDetails.innerHTML = `${item.type} ${item.brand} ${item.style} ${item.size} $${item.price}\n`;
+        itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}\n`;
         itemDiv.appendChild(itemDetails)
         itemDiv.appendChild(img);
         link.href = item.linkRef;
@@ -242,7 +243,7 @@ pantGroupByContainers.forEach((containerArray) => {
 
 
 
-
+console.log(pantContainersContainer)
 
 
 
