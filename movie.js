@@ -21,29 +21,32 @@ input.forEach(([date, item]) => {
     if (!purchaseDates[date]) {
         purchaseDates[date] = { soda: 0, popcorn: 0 }
     }
-   if (item === "soda"){
-    purchaseDates[date].soda += 1;
-   }
-   else {
-    purchaseDates[date].popcorn += 1
-   }
-  })
+    if (item === "soda") {
+        purchaseDates[date].soda += 1;
+    }
+    else {
+        purchaseDates[date].popcorn += 1
+    }
+})
 
-  for (let dateKeys in purchaseDates){
-    const purchaseTimes = purchaseDates[dateKeys];
+Object.keys(purchaseDates).forEach(dateKey => {
+    const purchaseTimes = purchaseDates[dateKey];
     const sodaAmount = purchaseTimes.soda;
     const popcornAmount = purchaseTimes.popcorn
-    let bundleAmount = Math.min(popcornAmount,sodaAmount);
-    output += bundleAmount * prices.bundle;
-    output += (sodaAmount- bundleAmount) * prices.soda;
-    output += (popcornAmount - bundleAmount) * prices.popcorn;
-  }
-  console.log(purchaseDates)
-  console.log(output);
+    let bundleAmount = Math.min(popcornAmount, sodaAmount);
+    output += (bundleAmount) * prices.bundle
+    output += (sodaAmount - bundleAmount) * prices.soda
+    output += (popcornAmount - bundleAmount) * prices.popcorn
 
-  
+    console.log(popcornAmount);
+});
 
-  
+
+console.log(output);
+
+
+
+
 
  // traverse through every key in purchase date object(convert object into array for easy access for loop)
  // determine the larger number, then subtract from the smaller number to get left over from bundle.
