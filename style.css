@@ -97,6 +97,13 @@ pd {
     width: 25%
 }
 
+@media (Max-width:48rem) {
+    .items-column{
+        float:left;
+        width:50%
+    }
+}
+
 
 .bottom {
     position: fixed;
