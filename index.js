@@ -1,18 +1,18 @@
 
 const stickItems = [
     { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
-    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "$244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
-    { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "$174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
-    { type: "Stick", brand: "True", style: "AX5 Grip", size: "Senior,", price: "$111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
-    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Intermediate", price: "$223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
-    { type: "Stick", brand: "Bauer", style: "Vapor 2X Pro Grip", size: "Senior", price: "$209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
-    { type: "Stick", brand: "Bauer", style: "Nexus 3N Grip", size: "Senior ", price: "$118.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/29c8c2ef224e52774e198d53cc207ab8_90b4bd9c-5226-458d-bd5f-c5fc2ec6d4ca_500x500_crop_center.jpg?v=1640215658", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-3n-grip-senior-hockey-stick-87-flex" },
-    { type: "Stick", brand: "Bauer", style: "TVapor X:Shift Pro Grip", size: "Senior", price: "$139.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6452d07009adac4677152b6a8caeebb9_500x500_crop_center.jpg?v=1627460331", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-x-shift-pro-grip-senior-hockey-stick-3" },
+    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
+    { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
+    { type: "Stick", brand: "True", style: "AX5 Grip", size: "Senior,", price: "111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
+    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Intermediate", price: "223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
+    { type: "Stick", brand: "Bauer", style: "Vapor 2X Pro Grip", size: "Senior", price: "209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
+    { type: "Stick", brand: "Bauer", style: "Nexus 3N Grip", size: "Senior ", price: "118.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/29c8c2ef224e52774e198d53cc207ab8_90b4bd9c-5226-458d-bd5f-c5fc2ec6d4ca_500x500_crop_center.jpg?v=1640215658", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-3n-grip-senior-hockey-stick-87-flex" },
+    { type: "Stick", brand: "Bauer", style: "TVapor X:Shift Pro Grip", size: "Senior", price: "139.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6452d07009adac4677152b6a8caeebb9_500x500_crop_center.jpg?v=1627460331", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-x-shift-pro-grip-senior-hockey-stick-3" },
 ]
 const gloveItems = [{ type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "$169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
 { type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
-{ type: "Glove", brand: "Warrior", style: "Covert Krypto Pro", size: "Senior", price: "$149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive" },
-{ type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "$59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },
+{ type: "Glove", brand: "Warrior", style: "Covert Krypto Pro", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive" },
+{ type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },
 ]
 const helmetItems = [
     { type: "Helmet", brand: "Warrior", style: "Covert CF100", size: "Senior", price: "199.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d2fabfa31a21f6f456e43eae7ba206d5_500x500_crop_center.jpg?v=1656671578", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-cf-100-hockey-helmet" },
@@ -61,34 +61,33 @@ const putItemsIntoContainers = (stickItems, cutOffnumber) => {
 
 const stickGroupByContainers = putItemsIntoContainers(stickItems, 8)
 const stickContainersContainer = document.getElementById("parent-container")
-stickGroupByContainers.forEach((containerArray) => {
-    const container = document.createElement("div");
-    container.classList.add("items-containers");
-
-    containerArray.forEach((item, index) => {
-        const itemDiv = document.createElement("div")
-        const table = document.getElementById("itemTable");
-        itemDiv.classList.add("item")
-        itemDiv.classList.add("items-column")
-        const link = document.createElement("a");
-        const img = document.createElement("img");
-        img.setAttribute("width", "50");
-        img.setAttribute("height", "50");
-        img.src = item.imageUrl;
-        const itemDetails=document.createElement("p")
-        itemDetails.innerHTML= `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
-        itemDiv.appendChild(itemDetails)
-        itemDiv.appendChild(img);
-        link.href = item.linkRef;
-        link.appendChild(img);
-        itemDiv.appendChild(link);
-        container.appendChild(itemDiv)
-        if (!index < containerArray.length) {
-            stickContainersContainer.appendChild(container);
-        }
+if (stickContainersContainer){
+    stickGroupByContainers.forEach((containerArray) => {
+        const container = document.createElement("div");
+        container.classList.add("items-containers");
+        containerArray.forEach((item, index) => {
+            const itemDiv = document.createElement("div")
+            itemDiv.classList.add("item")
+            itemDiv.classList.add("items-column")
+            const link = document.createElement("a");
+            const img = document.createElement("img");
+            img.setAttribute("width", "50");
+            img.setAttribute("height", "50");
+            img.src = item.imageUrl;
+            const itemDetails=document.createElement("p")
+            itemDetails.innerHTML= `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
+            itemDiv.appendChild(itemDetails)
+            itemDiv.appendChild(img);
+            link.href = item.linkRef;
+            link.appendChild(img);
+            itemDiv.appendChild(link);
+            container.appendChild(itemDiv)
+            if (!index < containerArray.length) {
+                stickContainersContainer.appendChild(container);
+            }
+        })
     })
-
-});
+};
 
 // gloveItems into its own nested loop
 
@@ -112,33 +111,34 @@ const putGloveItemsIntoContainers = (gloveItems, cutOffnumber) => {
 
 const gloveGroupByContainers = putGloveItemsIntoContainers(gloveItems, 8)
 const glovecontainersContainer = document.getElementById("parent-container")
-gloveGroupByContainers.forEach((containerArray) => {
-    const container = document.createElement("div");
-    container.classList.add("items-containers");
-
-    containerArray.forEach((item, index) => {
-        const itemDiv = document.createElement("div")
-        itemDiv.classList.add("item")
-        itemDiv.classList.add("items-column")
-        const link = document.createElement("a");
-        const img = document.createElement("img");
-        img.setAttribute("width", "50");
-        img.setAttribute("height", "50");
-        img.src = item.imageUrl;
-        const itemDetails=document.createElement("p")
-        itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br> ${item.size}<br>$${item.price}\n`;
-        itemDiv.appendChild(itemDetails)
-        itemDiv.appendChild(img);
-        link.href = item.linkRef;
-        link.appendChild(img);
-        itemDiv.appendChild(link);
-        container.appendChild(itemDiv)
-        if (!index < containerArray.length) {
-            glovecontainersContainer.appendChild(container);
-        }
-    })
-
+if(glovecontainersContainer){
+    gloveGroupByContainers.forEach((containerArray) => {
+        const container = document.createElement("div");
+        container.classList.add("items-containers");
+        containerArray.forEach((item, index) => {
+            const itemDiv = document.createElement("div")
+            itemDiv.classList.add("item")
+            itemDiv.classList.add("items-column")
+            const link = document.createElement("a");
+            const img = document.createElement("img");
+            img.setAttribute("width", "50");
+            img.setAttribute("height", "50");
+            img.src = item.imageUrl;
+            const itemDetails=document.createElement("p")
+            itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br> ${item.size}<br>$${item.price}\n`;
+            itemDiv.appendChild(itemDetails)
+            itemDiv.appendChild(img);
+            link.href = item.linkRef;
+            link.appendChild(img);
+            itemDiv.appendChild(link);
+            container.appendChild(itemDiv)
+            if (!index < containerArray.length) {
+                glovecontainersContainer.appendChild(container);
+            }
+        })
+      
 })
+}
 
 //helmet items into its own nested loop
 
@@ -161,33 +161,34 @@ const putHelmetItemsIntoContainers = (helmetItems, cutOffnumber) => {
 
 const helmetGroupByContainers = putGloveItemsIntoContainers(helmetItems, 8)
 const helmetContainersContainer = document.getElementById("parent-container")
-helmetGroupByContainers.forEach((containerArray) => {
-    const container = document.createElement("div");
-    container.classList.add("items-containers");
+if (helmetContainersContainer){
+    helmetGroupByContainers.forEach((containerArray) => {
+        const container = document.createElement("div");
+        container.classList.add("items-containers");
+        containerArray.forEach((item, index) => {
+            const itemDiv = document.createElement("div")
+            itemDiv.classList.add("item")
+            itemDiv.classList.add("items-column")
+            const link = document.createElement("a");
+            const img = document.createElement("img");
+            img.setAttribute("width", "50");
+            img.setAttribute("height", "50");
+            img.src = item.imageUrl;
+            itemDetails=document.createElement("p")
+            itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}\n`;
+            itemDiv.appendChild(itemDetails)
+            itemDiv.appendChild(img);
+            link.href = item.linkRef;
+            link.appendChild(img);
+            itemDiv.appendChild(link);
+            container.appendChild(itemDiv)
+            if (!index < containerArray.length) {
+                helmetContainersContainer.appendChild(container);
+            }
+        })
 
-    containerArray.forEach((item, index) => {
-        const itemDiv = document.createElement("div")
-        itemDiv.classList.add("item")
-        itemDiv.classList.add("items-column")
-        const link = document.createElement("a");
-        const img = document.createElement("img");
-        img.setAttribute("width", "50");
-        img.setAttribute("height", "50");
-        img.src = item.imageUrl;
-        itemDetails=document.createElement("p")
-        itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}\n`;
-        itemDiv.appendChild(itemDetails)
-        itemDiv.appendChild(img);
-        link.href = item.linkRef;
-        link.appendChild(img);
-        itemDiv.appendChild(link);
-        container.appendChild(itemDiv)
-        if (!index < containerArray.length) {
-            helmetContainersContainer.appendChild(container);
-        }
     })
-
-})
+}
 
 const putPantItemsIntoContainer = (pantItems, cutOffnumber) => {
     let cutOff = cutOffnumber - 1;
@@ -208,11 +209,11 @@ const putPantItemsIntoContainer = (pantItems, cutOffnumber) => {
 
 const pantGroupByContainers = putPantItemsIntoContainer(pantItems,8)
 const pantContainersContainer= document.getElementById("parent-container")
+if(pantGroupByContainers){
 pantGroupByContainers.forEach((containerArray) => {
     const container=document.createElement("div")
     container.classList.add("items-containers")
-
-    containerArray.forEach((item,index)=>{
+        containerArray.forEach((item,index)=>{
         const itemDiv = document.createElement("div")
         itemDiv.classList.add("item")
         itemDiv.classList.add("items-column")
@@ -238,13 +239,27 @@ pantGroupByContainers.forEach((containerArray) => {
 
 
 })
+}
 
+    const testArray = [
+        {name:"popcorn", price:12},
+        {name:"soda", price:2},
+        {name:"candy", price:3},
+    ]
 
-
-
+    const tableElement=document.getElementById("display-table")
+        testArray.map((item)=>{
+        const itemDiv=document.createElement("div")
+        const element = document.createElement("p")
+        element.innerHTML = `${testArray.name} $${testArray.price}`
+        element.appendChild(itemDiv)
+        tableElement.appendChild(element)
+        
+        })
 
 console.log(pantContainersContainer)
 
+console.log("hello")
 
 
 
@@ -255,80 +270,6 @@ console.log(pantContainersContainer)
 
 
 
-
-// const parentContainer = document.getElementById("item-container")
-// equipment.map ((item) => {
-//   const element = document.createElement("container")
-//   const link = document.createElement("a");
-//   const img = document.createElement("img");
-//   img.src = item.imageUrl;
-//   element.textContent=item.type + item.brand + item.style + item.size + item.price;
-//   parentContainer.appendChild(element);
-//   element.appendChild(img);
-//   const stickImg = document.querySelector("img");
-//   img.setAttribute("src",item.imageUrl);
-//   img.setAttribute("width", "100");
-//   img.setAttribute("height", "100");
-//   link.href = item.linkRef;
-//   link.appendChild(img);
-//   element.appendChild(link);
-//   parentContainer.appendChild(element);
-// });
-
-
-
-// const stickColumn = document.getElementById("stick-column")
-// equipment.forEach ((item) => {
-//   const element = document.createElement("div")
-//   const link = document.createElement("a");
-//   const img = document.createElement("img");
-//   img.src = item.imageUrl;
-//   element.textContent=item.type + item.brand + item.style + item.size + item.price;
-//   element.appendChild(img);
-//   const stickImg = document.querySelector("img");
-//   img.setAttribute("src",item.imageUrl);
-//   img.setAttribute("width", "200");
-//   img.setAttribute("height", "200");
-//   link.href = item.linkRef;
-//   link.appendChild(img);
-//   element.appendChild(link);
-//   stickColumn.appendChild(element);
-// });
-
-// const skateColumn = document.getElementById("skate-column")
-// skateItems.forEach((item) => {
-//     const element = document.createElement("div");
-//     const link = document.createElement("a");
-//     const img = document.createElement("img");
-//     img.src= item.imageUrl;
-//     element.textContent = item.type + item.brand + item.style + item.size + item.price;
-//     const skateImg=document.querySelector("img");
-//     img.setAttribute("src",item.imageUrl);
-//     img.setAttribute("width","200");
-//     img.setAttribute("height","200");
-//     link.href=item.linkRef;
-//     link.appendChild(img);
-//     element.appendChild(link);
-//     skateColumn.appendChild(element);
-// });
-// // draws "glove-info" tag from HTML Page
-// const gloveColumn = document.getElementById("glove-info");
-// gloveItems.forEach(function(item){   
-//     const element=document.createElement("div");
-//     const img = document.createElement("img");
-//     const link =document.createElement("a");
-//     img.src = item.imageUrl;  
-//     element.textContent = item.type + item.brand + item.style + item.size + item.price;
-//     element.appendChild(img);
-//     const gloveImage = document.querySelector("img");
-//     img.setAttribute("src",item.imageUrl);
-//     img.setAttribute("width", "200");
-//     img.setAttribute("height", "200");
-//     link.href=item.linkRef;
-//     link.appendChild(img);
-//     element.appendChild(link);
-//     gloveColumn.appendChild(element);
-// });
 
 
 //    const button = document.createElement("Button");

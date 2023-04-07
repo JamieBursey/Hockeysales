@@ -5,7 +5,9 @@ const input = [
     ["10212021", "popcorn"],
     ["10212021", "soda"],
     ["10212021", "popcorn"],
-    ["10212022", "popcorn"]
+    ["10212022", "popcorn"],
+    ["10212023", "soda"],
+    ["10212023", "popcorn"]
 ];
 
 const prices = {
@@ -31,19 +33,26 @@ input.forEach(([date, item]) => {
 
 Object.keys(purchaseDates).forEach(dateKey => {
     const purchaseTimes = purchaseDates[dateKey];
-    const sodaAmount = purchaseTimes.soda;
-    const popcornAmount = purchaseTimes.popcorn
-    let bundleAmount = Math.min(popcornAmount, sodaAmount);
-    output += (bundleAmount) * prices.bundle
-    output += (sodaAmount - bundleAmount) * prices.soda
-    output += (popcornAmount - bundleAmount) * prices.popcorn
+    const sodaAmount = purchaseDates[dateKey].soda;
+    const popcornAmount = purchaseDates[dateKey].popcorn
+    let bundleAmount = 0
+        if (sodaAmount > 0 && popcornAmount > 0){
+            bundleAmount=Math.min(popcornAmount,sodaAmount)
+        }
+    const sodaPrice=(sodaAmount-bundleAmount) * prices.soda;
+    const popcornPrice=(popcornAmount-bundleAmount) * prices.popcorn
+    const bundlePrice= bundleAmount * prices.bundle;
 
-    console.log(popcornAmount);
+    output += sodaPrice + popcornPrice + bundlePrice
+console.log(bundleAmount)
+console.log(sodaPrice)
+console.log(popcornPrice)
+console.log(bundlePrice)
+
 });
 
 
-console.log(output);
-
+console.log(output)
 
 
 
