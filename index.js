@@ -249,12 +249,15 @@ pantGroupByContainers.forEach((containerArray) => {
 
     const tableElement=document.getElementById("display-table")
         testArray.map((item)=>{
-        const itemDiv=document.createElement("div")
-        const element = document.createElement("p")
-        element.innerHTML = `${testArray.name} $${testArray.price}`
-        element.appendChild(itemDiv)
-        tableElement.appendChild(element)
-        
+        const element = document.createElement("table")
+        const tableRow = document.createElement("tr")
+            for (let property in item){
+                const tableData = document.createElement("td")
+                tableData.innerHTML =  `${item.name} $${item.price}` 
+                tableRow.appendChild(tableData)
+            }
+            element.appendChild(tableRow)
+            tableElement.appendChild(element)
         })
 
 console.log(pantContainersContainer)
