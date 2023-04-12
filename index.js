@@ -245,32 +245,85 @@ pantGroupByContainers.forEach((containerArray) => {
         {name:"popcorn", price:12},
         {name:"soda", price:2},
         {name:"candy", price:3},
+        {name:"twizzler", price:6}
     ]
 
-    const tableHeader = (table,data) => {
-        let tableHead= table.createTHead();
-        let row = tableHead.insertRow()
-        for (let key of data) {
-            let th = document.createElement("th");
-            let text = document.createTextNode(key);
-            th.appendChild(text)
-            row.appendChild(th);
-        }
-    }
-    const generateTable = (table,data) => {
-        for (let element of data){
-            let row = table.insertRow();
-            for (key in element){
-                let cell= row.insertCell()
-                let text = document.createTextNode(element[key])
-                cell.appendChild(text)
-            }
-        }
-    }
-    let table = document.querySelector("table");
-    let data = Object.keys(testArray[0]);
-    tableHeader(table,data)
-    generateTable(table,testArray)
+    const table = document.getElementById("display-table")
+
+    const headerRow = document.createElement("tr");
+
+const headers = ["Name", "Price"];
+for (let i = 0; i < headers.length; i++) {
+  const headerCell = document.createElement("th");
+  headerCell.textContent = headers[i];
+  headerRow.appendChild(headerCell);
+}
+
+table.appendChild(headerRow);
+
+for (let i = 0; i < testArray.length; i++) {
+  const item = testArray[i];
+
+  const row = document.createElement("tr");
+
+  const nameCell = document.createElement("td");
+  nameCell.textContent = item.name;
+  row.appendChild(nameCell);
+
+  const priceCell = document.createElement("td");
+  priceCell.textContent = "$" + item.price.toFixed(2);
+  row.appendChild(priceCell);
+
+  table.appendChild(row);
+}
+
+console.log(table);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const tableHeader = (table,data) => {
+    //     let tableHead= table.createTHead();
+    //     let row = tableHead.insertRow()
+    //     for (let key of data) {
+    //         let th = document.createElement("th");
+    //         let text = document.createTextNode(key);
+    //         th.appendChild(text)
+    //         row.appendChild(th);
+    //     }
+    // }
+    // const generateTable = (table,data) => {
+    //     for (let element of data){
+    //         let row = table.insertRow();
+    //         for (key in element){
+    //             let cell= row.insertCell()
+    //             let text = document.createTextNode(key === "price" ? "$" + element[key] : element[key])
+    //             cell.appendChild(text)
+    //         }
+    //     }
+    //     console.log(generateTable)
+    // }
+    // let table = document.querySelector("table");
+    // let data = Object.keys(testArray[0]);
+    // tableHeader(table,data)
+    // generateTable(table,testArray)
+
+    // console.log(tableHeader)
 
 
     
