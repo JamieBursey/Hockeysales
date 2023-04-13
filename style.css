@@ -91,7 +91,16 @@ pd {
     border-radius: .5rem;
 }
 
+table,th,td {
+    border-style:dashed;
+    border-width:1px;
+    overflow: hidden;
+     
+}
 
+td {
+    
+}
 .items-column {
     float: left;
     width: 25%
