@@ -84,114 +84,65 @@ if (itemsContainersContainer){
     })
 };
 
+// const tableHeader=[
+//     "Type","Brand","Style","Size","Price","Image"
+// ]
+// const tableElement=document.getElementById("display-table")
+// const headRow=document.createElement("tr")
+// tableHeader.forEach(header =>{
+//  const headData=document.createElement("td")
+//  headData.innerHTML=header
+//  headRow.appendChild(headData)
+// })
+// tableElement.appendChild(headRow)
 
-const itemstable = document.getElementById("display-table")
+// Items.forEach(item => {
+//     if (item.type==="Stick") {
+//     const row = document.createElement("tr");
+//     const typeCell = document.createElement("td");
+//     typeCell.innerHTML = `${item.type}`;
+//     row.appendChild(typeCell);
 
-const row = document.createElement("tr");
-const typeHeader = document.createElement("th");
-typeHeader.textContent = "Type";
-row.appendChild(typeHeader);
+//     const brandCell=document.createElement("td")
+//     brandCell.innerHTML=`${item.brand}`
+//     row.appendChild(brandCell)
 
-const brandHeader = document.createElement("th");
-brandHeader.textContent = "Brand";
-row.appendChild(brandHeader);
+//     const styleCell=document.createElement("td")
+//     styleCell.innerHTML=`${item.style}`
+//     row.appendChild(styleCell)
 
-const styleHeader=document.createElement("th")
-styleHeader.textContent="Style"
-row.appendChild(styleHeader)
+//     const sizeCell=document.createElement("td")
+//     sizeCell.innerHTML=`${item.size}`
+//     row.appendChild(sizeCell)
 
-const sizeHeader=document.createElement("th")
-sizeHeader.innerText="Size"
-row.appendChild(sizeHeader)
+//     const priceCell = document.createElement("td");
+//     priceCell.innerHTML = `$${item.price}`;
+//     row.appendChild(priceCell);
 
-const priceHead= document.createElement("th")
-priceHead.innerText="Price"
-row.appendChild(priceHead);
+//     const imageCell=document.createElement("td")
+//     imageCell.setAttribute("height","60")
+//     imageCell.setAttribute("width","60")
+//     img=document.createElement("img")
+//     img.setAttribute("width", "60");
+//     img.setAttribute("height", "60");
+//     img.src = item.imageUrl;
+//     img.appendChild(imageCell)
+//     row.appendChild(imageCell)
 
-const imageHeader=document.createElement("th")
-imageHeader.innerText="Image"
-row.appendChild(imageHeader)
-
-
-itemstable.appendChild(row);
-
-Items.forEach(item => {
-    const row = document.createElement("tr");
-    const typeCell = document.createElement("td");
-    typeCell.innerHTML = `${item.type}`;
-    row.appendChild(typeCell);
-
-    const brandCell=document.createElement("td")
-    brandCell.innerHTML=`${item.brand}`
-    row.appendChild(brandCell)
-
-    const styleCell=document.createElement("td")
-    styleCell.innerHTML=`${item.style}`
-    row.appendChild(styleCell)
-
-    const sizeCell=document.createElement("td")
-    sizeCell.innerHTML=`${item.style}`
-    row.appendChild(sizeCell)
-
-    const priceCell = document.createElement("td");
-    priceCell.innerHTML = `$${item.price}`;
-    row.appendChild(priceCell);
-
-    const imageCell=document.createElement("td")
-    imageCell.setAttribute("height","60")
-    imageCell.setAttribute("width","60")
-    img=document.createElement("img")
-    img.setAttribute("width", "60");
-    img.setAttribute("height", "60");
-    img.src = item.imageUrl;
-    img.appendChild(imageCell)
-    row.appendChild(imageCell)
-
-    const link=document.createElement("a")
-    link.href=item.linkRef
-    link.appendChild(img)
-    row.appendChild(link)
-    imageCell.appendChild(link)
+//     const link=document.createElement("a")
+//     link.href=item.linkRef
+//     link.appendChild(img)
+//     row.appendChild(link)
+//     imageCell.appendChild(link)
 
 
-    itemstable.appendChild(row);
-});
+//     tableElement.appendChild(row);
+//     }
+// });
 
-const testArray = [
-    { name: "popcorn", price: 12 },
-    { name: "soda", price: 2 },
-    { name: "candy", price: 3 },
-    { name: "twizzler", price: 6 }
-]
 
-const table = document.getElementById("display-table")
 
-const headerRow = document.createElement("tr");
-const nameHeader = document.createElement("th");
-nameHeader.textContent = "Name";
-headerRow.appendChild(nameHeader);
-const priceHeader = document.createElement("th");
-priceHeader.textContent = "Price";
-headerRow.appendChild(priceHeader);
-table.appendChild(headerRow);
 
-testArray.forEach(item => {
-    const row = document.createElement("tr");
-    const nameCell = document.createElement("td");
-    nameCell.innerHTML = `${item.name}`;
-    row.appendChild(nameCell);
-
-    const priceCell = document.createElement("td");
-    priceCell.innerHTML = `$${item.price}`;
-    row.appendChild(priceCell);
-
-    table.appendChild(row);
-});
-  
-  console.log(table);
-  
-console.log(headerRow)
-console.log(table);
 
 
 
