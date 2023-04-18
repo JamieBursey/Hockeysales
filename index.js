@@ -53,6 +53,19 @@ const Items =[
     })
     return (results)
 }
+const gloveButtonElement=document.getElementById("glove-button")
+const sortGloveButton=(type) =>{
+    let gloveitems=[]
+    if (item.type==="glove"){
+        gloveitems=containerArray.sort(item.type === "glove")
+    }
+    gloveButtonElement.onclick.appendChild(sortGloveButton)
+    gloveButtonElement.appendChild(containerArray)
+    sortGloveButton.appendChild(itemsContainersContainer)
+    
+}
+
+console.log(sortGloveButton)
 
 const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
 const itemsContainersContainer= document.getElementById("parent-container")
@@ -79,120 +92,67 @@ if (itemsContainersContainer){
             container.appendChild(itemDiv)
             if (!index < containerArray.length) {
                 itemsContainersContainer.appendChild(container);
+
             }
         })
     })
 };
 
-// const tableHeader=[
-//     "Type","Brand","Style","Size","Price","Image"
-// ]
-// const tableElement=document.getElementById("display-table")
-// const headRow=document.createElement("tr")
-// tableHeader.forEach(header =>{
-//  const headData=document.createElement("td")
-//  headData.innerHTML=header
-//  headRow.appendChild(headData)
-// })
-// tableElement.appendChild(headRow)
+const tableHeader=[
+    "Type","Brand","Style","Size","Price","Image"
+]
+const tableElement=document.getElementById("display-table")
+const headRow=document.createElement("tr")
+tableHeader.forEach(header =>{
+ const headData=document.createElement("td")
+ headData.innerHTML=header
+ headRow.appendChild(headData)
+})
+tableElement.appendChild(headRow)
 
-// Items.forEach(item => {
-//     if (item.type==="Stick") {
-//     const row = document.createElement("tr");
-//     const typeCell = document.createElement("td");
-//     typeCell.innerHTML = `${item.type}`;
-//     row.appendChild(typeCell);
+Items.forEach(item => {
+    if (item.type==="Stick") {
+    const row = document.createElement("tr");
+    const typeCell = document.createElement("td");
+    typeCell.innerHTML = `${item.type}`;
+    row.appendChild(typeCell);
 
-//     const brandCell=document.createElement("td")
-//     brandCell.innerHTML=`${item.brand}`
-//     row.appendChild(brandCell)
+    const brandCell=document.createElement("td")
+    brandCell.innerHTML=`${item.brand}`
+    row.appendChild(brandCell)
 
-//     const styleCell=document.createElement("td")
-//     styleCell.innerHTML=`${item.style}`
-//     row.appendChild(styleCell)
+    const styleCell=document.createElement("td")
+    styleCell.innerHTML=`${item.style}`
+    row.appendChild(styleCell)
 
-//     const sizeCell=document.createElement("td")
-//     sizeCell.innerHTML=`${item.size}`
-//     row.appendChild(sizeCell)
+    const sizeCell=document.createElement("td")
+    sizeCell.innerHTML=`${item.size}`
+    row.appendChild(sizeCell)
 
-//     const priceCell = document.createElement("td");
-//     priceCell.innerHTML = `$${item.price}`;
-//     row.appendChild(priceCell);
+    const priceCell = document.createElement("td");
+    priceCell.innerHTML = `$${item.price}`;
+    row.appendChild(priceCell);
 
-//     const imageCell=document.createElement("td")
-//     imageCell.setAttribute("height","60")
-//     imageCell.setAttribute("width","60")
-//     img=document.createElement("img")
-//     img.setAttribute("width", "60");
-//     img.setAttribute("height", "60");
-//     img.src = item.imageUrl;
-//     img.appendChild(imageCell)
-//     row.appendChild(imageCell)
+    const imageCell=document.createElement("td")
+    imageCell.setAttribute("height","60")
+    imageCell.setAttribute("width","60")
+    img=document.createElement("img")
+    img.setAttribute("width", "60");
+    img.setAttribute("height", "60");
+    img.src = item.imageUrl;
+    img.appendChild(imageCell)
+    row.appendChild(imageCell)
 
-//     const link=document.createElement("a")
-//     link.href=item.linkRef
-//     link.appendChild(img)
-//     row.appendChild(link)
-//     imageCell.appendChild(link)
-
-
-//     tableElement.appendChild(row);
-//     }
-// });
+    const link=document.createElement("a")
+    link.href=item.linkRef
+    link.appendChild(img)
+    row.appendChild(link)
+    imageCell.appendChild(link)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // const tableHeader = (table,data) => {
-    //     let tableHead= table.createTHead();
-    //     let row = tableHead.insertRow()
-    //     for (let key of data) {
-    //         let th = document.createElement("th");
-    //         let text = document.createTextNode(key);
-    //         th.appendChild(text)
-    //         row.appendChild(th);
-    //     }
-    // }
-    // const generateTable = (table,data) => {
-    //     for (let element of data){
-    //         let row = table.insertRow();
-    //         for (key in element){
-    //             let cell= row.insertCell()
-    //             let text = document.createTextNode(key === "price" ? "$" + element[key] : element[key])
-    //             cell.appendChild(text)
-    //         }
-    //     }
-    //     console.log(generateTable)
-    // }
-    // let table = document.querySelector("table");
-    // let data = Object.keys(testArray[0]);
-    // tableHeader(table,data)
-    // generateTable(table,testArray)
-
-    // console.log(tableHeader)
-
-
-    
-
+    tableElement.appendChild(row);
+    }
+});
 
 
 console.log("hello")
