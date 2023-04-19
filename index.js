@@ -1,5 +1,5 @@
 
-const Items =[
+const Items = [
     { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
     { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
     { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
@@ -12,8 +12,8 @@ const Items =[
     { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "$169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
     { type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
     { type: "Glove", brand: "Warrior", style: "Covert Krypto Pro", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive" },
-    { type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },  
-    
+    { type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },
+
     { type: "Helmet", brand: "Warrior", style: "Covert CF100", size: "Senior", price: "199.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d2fabfa31a21f6f456e43eae7ba206d5_500x500_crop_center.jpg?v=1656671578", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-cf-100-hockey-helmet" },
     { type: "Helmet", brand: "CCM", style: "Tacks 70 Combo", size: "youth", price: "84.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/0009dac6592ee52f8b99322269041fa3_6fd328fa-d0cb-4343-81c6-76c429b847c5_500x500_crop_center.jpg?v=1653042048", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-70-youth-hockey-helmet-combo" },
     { type: "Helmet", brand: "CCM", style: "Tacks 70 combo", size: "Senior", price: "84.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/cd33d88ece570a9e144712d66d49c76e_500x500_crop_center.jpg?v=1653042006", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-70-senior-hockey-helmet-combo" },
@@ -36,16 +36,16 @@ const Items =[
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
 ]
-    const putItemsIntoContainers = (stickItems, cutOffnumber) => {
+const putItemsIntoContainers = (Items, cutOffnumber) => {
     let cutOff = cutOffnumber - 1
     let container = []
     const results = []
-    stickItems.map((item, index) => {
+    Items.map((item, index) => {
 
         if (index <= cutOff) {
             container.push(item)
         }
-        if (index === cutOff || index == stickItems.length - 1) {
+        if (index === cutOff || index == Items.length - 1) {
             results.push(container)
             cutOff += cutOffnumber
             container = [];
@@ -53,23 +53,11 @@ const Items =[
     })
     return (results)
 }
-const gloveButtonElement=document.getElementById("glove-button")
-const sortGloveButton=(type) =>{
-    let gloveitems=[]
-    if (item.type==="glove"){
-        gloveitems=containerArray.sort(item.type === "glove")
-    }
-    gloveButtonElement.onclick.appendChild(sortGloveButton)
-    gloveButtonElement.appendChild(containerArray)
-    sortGloveButton.appendChild(itemsContainersContainer)
-    
-}
 
-console.log(sortGloveButton)
 
 const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
-const itemsContainersContainer= document.getElementById("parent-container")
-if (itemsContainersContainer){
+const itemsContainersContainer = document.getElementById("parent-container")
+if (itemsContainersContainer) {
     itemsGroupByContainers.forEach((containerArray) => {
         const container = document.createElement("div");
         container.classList.add("items-containers");
@@ -82,8 +70,8 @@ if (itemsContainersContainer){
             img.setAttribute("width", "50");
             img.setAttribute("height", "50");
             img.src = item.imageUrl;
-            const itemDetails=document.createElement("p")
-            itemDetails.innerHTML= `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
+            const itemDetails = document.createElement("p")
+            itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
             itemDiv.appendChild(itemDetails)
             itemDiv.appendChild(img);
             link.href = item.linkRef;
@@ -97,65 +85,75 @@ if (itemsContainersContainer){
         })
     })
 };
+const gloveButtonElement = document.getElementById("glove-button")
+const sortGloveButton=() =>{
+    alert("click")
+    Items.filter(item.type==="Glove")
 
-const tableHeader=[
-    "Type","Brand","Style","Size","Price","Image"
+}
+gloveButtonElement.onclick=sortGloveButton
+gloveButtonElement.appendChild(container)
+
+console.log(gloveButtonElement)
+
+
+
+const tableHeader = [
+    "Type", "Brand", "Style", "Size", "Price", "Image"
 ]
-const tableElement=document.getElementById("display-table")
-const headRow=document.createElement("tr")
-tableHeader.forEach(header =>{
- const headData=document.createElement("td")
- headData.innerHTML=header
- headRow.appendChild(headData)
+const tableElement = document.getElementById("display-table")
+const headRow = document.createElement("tr")
+tableHeader.forEach(header => {
+    const headData = document.createElement("td")
+    headData.innerHTML = header
+    headRow.appendChild(headData)
 })
 tableElement.appendChild(headRow)
 
 Items.forEach(item => {
-    if (item.type==="Stick") {
-    const row = document.createElement("tr");
-    const typeCell = document.createElement("td");
-    typeCell.innerHTML = `${item.type}`;
-    row.appendChild(typeCell);
+    if (item.type === "Stick") {
+        const row = document.createElement("tr");
+        const typeCell = document.createElement("td");
+        typeCell.innerHTML = `${item.type}`;
+        row.appendChild(typeCell);
 
-    const brandCell=document.createElement("td")
-    brandCell.innerHTML=`${item.brand}`
-    row.appendChild(brandCell)
+        const brandCell = document.createElement("td")
+        brandCell.innerHTML = `${item.brand}`
+        row.appendChild(brandCell)
 
-    const styleCell=document.createElement("td")
-    styleCell.innerHTML=`${item.style}`
-    row.appendChild(styleCell)
+        const styleCell = document.createElement("td")
+        styleCell.innerHTML = `${item.style}`
+        row.appendChild(styleCell)
 
-    const sizeCell=document.createElement("td")
-    sizeCell.innerHTML=`${item.size}`
-    row.appendChild(sizeCell)
+        const sizeCell = document.createElement("td")
+        sizeCell.innerHTML = `${item.size}`
+        row.appendChild(sizeCell)
 
-    const priceCell = document.createElement("td");
-    priceCell.innerHTML = `$${item.price}`;
-    row.appendChild(priceCell);
+        const priceCell = document.createElement("td");
+        priceCell.innerHTML = `$${item.price}`;
+        row.appendChild(priceCell);
 
-    const imageCell=document.createElement("td")
-    imageCell.setAttribute("height","60")
-    imageCell.setAttribute("width","60")
-    img=document.createElement("img")
-    img.setAttribute("width", "60");
-    img.setAttribute("height", "60");
-    img.src = item.imageUrl;
-    img.appendChild(imageCell)
-    row.appendChild(imageCell)
+        const imageCell = document.createElement("td")
+        imageCell.setAttribute("height", "60")
+        imageCell.setAttribute("width", "60")
+        img = document.createElement("img")
+        img.setAttribute("width", "60");
+        img.setAttribute("height", "60");
+        img.src = item.imageUrl;
+        img.appendChild(imageCell)
+        row.appendChild(imageCell)
 
-    const link=document.createElement("a")
-    link.href=item.linkRef
-    link.appendChild(img)
-    row.appendChild(link)
-    imageCell.appendChild(link)
+        const link = document.createElement("a")
+        link.href = item.linkRef
+        link.appendChild(img)
+        row.appendChild(link)
+        imageCell.appendChild(link)
 
 
-    tableElement.appendChild(row);
+        tableElement.appendChild(row);
     }
 });
 
-
-console.log("hello")
 
 
 
