@@ -36,7 +36,9 @@ const Items = [
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
 ]
-const putItemsIntoContainers = (Items, cutOffnumber) => {
+
+
+const putItemsIntoContainers = (stickItems, cutOffnumber) => {
     let cutOff = cutOffnumber - 1
     let container = []
     const results = []
@@ -57,11 +59,24 @@ const putItemsIntoContainers = (Items, cutOffnumber) => {
 
 const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
 const itemsContainersContainer = document.getElementById("parent-container")
+const gloveButtonElement = document.getElementById("glove-button")
 if (itemsContainersContainer) {
-    itemsGroupByContainers.forEach((containerArray) => {
+    itemsGroupByContainers.map((containerArray) => {
         const container = document.createElement("div");
         container.classList.add("items-containers");
-        containerArray.forEach((item, index) => {
+        const filterGloveButton=() =>{
+            let gloveArray=[]
+            const itemsContainer=itemsGroupByContainers
+            alert("click")
+            console.log(itemsGroupByContainers)
+            const gloveItems = itemsContainer.filter(item => type="Glove");
+
+            console.log("gloveItems:",gloveItems)
+            console.log("itemsContainer:",itemsContainer)
+        }
+        gloveButtonElement.onclick=filterGloveButton
+        console.log(gloveButtonElement)
+        containerArray.map((item, index) => {
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
             itemDiv.classList.add("items-column")
@@ -85,16 +100,8 @@ if (itemsContainersContainer) {
         })
     })
 };
-const gloveButtonElement = document.getElementById("glove-button")
-const sortGloveButton=() =>{
-    alert("click")
-    Items.filter(item.type==="Glove")
 
-}
-gloveButtonElement.onclick=sortGloveButton
-gloveButtonElement.appendChild(container)
 
-console.log(gloveButtonElement)
 
 
 
