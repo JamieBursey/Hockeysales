@@ -59,6 +59,7 @@ const helmetButtonElement=document.getElementById("helmet-button")
 const gloveButtonElement = document.getElementById("glove-button")
 const sortMyItems = (type) => { 
     return Items.filter(item => item.type === type)
+
   }
 helmetButtonElement.onclick=() => {
     const filteredHelmets=sortMyItems("Helmet")
@@ -69,9 +70,43 @@ console.log(gloveButtonElement)
 let filteredGloves=[]
 gloveButtonElement.onclick=() =>{
     alert("click")
+
+    while (itemsContainersContainer.hasChildNodes()){itemsContainersContainer.removeChild(itemsContainersContainer.firstChild)}
     filteredGloves=sortMyItems("Glove")
-    console.log(filteredGloves)
+
+
+    const filterGroupByContainers = putItemsIntoContainers(filteredGloves, 16)
+const filterContainersContainer = document.getElementById("parent-container")
+if (itemsContainersContainer) {
+    filterGroupByContainers.map((filteredArray) => {
+        const container=document.createElement("div")
+        container.classList.add("items-containers")
+    filteredArray.map((item,index)=>{
+
+            const gloveDiv=document.createElement("div")
+            gloveDiv.classList.add("item")
+            gloveDiv.classList.add("items-column")
+            const gloveDetails=document.createElement("p")
+            gloveDetails.innerHTML=`${item.type} ${item.brand}`
+            gloveDiv.appendChild(gloveDetails)
+            container.appendChild(gloveDiv)
+
+            if (!index < filteredArray.length) {
+                filterContainersContainer.appendChild(container);
+            }
+            console.log(filteredArray)
+
+
+    })
+})}
+
+
+
+    
+    console.log("filteredgloves:",filteredGloves)
 }
+console.log("glovebuttonelement:",gloveButtonElement)
+
 
 
 const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
@@ -80,9 +115,8 @@ if (itemsContainersContainer) {
     itemsGroupByContainers.map((containerArray) => {
         const container = document.createElement("div");
         container.classList.add("items-containers");
-        containerArray.map((item, index) => {
-        
 
+        containerArray.map((item, index) => {
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
             itemDiv.classList.add("items-column")
@@ -99,20 +133,7 @@ if (itemsContainersContainer) {
             link.appendChild(img);
             itemDiv.appendChild(link);
             container.appendChild(itemDiv)
-                filteredGloves.map(()=>{
-                const filteredItemDiv = document.createElement("div");
-                filteredItemDiv.classList.add("item");
-                filteredItemDiv.classList.add("items-column");
-                const filteredImg = document.createElement("img");
-                filteredImg.setAttribute("width", "50");
-                filteredImg.setAttribute("height", "50");
-                filteredImg.src = filteredItem.imageUrl;
-                const filteredItemDetails = document.createElement("p");
-                filteredItemDetails.innerHTML = `${filteredItem.type}<br>${filteredItem.brand}<br>${filteredItem.style}<br>${filteredItem.size}<br>$${filteredItem.price}`;
-                filteredItemDiv.appendChild(filteredItemDetails);
-                filteredItemDiv.appendChild(filteredImg);
-                container.appendChild(filteredItemDiv);
-            })
+
             if (!index < containerArray.length) {
                 itemsContainersContainer.appendChild(container);
             }
@@ -121,7 +142,7 @@ if (itemsContainersContainer) {
 };
 
 
-
+console.log("itemsgroubycontainer:",itemsGroupByContainers)
 
 
 const tableHeader = [
