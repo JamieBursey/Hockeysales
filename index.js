@@ -38,12 +38,12 @@ const Items = [
 ]
 
 
-const putItemsIntoContainers = (stickItems, cutOffnumber) => {
+const putItemsIntoContainers = (Items, cutOffnumber) => {
     let cutOff = cutOffnumber - 1
     let container = []
     const results = []
     Items.map((item, index) => {
-
+        
         if (index <= cutOff) {
             container.push(item)
         }
@@ -55,28 +55,34 @@ const putItemsIntoContainers = (stickItems, cutOffnumber) => {
     })
     return (results)
 }
+const helmetButtonElement=document.getElementById("helmet-button")
+const gloveButtonElement = document.getElementById("glove-button")
+const sortMyItems = (type) => { 
+    return Items.filter(item => item.type === type)
+  }
+helmetButtonElement.onclick=() => {
+    const filteredHelmets=sortMyItems("Helmet")
+    console.log(filteredHelmets)
+}
+console.log(gloveButtonElement)
+
+let filteredGloves=[]
+gloveButtonElement.onclick=() =>{
+    alert("click")
+    filteredGloves=sortMyItems("Glove")
+    console.log(filteredGloves)
+}
 
 
 const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
 const itemsContainersContainer = document.getElementById("parent-container")
-const gloveButtonElement = document.getElementById("glove-button")
 if (itemsContainersContainer) {
     itemsGroupByContainers.map((containerArray) => {
         const container = document.createElement("div");
         container.classList.add("items-containers");
-        const filterGloveButton=() =>{
-            let gloveArray=[]
-            const itemsContainer=itemsGroupByContainers
-            alert("click")
-            console.log(itemsGroupByContainers)
-            const gloveItems = itemsContainer.filter(item => type="Glove");
-
-            console.log("gloveItems:",gloveItems)
-            console.log("itemsContainer:",itemsContainer)
-        }
-        gloveButtonElement.onclick=filterGloveButton
-        console.log(gloveButtonElement)
         containerArray.map((item, index) => {
+        
+
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
             itemDiv.classList.add("items-column")
@@ -93,9 +99,22 @@ if (itemsContainersContainer) {
             link.appendChild(img);
             itemDiv.appendChild(link);
             container.appendChild(itemDiv)
+                filteredGloves.map(()=>{
+                const filteredItemDiv = document.createElement("div");
+                filteredItemDiv.classList.add("item");
+                filteredItemDiv.classList.add("items-column");
+                const filteredImg = document.createElement("img");
+                filteredImg.setAttribute("width", "50");
+                filteredImg.setAttribute("height", "50");
+                filteredImg.src = filteredItem.imageUrl;
+                const filteredItemDetails = document.createElement("p");
+                filteredItemDetails.innerHTML = `${filteredItem.type}<br>${filteredItem.brand}<br>${filteredItem.style}<br>${filteredItem.size}<br>$${filteredItem.price}`;
+                filteredItemDiv.appendChild(filteredItemDetails);
+                filteredItemDiv.appendChild(filteredImg);
+                container.appendChild(filteredItemDiv);
+            })
             if (!index < containerArray.length) {
                 itemsContainersContainer.appendChild(container);
-
             }
         })
     })
