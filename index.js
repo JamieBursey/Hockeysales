@@ -13,6 +13,9 @@ const Items = [
     { type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
     { type: "Glove", brand: "Warrior", style: "Covert Krypto Pro", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive" },
     { type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },
+    { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "$169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
+    { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "$169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
+    { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "$169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
 
     { type: "Helmet", brand: "Warrior", style: "Covert CF100", size: "Senior", price: "199.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d2fabfa31a21f6f456e43eae7ba206d5_500x500_crop_center.jpg?v=1656671578", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-cf-100-hockey-helmet" },
     { type: "Helmet", brand: "CCM", style: "Tacks 70 Combo", size: "youth", price: "84.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/0009dac6592ee52f8b99322269041fa3_6fd328fa-d0cb-4343-81c6-76c429b847c5_500x500_crop_center.jpg?v=1653042048", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-70-youth-hockey-helmet-combo" },
@@ -43,7 +46,7 @@ const putItemsIntoContainers = (Items, cutOffnumber) => {
     let container = []
     const results = []
     Items.map((item, index) => {
-        
+
         if (index <= cutOff) {
             container.push(item)
         }
@@ -55,59 +58,65 @@ const putItemsIntoContainers = (Items, cutOffnumber) => {
     })
     return (results)
 }
-const helmetButtonElement=document.getElementById("helmet-button")
-const gloveButtonElement = document.getElementById("glove-button")
-const sortMyItems = (type) => { 
+
+const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
+
+buttonTitles.map((buttonName) => {
+    console.log("start:")
+    const buttonDiv = document.getElementById("myBtnContainer")
+    const buttonElement = document.createElement("button")
+    buttonElement.classList.add("item-button")
+    buttonElement.innerHTML = buttonName
+    buttonDiv.appendChild(buttonElement)
+    buttonDiv.appendChild(buttonElement)
+    buttonElement.onclick=()=>{
+        const filteredItems=sortMyItems(buttonName)
+        updateItemsInTable(filteredItems)
+    }
+    console.log("stop")
+})
+
+const sortMyItems = (type) => {
     return Items.filter(item => item.type === type)
 
-  }
-helmetButtonElement.onclick=() => {
-    const filteredHelmets=sortMyItems("Helmet")
-    console.log(filteredHelmets)
 }
-console.log(gloveButtonElement)
-
-let filteredGloves=[]
-gloveButtonElement.onclick=() =>{
-    alert("click")
-
-    while (itemsContainersContainer.hasChildNodes()){itemsContainersContainer.removeChild(itemsContainersContainer.firstChild)}
-    filteredGloves=sortMyItems("Glove")
 
 
-    const filterGroupByContainers = putItemsIntoContainers(filteredGloves, 16)
-const filterContainersContainer = document.getElementById("parent-container")
-if (itemsContainersContainer) {
-    filterGroupByContainers.map((filteredArray) => {
-        const container=document.createElement("div")
-        container.classList.add("items-containers")
-    filteredArray.map((item,index)=>{
+const updateItemsInTable = (filteredItems) => {
+    const filterGroupByContainers = putItemsIntoContainers(filteredItems, 6)
+    while (itemsContainersContainer.hasChildNodes()) { itemsContainersContainer.removeChild(itemsContainersContainer.firstChild) }
 
-            const gloveDiv=document.createElement("div")
-            gloveDiv.classList.add("item")
-            gloveDiv.classList.add("items-column")
-            const gloveDetails=document.createElement("p")
-            gloveDetails.innerHTML=`${item.type} ${item.brand}`
-            gloveDiv.appendChild(gloveDetails)
-            container.appendChild(gloveDiv)
+    const filterContainersContainer = document.getElementById("parent-container")
+    if (itemsContainersContainer) {
+        filterGroupByContainers.map((itemsArray) => {
+            const container = document.createElement("div")
+            container.classList.add("items-containers")
 
-            if (!index < filteredArray.length) {
-                filterContainersContainer.appendChild(container);
-            }
-            console.log(filteredArray)
-
-
-    })
-})}
-
-
-
-    
-    console.log("filteredgloves:",filteredGloves)
+            itemsArray.map((item, index) => {
+                const gloveDiv = document.createElement("div")
+                gloveDiv.classList.add("item")
+                gloveDiv.classList.add("items-column")
+                const link = document.createElement("a");
+                const img = document.createElement("img");
+                img.setAttribute("width", "50");
+                img.setAttribute("height", "50");
+                img.src = item.imageUrl;
+                const gloveDetails = document.createElement("p")
+                gloveDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
+                gloveDiv.appendChild(gloveDetails)
+                container.appendChild(gloveDiv)
+                gloveDiv.appendChild(img);
+                link.href = item.linkRef;
+                link.appendChild(img);
+                gloveDiv.appendChild(link);
+                if (!index <= itemsArray.length) {
+                    filterContainersContainer.appendChild(container);
+                }
+                console.log(itemsArray)
+            })
+        })
+    }
 }
-console.log("glovebuttonelement:",gloveButtonElement)
-
-
 
 const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
 const itemsContainersContainer = document.getElementById("parent-container")
@@ -134,7 +143,7 @@ if (itemsContainersContainer) {
             itemDiv.appendChild(link);
             container.appendChild(itemDiv)
 
-            if (!index < containerArray.length) {
+            if (!index <= containerArray.length) {
                 itemsContainersContainer.appendChild(container);
             }
         })
@@ -142,7 +151,7 @@ if (itemsContainersContainer) {
 };
 
 
-console.log("itemsgroubycontainer:",itemsGroupByContainers)
+console.log("itemsgroubycontainer:", itemsGroupByContainers)
 
 
 const tableHeader = [
