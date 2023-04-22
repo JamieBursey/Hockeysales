@@ -15,9 +15,9 @@ p2 {
 }
 
 
-@media (max-width:60rem) {
+@media (max-width:50rem) {
     p1 {
-        font-size: 30px;
+        font-size: 10px;
     }
 }
 
