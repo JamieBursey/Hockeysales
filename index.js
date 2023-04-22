@@ -61,7 +61,8 @@ const putItemsIntoContainers = (Items, cutOffnumber) => {
 
 const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
 
-buttonTitles.map((buttonName) =>  {
+buttonTitles.map((buttonName) => {
+    if (window.location.href.indexOf("index.html") > -1) {
     const buttonDiv = document.getElementById("myBtnContainer")
     const buttonElement = document.createElement("button")
     buttonElement.classList.add("item-button")
@@ -72,7 +73,7 @@ buttonTitles.map((buttonName) =>  {
         const filteredItems=sortMyItems(buttonName)
         updateItemsInTable(filteredItems)
     }}
-)
+})
 
 const sortMyItems = (type) => {
     return Items.filter(item => item.type === type)
