@@ -62,18 +62,22 @@ const putItemsIntoContainers = (Items, cutOffnumber) => {
 const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
 
 buttonTitles.map((buttonName) => {
-    if (window.location.href.indexOf("index.html") > -1) {
+    console.log("start:")
     const buttonDiv = document.getElementById("myBtnContainer")
     const buttonElement = document.createElement("button")
     buttonElement.classList.add("item-button")
     buttonElement.innerHTML = buttonName
     buttonDiv.appendChild(buttonElement)
+    buttonDiv.appendChild(buttonElement)
     buttonElement.onclick=()=>{
         const filteredItems=sortMyItems(buttonName)
         updateItemsInTable(filteredItems)
-    }}
+    }
+    console.log("stop")
 })
 
+
+const gloveButtonElement = document.getElementById("glove-button")
 const sortMyItems = (type) => {
     return Items.filter(item => item.type === type)
 
@@ -147,6 +151,11 @@ if (itemsContainersContainer) {
         })
     })
 };
+
+
+console.log("itemsgroubycontainer:", itemsGroupByContainers)
+
+
 const tableHeader = [
     "Type", "Brand", "Style", "Size", "Price", "Image"
 ]
@@ -160,6 +169,7 @@ tableHeader.forEach(header => {
 tableElement.appendChild(headRow)
 
 Items.forEach(item => {
+    if (item.type === "Stick") {
         const row = document.createElement("tr");
         const typeCell = document.createElement("td");
         typeCell.innerHTML = `${item.type}`;
@@ -200,7 +210,7 @@ Items.forEach(item => {
 
         tableElement.appendChild(row);
     }
-);
+});
 
 
 
