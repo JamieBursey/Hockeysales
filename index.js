@@ -68,7 +68,6 @@ buttonTitles.map((buttonName) => {
     buttonElement.classList.add("item-button")
     buttonElement.innerHTML = buttonName
     buttonDiv.appendChild(buttonElement)
-    buttonDiv.appendChild(buttonElement)
     buttonElement.onclick=()=>{
         const filteredItems=sortMyItems(buttonName)
         updateItemsInTable(filteredItems)
