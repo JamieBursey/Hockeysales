@@ -151,7 +151,6 @@ if (itemsContainersContainer) {
 const tableHeader = [
     "Type", "Brand", "Style", "Size", "Price", "Image"
 ]
-
 const tableElement = document.getElementById("display-table")
 const headRow = document.createElement("tr")
 tableHeader.forEach(header => {
