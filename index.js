@@ -62,7 +62,7 @@ const putItemsIntoContainers = (Items, cutOffnumber) => {
 const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
 
 buttonTitles.map((buttonName) => {
-    console.log("start:")
+    if (window.location.href.indexOf("index.html") > -1) {
     const buttonDiv = document.getElementById("myBtnContainer")
     const buttonElement = document.createElement("button")
     buttonElement.classList.add("item-button")
@@ -72,8 +72,7 @@ buttonTitles.map((buttonName) => {
     buttonElement.onclick=()=>{
         const filteredItems=sortMyItems(buttonName)
         updateItemsInTable(filteredItems)
-    }
-    console.log("stop")
+    }}
 })
 
 const sortMyItems = (type) => {
@@ -149,14 +148,10 @@ if (itemsContainersContainer) {
         })
     })
 };
-
-
-console.log("itemsgroubycontainer:", itemsGroupByContainers)
-
-
 const tableHeader = [
     "Type", "Brand", "Style", "Size", "Price", "Image"
 ]
+
 const tableElement = document.getElementById("display-table")
 const headRow = document.createElement("tr")
 tableHeader.forEach(header => {

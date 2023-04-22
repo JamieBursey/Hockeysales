@@ -20,6 +20,11 @@ p2 {
         font-size: 50px;
     }
 }
+@media (max-width:30rem) {
+    p1 {
+        font-size: 20px;
+    }
+}
 
 pd {
     bottom: 5px;
@@ -63,6 +68,11 @@ img {
     left: 50%;
     transform: translate(-50%, -150%);
 }
+@media (max-width:20rem){
+    .centered{
+        position:relative;
+        }
+}
 
 .main {
     position: relative;
@@ -102,9 +112,6 @@ table,th,td {
      
 }
 
-td {
-    
-}
 .items-column {
     float: left;
     width: 25%
