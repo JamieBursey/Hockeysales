@@ -21,7 +21,6 @@ p2 {
     }
 }
 
-
 pd {
     bottom: 5px;
     position: relative;
@@ -63,13 +62,6 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -150%);
-}
-@media (max-width:40rem){
-    .centered{
-        position:relative;
-        top:90px;
-       
-    }
 }
 
 .main {
