@@ -28,7 +28,12 @@ pd {
     margin-right: 50%;
 
 }
-
+.buttonDiv{
+    position:relative;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 15px;
+}
 .items {
     color: black;
     display: block;
