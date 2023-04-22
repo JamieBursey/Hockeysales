@@ -160,7 +160,6 @@ tableHeader.forEach(header => {
 tableElement.appendChild(headRow)
 
 Items.forEach(item => {
-    if (item.type === "Stick") {
         const row = document.createElement("tr");
         const typeCell = document.createElement("td");
         typeCell.innerHTML = `${item.type}`;
@@ -201,7 +200,7 @@ Items.forEach(item => {
 
         tableElement.appendChild(row);
     }
-});
+);
 
 
 
