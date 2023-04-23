@@ -63,6 +63,7 @@ const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
 
 buttonTitles.map((buttonName) => {
     console.log("start:")
+    if (window.location.href.indexOf("index.html") > -1){
     const buttonDiv = document.getElementById("myBtnContainer")
     const buttonElement = document.createElement("button")
     buttonElement.classList.add("item-button")
@@ -72,7 +73,7 @@ buttonTitles.map((buttonName) => {
     buttonElement.onclick=()=>{
         const filteredItems=sortMyItems(buttonName)
         updateItemsInTable(filteredItems)
-    }
+    }}
     console.log("stop")
 })
 
