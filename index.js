@@ -63,7 +63,7 @@ const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
 
 buttonTitles.map((buttonName) => {
 
-    if (location.href.indexOf("./index.html")){console.log("buttons:")
+    if (href=("./index.html")){
     const buttonDiv = document.getElementById("myBtnContainer")
     const buttonElement = document.createElement("button")
     buttonElement.classList.add("item-button")
