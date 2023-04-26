@@ -40,11 +40,7 @@ pd {
     width: 50%;
 
 }
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+
 .header {
     display: block;
     margin-left: auto;
@@ -73,12 +69,7 @@ img {
     color: white;
 }
 
-.container {
-    position: relative;
-    text-align: center;
-    color: black;
-    box-shadow: 5px 5px 5px 0 rgba(238, 10, 10, .3);
-}
+
 
 .parentContainer {
     background-color: white;
@@ -97,13 +88,27 @@ table,th,td {
      
 }
 
-td {
+.item{
+    box-sizing: 300px;
+    width:50px;
+    padding-block: 2rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemImg{
     
 }
-.items-column {
-    background-color:  white;
-    float: left;
-    width: 25%
+.items-column {  
+    border: 5px solid white;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: grey;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 @media (Max-width:48rem) {
