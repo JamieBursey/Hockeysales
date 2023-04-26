@@ -41,23 +41,7 @@ const Items = [
 ]
 
 
-const putItemsIntoContainers = (Items, cutOffnumber) => {
-    let cutOff = cutOffnumber - 1
-    let container = []
-    const results = []
-    Items.map((item, index) => {
 
-        if (index <= cutOff) {
-            container.push(item)
-        }
-        if (index === cutOff || index == Items.length - 1) {
-            results.push(container)
-            cutOff += cutOffnumber
-            container = [];
-        }
-    })
-    return (results)
-}
 
 const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
 
@@ -85,16 +69,11 @@ const sortMyItems = (type) => {
 
 
 const updateItemsInTable = (filteredItems) => {
-    const filterGroupByContainers = putItemsIntoContainers(filteredItems, 6)
-    while (itemsContainersContainer.hasChildNodes()) { itemsContainersContainer.removeChild(itemsContainersContainer.firstChild) }
+    while (itemsContainer.hasChildNodes()) { itemsContainer.removeChild(itemsContainer.firstChild) }
 
-    const filterContainersContainer = document.getElementById("parent-container")
-    if (itemsContainersContainer) {
-        filterGroupByContainers.map((itemsArray) => {
-            const container = document.createElement("div")
-            container.classList.add("items-containers")
+    const filteredContainer = document.getElementById("parent-container")
 
-            itemsArray.map((item, index) => {
+            filteredItems.map((item) => {
                 const gloveDiv = document.createElement("div")
                 gloveDiv.classList.add("item")
                 gloveDiv.classList.add("items-column")
@@ -106,27 +85,17 @@ const updateItemsInTable = (filteredItems) => {
                 const gloveDetails = document.createElement("p")
                 gloveDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
                 gloveDiv.appendChild(gloveDetails)
-                container.appendChild(gloveDiv)
+                filteredContainer.appendChild(gloveDiv)
                 gloveDiv.appendChild(img);
                 link.href = item.linkRef;
                 link.appendChild(img);
                 gloveDiv.appendChild(link);
-                if (!index <= itemsArray.length) {
-                    filterContainersContainer.appendChild(container);
-                }
-            })
-        })
-    }
-}
+})}
+    
 
-const itemsGroupByContainers = putItemsIntoContainers(Items, 16)
-const itemsContainersContainer = document.getElementById("parent-container")
-if (itemsContainersContainer) {
-    itemsGroupByContainers.map((containerArray) => {
-        const container = document.createElement("div");
-        container.classList.add("items-containers");
-
-        containerArray.map((item, index) => {
+        
+        const itemsContainer=document.getElementById("parent-container")
+        Items.map((item) => {
             const itemDiv = document.createElement("div")
             itemDiv.classList.add("item")
             itemDiv.classList.add("items-column")
@@ -142,73 +111,72 @@ if (itemsContainersContainer) {
             link.href = item.linkRef;
             link.appendChild(img);
             itemDiv.appendChild(link);
-            container.appendChild(itemDiv)
-
-            if (!index <= containerArray.length) {
-                itemsContainersContainer.appendChild(container);
-            }
+            itemsContainer.appendChild(itemDiv)
+            console.log(itemDiv)
         })
-    })
-};
 
 
 
 
-const tableHeader = [
-    "Type", "Brand", "Style", "Size", "Price", "Image"
-]
-const tableElement = document.getElementById("display-table")
-const headRow = document.createElement("tr")
-tableHeader.forEach(header => {
-    const headData = document.createElement("td")
-    headData.innerHTML = header
-    headRow.appendChild(headData)
-})
-tableElement.appendChild(headRow)
 
-Items.forEach(item => {
+
+
+// const tableHeader = [
+//     "Type", "Brand", "Style", "Size", "Price", "Image"
+// ]
+// if (document.getElementById("diaply-table")){
+// const tableElement = document.getElementById("display-table")
+// const headRow = document.createElement("tr")
+// tableHeader.forEach(header => {
+//     const headData = document.createElement("td")
+//     headData.innerHTML = header
+//     headRow.appendChild(headData)
+// })
+// tableElement.appendChild(headRow)
+
+// Items.forEach(item => {
      
-        const row = document.createElement("tr");
-        const typeCell = document.createElement("td");
-        typeCell.innerHTML = `${item.type}`;
-        row.appendChild(typeCell);
+//         const row = document.createElement("tr");
+//         const typeCell = document.createElement("td");
+//         typeCell.innerHTML = `${item.type}`;
+//         row.appendChild(typeCell);
 
-        const brandCell = document.createElement("td")
-        brandCell.innerHTML = `${item.brand}`
-        row.appendChild(brandCell)
+//         const brandCell = document.createElement("td")
+//         brandCell.innerHTML = `${item.brand}`
+//         row.appendChild(brandCell)
 
-        const styleCell = document.createElement("td")
-        styleCell.innerHTML = `${item.style}`
-        row.appendChild(styleCell)
+//         const styleCell = document.createElement("td")
+//         styleCell.innerHTML = `${item.style}`
+//         row.appendChild(styleCell)
 
-        const sizeCell = document.createElement("td")
-        sizeCell.innerHTML = `${item.size}`
-        row.appendChild(sizeCell)
+//         const sizeCell = document.createElement("td")
+//         sizeCell.innerHTML = `${item.size}`
+//         row.appendChild(sizeCell)
 
-        const priceCell = document.createElement("td");
-        priceCell.innerHTML = `$${item.price}`;
-        row.appendChild(priceCell);
+//         const priceCell = document.createElement("td");
+//         priceCell.innerHTML = `$${item.price}`;
+//         row.appendChild(priceCell);
 
-        const imageCell = document.createElement("td")
-        imageCell.setAttribute("height", "60")
-        imageCell.setAttribute("width", "60")
-        img = document.createElement("img")
-        img.setAttribute("width", "60");
-        img.setAttribute("height", "60");
-        img.src = item.imageUrl;
-        img.appendChild(imageCell)
-        row.appendChild(imageCell)
+//         const imageCell = document.createElement("td")
+//         imageCell.setAttribute("height", "60")
+//         imageCell.setAttribute("width", "60")
+//         img = document.createElement("img")
+//         img.setAttribute("width", "60");
+//         img.setAttribute("height", "60");
+//         img.src = item.imageUrl;
+//         img.appendChild(imageCell)
+//         row.appendChild(imageCell)
 
-        const link = document.createElement("a")
-        link.href = item.linkRef
-        link.appendChild(img)
-        row.appendChild(link)
-        imageCell.appendChild(link)
+//         const link = document.createElement("a")
+//         link.href = item.linkRef
+//         link.appendChild(img)
+//         row.appendChild(link)
+//         imageCell.appendChild(link)
 
 
-        tableElement.appendChild(row);
-    }
-);
+//         tableElement.appendChild(row);
+//     }
+// );}
 
 
 
@@ -231,5 +199,3 @@ Items.forEach(item => {
 //     button.onclick = onClickHandler
 //     button.innerHTML="test click";
 //     gloveColumn.appendChild(button);
-
-

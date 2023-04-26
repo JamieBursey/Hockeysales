@@ -1,5 +1,5 @@
 body {
-    background-color: grey;
+    background-color: black;
 }
 
 p1 {
@@ -10,7 +10,7 @@ p1 {
 }
 
 p2 {
-    color: black;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -22,7 +22,6 @@ p2 {
 }
 
 .item-button{
-    
 }
 
 pd {
@@ -82,21 +81,13 @@ img {
 }
 
 .parentContainer {
+    background-color: white;
     max-width: 90%;
     margin: auto;
     margin-top: 50px;
     border-radius: 1rem;
+    overflow: auto;
 
-}
-
-.items-containers {
-    height: 10rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    overflow-x: hidden;
-    background-color: #ff000040;
-    overflow-y: scroll;
-    border-radius: .5rem;
 }
 
 table,th,td {
@@ -110,6 +101,7 @@ td {
     
 }
 .items-column {
+    background-color:  white;
     float: left;
     width: 25%
 }
