@@ -43,7 +43,7 @@ const Items = [
 
 
 
-const buttonTitles = ["Stick", "Glove", "Helmet","Pant"]
+const buttonTitles = ["All","Stick", "Glove", "Helmet","Pant"]
 
 if(document.getElementById("myBtnContainer")){
 buttonTitles.map((buttonName) => {
@@ -57,8 +57,12 @@ buttonTitles.map((buttonName) => {
         const filteredItems=sortMyItems(buttonName)
         updateItemsInTable(filteredItems)
     }
+    if (buttonName === "All") {
+    buttonElement.onclick = () => {
+      updateItemsInTable(Items)
+    }
 
-})}
+}})}
 
 
 const gloveButtonElement = document.getElementById("glove-button")
@@ -93,7 +97,7 @@ const updateItemsInTable = (filteredItems) => {
 })}
     
 
-        
+    
         const itemsContainer=document.getElementById("parent-container")
         Items.map((item) => {
             const itemDiv = document.createElement("div")
@@ -101,14 +105,13 @@ const updateItemsInTable = (filteredItems) => {
             itemDiv.classList.add("items-column")
             const link = document.createElement("a");
             const img = document.createElement("img");
-            img.setAttribute("width", "50");
-            img.setAttribute("height", "50");
+            img.setAttribute("width", "100");
+            img.setAttribute("height", "100");
             img.src = item.imageUrl;
             const itemDetails = document.createElement("p")
             itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
             itemDiv.appendChild(itemDetails)
             itemDiv.appendChild(img);
-            link.href = item.linkRef;
             link.appendChild(img);
             itemDiv.appendChild(link);
             itemsContainer.appendChild(itemDiv)
