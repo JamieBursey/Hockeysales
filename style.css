@@ -94,6 +94,7 @@ table,th,td {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    box-shadow:3px 3px 3px rgb(91, 89, 89);
 }
 
 .itemImg{
@@ -114,6 +115,7 @@ table,th,td {
 @media (Max-width:48rem) {
     .items-column{
         width:50%;
+        padding:15px
     }
 }
 
