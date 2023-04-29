@@ -78,22 +78,31 @@ const updateItemsInTable = (filteredItems) => {
     const filteredContainer = document.getElementById("parent-container")
 
             filteredItems.map((item) => {
-                const itemDiv = document.createElement("div")
+                const columnDiv = document.createElement("div")
+                filteredContainer.appendChild(columnDiv)
+                const itemDiv=document.createElement("div")
+                columnDiv.appendChild(itemDiv)
                 itemDiv.classList.add("item")
-                itemDiv.classList.add("items-column")
-                const link = document.createElement("a");
+                columnDiv.classList.add("items-column")
+                const brand = document.createElement("p")
+                brand.innerHTML=`${item.brand}`
                 const img = document.createElement("img");
-                img.setAttribute("width", "50");
-                img.setAttribute("height", "50");
+                img.setAttribute("width", "70%");
+                img.setAttribute("height", "50%");
                 img.src = item.imageUrl;
-                const gloveDetails = document.createElement("p")
-                gloveDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
-                itemDiv.appendChild(gloveDetails)
-                filteredContainer.appendChild(itemDiv)
-                itemDiv.appendChild(img);
+                const link = document.createElement("a");
                 link.href = item.linkRef;
-                link.appendChild(img);
+                const itemDetails = document.createElement("p")
+                itemDiv.appendChild(brand)
+                itemDiv.appendChild(img);
+                itemDetails.innerHTML = `${item.style}<br>${item.size}`
+                const prices=document.createElement("p")
+                prices.innerHTML=`$${item.price}`
+                prices.classList.add("price-font")
+                itemDiv.appendChild(itemDetails)
                 itemDiv.appendChild(link);
+                itemDiv.appendChild(prices)
+                link.appendChild(prices)
 })}
     
 
