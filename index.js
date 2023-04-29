@@ -109,8 +109,8 @@ const updateItemsInTable = (filteredItems) => {
             const brand = document.createElement("p")
             brand.innerHTML=`${item.brand}`
             const img = document.createElement("img");
-            img.setAttribute("width", "100");
-            img.setAttribute("height", "100");
+            img.setAttribute("width", "70%");
+            img.setAttribute("height", "50%");
             img.src = item.imageUrl;
             const link = document.createElement("a");
             link.href = item.linkRef;

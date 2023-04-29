@@ -90,7 +90,6 @@ table,th,td {
 .item{
     background-color:#E9E6E6;
     border-radius: 5px;
-    box-sizing: 300px; 
     display: flex;
     flex-direction: column;
     align-items: center;
