@@ -78,9 +78,9 @@ const updateItemsInTable = (filteredItems) => {
     const filteredContainer = document.getElementById("parent-container")
 
             filteredItems.map((item) => {
-                const gloveDiv = document.createElement("div")
-                gloveDiv.classList.add("item")
-                gloveDiv.classList.add("items-column")
+                const itemDiv = document.createElement("div")
+                itemDiv.classList.add("item")
+                itemDiv.classList.add("items-column")
                 const link = document.createElement("a");
                 const img = document.createElement("img");
                 img.setAttribute("width", "50");
@@ -88,34 +88,46 @@ const updateItemsInTable = (filteredItems) => {
                 img.src = item.imageUrl;
                 const gloveDetails = document.createElement("p")
                 gloveDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
-                gloveDiv.appendChild(gloveDetails)
-                filteredContainer.appendChild(gloveDiv)
-                gloveDiv.appendChild(img);
+                itemDiv.appendChild(gloveDetails)
+                filteredContainer.appendChild(itemDiv)
+                itemDiv.appendChild(img);
                 link.href = item.linkRef;
                 link.appendChild(img);
-                gloveDiv.appendChild(link);
+                itemDiv.appendChild(link);
 })}
     
 
     
         const itemsContainer=document.getElementById("parent-container")
         Items.map((item) => {
-            const itemDiv = document.createElement("div")
+            const columnDiv = document.createElement("div")
+            itemsContainer.appendChild(columnDiv)
+            const itemDiv=document.createElement("div")
+            columnDiv.appendChild(itemDiv)
             itemDiv.classList.add("item")
-            itemDiv.classList.add("items-column")
-            const link = document.createElement("a");
+            columnDiv.classList.add("items-column")
+            const brand = document.createElement("p")
+            brand.innerHTML=`${item.brand}`
             const img = document.createElement("img");
             img.setAttribute("width", "100");
             img.setAttribute("height", "100");
             img.src = item.imageUrl;
+            const link = document.createElement("a");
+            link.href = item.linkRef;
             const itemDetails = document.createElement("p")
-            itemDetails.innerHTML = `${item.type}<br>${item.brand}<br>${item.style}<br>${item.size}<br>$${item.price}`
-            itemDiv.appendChild(itemDetails)
+            itemDiv.appendChild(brand)
             itemDiv.appendChild(img);
-            link.appendChild(img);
+            itemDetails.innerHTML = `${item.style}<br>${item.size}`
+            const prices=document.createElement("p")
+            prices.innerHTML=`$${item.price}`
+            prices.classList.add("price-font")
+            itemDiv.appendChild(itemDetails)
             itemDiv.appendChild(link);
-            itemsContainer.appendChild(itemDiv)
-            console.log(itemDiv)
+            itemDiv.appendChild(prices)
+            link.appendChild(prices)
+
+       
+
         })
 
 
