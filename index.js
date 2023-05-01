@@ -90,8 +90,7 @@ const updateItemsInTable = (filteredItems) => {
                 img.setAttribute("width", "70%");
                 img.setAttribute("height", "50%");
                 img.src = item.imageUrl;
-                const link = document.createElement("a");
-                link.href = item.linkRef;
+
                 const itemDetails = document.createElement("p")
                 itemDiv.appendChild(brand)
                 itemDiv.appendChild(img);
@@ -100,9 +99,19 @@ const updateItemsInTable = (filteredItems) => {
                 prices.innerHTML=`$${item.price}`
                 prices.classList.add("price-font")
                 itemDiv.appendChild(itemDetails)
-                itemDiv.appendChild(link);
                 itemDiv.appendChild(prices)
-                link.appendChild(prices)
+                const buyNowElement=document.createElement("div")
+                buyNowElement.classList.add("buyBtn")
+                const buyNow=document.createElement("p")
+                buyNow.innerText="BUY NOW"
+                buyNow.classList.add("buyNowFont")
+                const link = document.createElement("a");
+                link.classList.add("no-underline")
+                link.href = item.linkRef;
+                link.appendChild(buyNow)
+                buyNowElement.appendChild(link)
+                itemDiv.appendChild(buyNowElement);
+
 })}
     
 
@@ -121,8 +130,6 @@ const updateItemsInTable = (filteredItems) => {
             img.setAttribute("width", "70%");
             img.setAttribute("height", "50%");
             img.src = item.imageUrl;
-            const link = document.createElement("a");
-            link.href = item.linkRef;
             const itemDetails = document.createElement("p")
             itemDiv.appendChild(brand)
             itemDiv.appendChild(img);
@@ -131,9 +138,22 @@ const updateItemsInTable = (filteredItems) => {
             prices.innerHTML=`$${item.price}`
             prices.classList.add("price-font")
             itemDiv.appendChild(itemDetails)
-            itemDiv.appendChild(link);
             itemDiv.appendChild(prices)
-            link.appendChild(prices)
+            const buyNowElement=document.createElement("div")
+            buyNowElement.classList.add("buyBtn")
+            const buyNow=document.createElement("p")
+            buyNow.innerText="BUY NOW"
+            buyNow.classList.add("buyNowFont")
+            const link = document.createElement("a");
+            link.classList.add("no-underline")
+            link.href = item.linkRef;
+            link.appendChild(buyNow)
+            buyNowElement.appendChild(link)
+            itemDiv.appendChild(buyNowElement);
+
+
+
+
 
        
 
