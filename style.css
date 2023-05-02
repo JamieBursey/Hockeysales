@@ -167,3 +167,7 @@ table,th,td {
     margin-left: 80%;
     margin-right: 10%;
 }
+.filter-container{
+    background: red;
+}
+  

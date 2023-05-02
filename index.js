@@ -43,29 +43,51 @@ const Items = [
 
 
 
-const buttonTitles = ["All","Stick", "Glove", "Helmet","Pant"]
+const buttonTitles = ["All","Stick", "Glove", "Helmet","Pants"]
+const btnfilterContainer=document.getElementById("filter-button")
+const filterBtn=document.createElement("button")
+filterBtn.classList.add("filter-container")
+filterBtn.innerHTML="Filter"
+btnfilterContainer.appendChild(filterBtn)
+const buttonDiv = document.getElementById("myBtnContainer")
+filterBtn.onclick=() => {
 
-if(document.getElementById("myBtnContainer")){
-buttonTitles.map((buttonName) => {
-    const buttonDiv = document.getElementById("myBtnContainer")
-    const buttonElement = document.createElement("button")
-    buttonElement.classList.add("item-button")
-    buttonElement.innerHTML = buttonName
-    buttonDiv.appendChild(buttonElement)
-    buttonDiv.appendChild(buttonElement)
-    buttonElement.onclick=()=>{
-        const filteredItems=sortMyItems(buttonName)
-        updateItemsInTable(filteredItems)
+
+    if (document.getElementById("myBtnContainer")) {
+        if (document.getElementsByClassName("item-button").length !== 0) {
+            while (buttonDiv.hasChildNodes()) {buttonDiv.removeChild(buttonDiv.firstChild)}
+            return
+        }
+    
+        if (document.getElementsByClassName("item-button").length === 0)
+        {buttonTitles.map((buttonName) => {
+            console.log(document.getElementsByClassName("item-button").length === 0)
+            const buttonElement = document.createElement("button")
+            buttonElement.classList.add("item-button")
+            buttonElement.innerHTML = buttonName
+            buttonDiv.appendChild(buttonElement)
+            buttonDiv.appendChild(buttonElement)
+            buttonElement.onclick = () => {
+                const filteredItems = sortMyItems(buttonName)
+                updateItemsInTable(filteredItems)
+            }
+            if (buttonName === "All") {
+                buttonElement.onclick = () => {
+                    updateItemsInTable(Items)
+                }
+            }
+            btnfilterContainer.appendChild(filterBtn)
+        }
+        )
+
+}
     }
-    if (buttonName === "All") {
-    buttonElement.onclick = () => {
-      updateItemsInTable(Items)
-    }
-
-}})}
+}
+// when buttonDiv is active create new onclick to hide buttons
 
 
-const gloveButtonElement = document.getElementById("glove-button")
+
+
 const sortMyItems = (type) => {
     return Items.filter(item => item.type === type)
 
@@ -129,6 +151,7 @@ const updateItemsInTable = (filteredItems) => {
             const img = document.createElement("img");
             img.setAttribute("width", "70%");
             img.setAttribute("height", "50%");
+
             img.src = item.imageUrl;
             const itemDetails = document.createElement("p")
             itemDiv.appendChild(brand)
