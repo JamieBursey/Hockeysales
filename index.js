@@ -50,17 +50,18 @@ filterBtn.classList.add("filter-container")
 filterBtn.innerHTML="Filter"
 btnfilterContainer.appendChild(filterBtn)
 const buttonDiv = document.getElementById("myBtnContainer")
-filterBtn.onclick=() => {
+buttonDiv.style.display="none"
 
-
-    if (document.getElementById("myBtnContainer")) {
-        if (document.getElementsByClassName("item-button").length !== 0) {
-            while (buttonDiv.hasChildNodes()) {buttonDiv.removeChild(buttonDiv.firstChild)}
-            return
-        }
+filterBtn.onclick = () => {
+    if (buttonDiv.style.display === "none") {
+      buttonDiv.style.display = "block";
+    } else {
+      buttonDiv.style.display = "none";
+    }
+}
     
-        if (document.getElementsByClassName("item-button").length === 0)
-        {buttonTitles.map((buttonName) => {
+const innerFilterButtons = buttonTitles.map((buttonName) => {
+    
             console.log(document.getElementsByClassName("item-button").length === 0)
             const buttonElement = document.createElement("button")
             buttonElement.classList.add("item-button")
@@ -77,13 +78,12 @@ filterBtn.onclick=() => {
                 }
             }
             btnfilterContainer.appendChild(filterBtn)
+            return buttonElement
         }
         )
 
-}
-    }
-}
-// when buttonDiv is active create new onclick to hide buttons
+
+
 
 
 
