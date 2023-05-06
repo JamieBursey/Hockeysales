@@ -18,10 +18,16 @@ p2 {
 @media (max-width:40rem) {
     p1 {
         font-size: 20px;
+        
     }
 }
-
-.item-button{
+.header {
+    margin-bottom: -100px;
+}
+@media (max-width:40rem){
+    .header{
+        margin-bottom: 10px;
+    }
 }
 
 pd {
@@ -168,6 +174,10 @@ table,th,td {
     margin-right: 10%;
 }
 .filter-container{
-    background: red;
+    background-color: black;
+    float:right;
+    margin-right: 5rem;
+    color:white
 }
+
   

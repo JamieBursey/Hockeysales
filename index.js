@@ -41,13 +41,32 @@ const Items = [
 ]
 
 
+    const searchBar=document.getElementById("search-bar")
+    const input=document.createElement("input")
+    input.type="text"
+    input.placeholder="Search..."
+    const searchButton=document.createElement("button")
+    searchButton.type="submit"
+    const searchIcon=document.createElement("i")
+    searchIcon.classList.add("fa","fa-search")
+    searchButton.appendChild(searchIcon)
+    searchBar.appendChild(input)
+    searchBar.appendChild(searchButton)
+
+    searchButton.onclick = () => {
+        const searchValue = input.value.toLowerCase();
+        const searchItems = Items.filter(item => (item.type + item.style + item.size).toLowerCase())
+        updateItemsInTable(searchItems);
+        console.log(searchItems);
+      };
 
 
-const buttonTitles = ["All","Stick", "Glove", "Helmet","Pants"]
+
+const buttonTitles = ["All","Sticks", "Gloves", "Helmets","Pants"]
 const btnfilterContainer=document.getElementById("filter-button")
 const filterBtn=document.createElement("button")
 filterBtn.classList.add("filter-container")
-filterBtn.innerHTML="Filter"
+filterBtn.innerHTML="Filter" + " " + "&#9660;"
 btnfilterContainer.appendChild(filterBtn)
 const buttonDiv = document.getElementById("myBtnContainer")
 buttonDiv.style.display="none"
