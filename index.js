@@ -54,10 +54,10 @@ const Items = [
     searchBar.appendChild(searchButton)
 
     searchButton.onclick = () => {
-        const searchValue = input.value.toLowerCase();
-        const searchItems = Items.filter(item => (item.type + item.style + item.size).toLowerCase())
+        const searchInput = input.value.toLowerCase();
+        const searchItems = Items.filter(item => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
         updateItemsInTable(searchItems);
-        console.log(searchItems);
+        console.log(searchInput);
       };
 
 
