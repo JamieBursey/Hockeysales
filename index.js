@@ -53,9 +53,9 @@ const Items = [
     searchBar.appendChild(input)
     searchBar.appendChild(searchButton)
 
-    searchButton.onclick = () => {
+    input.onkeyup = () => {
         const searchInput = input.value.toLowerCase();
-        const searchItems = Items.filter(item => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
+        const searchItems = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
         updateItemsInTable(searchItems);
         console.log(searchInput);
       };
