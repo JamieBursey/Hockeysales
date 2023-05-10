@@ -39,7 +39,35 @@ const Items = [
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
 ]
+    const sortListElement=document.getElementById("button-list")
+    const sortDropDown=document.createElement("div")
+    sortDropDown.classList.add("pricelist")
+    const sortLow=document.createElement("li")
+    sortLow.classList.add("sortLow")
+    sortLow.innerText="Low-High"
+    const sortHigh=document.createElement("li")
+    sortHigh.innerText="High-Low"
+    sortListElement.appendChild(sortHigh)
+    sortListElement.appendChild(sortLow)
+    sortDropDown.appendChild(sortHigh)
+    sortDropDown.appendChild(sortLow)
+    sortListElement.appendChild(sortDropDown)
+    sortListElement.style.display="none"
 
+    const priceBtnElement=document.getElementById("sort-price")
+    const priceBtn=document.createElement("button")
+    priceBtn.classList.add("sortBtn")
+    priceBtn.innerHTML="Sort" + " " +  "&#9660;"
+    priceBtnElement.appendChild(priceBtn)
+
+    priceBtn.onclick=()=>{
+        if (sortListElement.style.display === "none") {
+            sortListElement.style.display = "contents";
+          } else {
+            sortListElement.style.display = "none";
+          }
+      
+    }
 
     const searchBar=document.getElementById("search-bar")
     const input=document.createElement("input")
@@ -62,7 +90,7 @@ const Items = [
 
 
 
-const buttonTitles = ["All","Sticks", "Gloves", "Helmets","Pants"]
+const buttonTitles = ["All","Stick", "Glove", "Helmet","Pant"]
 const btnfilterContainer=document.getElementById("filter-button")
 const filterBtn=document.createElement("button")
 filterBtn.classList.add("filter-container")
@@ -100,10 +128,6 @@ const innerFilterButtons = buttonTitles.map((buttonName) => {
             return buttonElement
         }
         )
-
-
-
-
 
 
 
@@ -192,12 +216,6 @@ const updateItemsInTable = (filteredItems) => {
             link.appendChild(buyNow)
             buyNowElement.appendChild(link)
             itemDiv.appendChild(buyNowElement);
-
-
-
-
-
-       
 
         })
 
