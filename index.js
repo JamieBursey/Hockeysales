@@ -45,7 +45,6 @@ const Items = [
     const sortLow=document.createElement("li")
     sortLow.classList.add("sortLow")
     sortLow.innerText="Low-High"
-    const sortlowBtn=document.createElement("button")
     const sortHigh=document.createElement("li")
     sortHigh.innerText="High-Low"
     sortHigh.classList.add("sortHigh")
@@ -56,11 +55,11 @@ const Items = [
     sortListElement.appendChild(sortDropDown)
     sortListElement.style.display="none"
     
-    sortHigh.onclick=()=>{
+   const sortHighBtn= sortHigh.onclick=()=>{
         const highFirst=Items.sort((low,high)=>(high.price-low.price))
         return updateItemsInTable(highFirst)
     }
-    sortLow.onclick=()=>{
+   const sortLowBtn= sortLow.onclick=()=>{
        const lowFirst= Items.sort((low,high) => (low.price-high.price))
          return updateItemsInTable(lowFirst)
     }

@@ -220,13 +220,18 @@ table,th,td {
     border-radius: .5rem;
 }
 .sortLow{
+    margin-top:.5rem;
+    margin-bottom:.5rem;
     margin-right: 5px;
     list-style-type: none;
+    cursor:pointer;
 
 }
 .sortHigh{
+    margin-top:.5rem;
     margin-right: 5px;
     list-style-type: none;
+    cursor:pointer;
 
 }
 .pricelist{
