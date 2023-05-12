@@ -224,6 +224,11 @@ table,th,td {
     list-style-type: none;
 
 }
+.sortHigh{
+    margin-right: 5px;
+    list-style-type: none;
+
+}
 .pricelist{
     color:black;
     background-color:#E9E6E6;
