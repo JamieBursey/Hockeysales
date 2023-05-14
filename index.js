@@ -1,13 +1,17 @@
 
 const Items = [
-    { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
-    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
-    { type: "Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
-    { type: "Stick", brand: "True", style: "AX5 Grip", size: "Senior,", price: "111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
-    { type: "Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Intermediate", price: "223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
-    { type: "Stick", brand: "Bauer", style: "Vapor 2X Pro Grip", size: "Senior", price: "209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
-    { type: "Stick", brand: "Bauer", style: "Nexus 3N Grip", size: "Senior ", price: "118.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/29c8c2ef224e52774e198d53cc207ab8_90b4bd9c-5226-458d-bd5f-c5fc2ec6d4ca_500x500_crop_center.jpg?v=1640215658", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-3n-grip-senior-hockey-stick-87-flex" },
-    { type: "Stick", brand: "Bauer", style: "TVapor X:Shift Pro Grip", size: "Senior", price: "139.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6452d07009adac4677152b6a8caeebb9_500x500_crop_center.jpg?v=1627460331", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-x-shift-pro-grip-senior-hockey-stick-3" },
+    { type:"Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
+    { type:"Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
+    { type:"Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
+    { type:"Stick", brand: "True", style: "AX5 Grip", size: "Senior,", price: "111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
+    { type:"Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Intermediate", price: "223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
+    { type:"Stick", brand: "Bauer", style: "Vapor 2X Pro Grip", size: "Senior", price: "209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
+    { type:"Stick", brand: "Bauer", style: "Nexus 3N Grip", size: "Senior ", price: "118.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/29c8c2ef224e52774e198d53cc207ab8_90b4bd9c-5226-458d-bd5f-c5fc2ec6d4ca_500x500_crop_center.jpg?v=1640215658", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-3n-grip-senior-hockey-stick-87-flex" },
+    { type:"Stick", brand: "Bauer", style: "TVapor X:Shift Pro Grip", size: "Senior", price: "139.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6452d07009adac4677152b6a8caeebb9_500x500_crop_center.jpg?v=1627460331", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-x-shift-pro-grip-senior-hockey-stick-3" },
+    { type:"Stick", brand:"True", style:"AX Pro (2020)",size:"Senior",price:"103.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/9c661c531df45128f3381ea5014f2f0a_500x500_crop_center.jpg?v=1627461032",linkRef:"https://www.sourceforsports.ca/products/true-hockey-ax-pro-senior-hockey-stick-source-exclusive"},
+    { type:"Stick", brand:"Warrior",style:"QR Edge Grip 85 Flex",size:"Senior",price:"299.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/51cba2ff956dcbdd8db3e27e9a9e688b_30eef7f7-1406-4f8b-9363-cf0b3efb585d_500x500_crop_center.jpg?v=1628683088",linkRef:"https://www.sourceforsports.ca/products/warrior-qr-edge-grip-85-flex-senior-hockey-stick"},
+    { type:"Stick", brand:"Bauer",style:"Nexus 3N Pro Grip (2020)",size:"Senior",price:"174.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/cdd191c11b4646acafdb4404b3fa7678_8c4e2b04-3d1d-45ea-9039-5f187113d7ae_500x500_crop_center.jpg?v=1627464304",linkRef:"https://www.sourceforsports.ca/products/bauer-nexus-3n-pro-grip-senior-hockey-stick-87-flex"},
+    { type:"Stick", brand:"Bauer",style:"Supreme 3S Pro Grip (2020)",size:"Senior",price:"209.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b8c3e97f814632df83a5c8e88cfb391f_500x500_crop_center.jpg?v=1627461865",linkRef:"https://www.sourceforsports.ca/products/bauer-supreme-3s-pro-grip-senior-hockey-stick-87-flex-2020"},
 
     { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
     { type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
@@ -21,64 +25,108 @@ const Items = [
     { type: "Helmet", brand: "CCM", style: "Tacks 70 Combo", size: "youth", price: "84.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/0009dac6592ee52f8b99322269041fa3_6fd328fa-d0cb-4343-81c6-76c429b847c5_500x500_crop_center.jpg?v=1653042048", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-70-youth-hockey-helmet-combo" },
     { type: "Helmet", brand: "CCM", style: "Tacks 70 combo", size: "Senior", price: "84.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/cd33d88ece570a9e144712d66d49c76e_500x500_crop_center.jpg?v=1653042006", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-70-senior-hockey-helmet-combo" },
     { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-    { type: "Helmet", brand: "Bauer", style: "HyperLite (2021)", size: "Senior", price: "349.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/e6b45c2a0b4c4f01545096603d1eb9fc_500x500_crop_center.jpg?v=1627631566", linkRef: "https://www.sourceforsports.ca/products/bauer-hyperlite-hockey-helmet" },
-]
-    const sortListElement=document.getElementById("button-list")
-    const sortDropDown=document.createElement("div")
-    sortDropDown.classList.add("pricelist")
-    const sortLow=document.createElement("li")
-    sortLow.classList.add("sortLow")
-    sortLow.innerText="Low-High"
-    const sortHigh=document.createElement("li")
-    sortHigh.innerText="High-Low"
-    sortHigh.classList.add("sortHigh")
-    sortListElement.appendChild(sortHigh)
-    sortListElement.appendChild(sortLow)
-    sortDropDown.appendChild(sortHigh)
-    sortDropDown.appendChild(sortLow)
-    sortListElement.appendChild(sortDropDown)
-    sortListElement.style.display="none"
-    
-   const sortHighBtn= sortHigh.onclick=()=>{
-        const highFirst=Items.sort((low,high)=>(high.price-low.price))
-        updateItemsInTable(highFirst)
-        sortListElement.style.display = "none"
-       }
-   const sortLowBtn= sortLow.onclick=()=>{
-       const lowFirst= Items.sort((low,high) => (low.price-high.price))
-         updateItemsInTable(lowFirst)
-         sortListElement.style.display = "none"
-    }
-     
-    const priceBtnElement=document.getElementById("sort-price")
-    const priceBtn=document.createElement("button")
-    priceBtn.classList.add("sortBtn")
-    priceBtn.innerHTML="Sort" + " " +  "&#9660;"
-    priceBtnElement.appendChild(priceBtn)
 
-    priceBtn.onclick=()=>{
-        if (sortListElement.style.display === "none") {
-            sortListElement.style.display = "contents";
-          } else {
+    {type:"Pants", brand:"CCM",style:"JetSpeed Vibe Senior Hockey Pants (2019) ",size:"S/M/L",price:"47.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dcd5dc401f221b89c239f5fab1f69ef9_91b20e78-e2cb-4c23-a585-4e620b727701_500x500_crop_center.jpg?v=1627527986",linkRef:"https://www.sourceforsports.ca/products/ccm-jetspeed-vibe-senior-hockey-pants-2019-source-exclusive"},
+    {type:"Pants",brand:"Bauer",style:"Elite Intermediate Goalie Pants",size:"S/M/L",price:"194.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/7cf90b5f9df415b2cb22f2eedf13400f_e11ef7e0-eb5f-494a-918c-75c595e3e2fb_500x500_crop_center.jpg?v=1627460228",linkRef:"https://www.sourceforsports.ca/products/bauer-s20-bauer-elite-goalie-pants-int"},
+    {type:"Pants",brand:"CCM",style:"CCM JetSpeed Control Junior Hockey Pants (2019)",size:"S-XL",price:"53.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/beba990cd9c058851a5990120196a817_500x500_crop_center.jpg?v=1627510577",linkRef:"https://www.sourceforsports.ca/products/ccm-jetspeed-control-junior-hockey-pants-2019-source-exclusive"},
+    {type:"Pants",brand:"Bauer",style:"Bauer Vapor X-W Women's Hockey Pants (2020)",size:"XS-L",price:"112.49",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/f7aaacf5c43a21c0fa37f1b3dcfa8a0b_500x500_crop_center.jpg?v=1627462137",linkRef:"https://www.sourceforsports.ca/products/bauer-vapor-x-w-womens-hockey-pants"},
+]
+
+
+
+
+//     const sortListElement=document.getElementById("button-list")
+//     const sortDropDown=document.createElement("div")
+//     sortDropDown.classList.add("pricelist")
+//     const sortLow=document.createElement("li")
+//     sortLow.classList.add("sortLow")
+//     sortLow.innerText="Low-High"
+//     const sortHigh=document.createElement("li")
+//     sortHigh.innerText="High-Low"
+//     sortHigh.classList.add("sortHigh")
+//     sortListElement.appendChild(sortHigh)
+//     sortListElement.appendChild(sortLow)
+//     sortDropDown.appendChild(sortHigh)
+//     sortDropDown.appendChild(sortLow)
+//     sortListElement.appendChild(sortDropDown)
+//     sortListElement.style.display="none"
+    
+//    const sortHighBtn= sortHigh.onclick=()=>{
+//         const highFirst=Items.sort((low,high)=>(high.price-low.price))
+//         updateItemsInTable(highFirst)
+//         sortListElement.style.display = "none"
+//        }
+//    const sortLowBtn= sortLow.onclick=()=>{
+//        const lowFirst= Items.sort((low,high) => (low.price-high.price))
+//          updateItemsInTable(lowFirst)
+//          sortListElement.style.display = "none"
+//     }
+     
+const priceBtnElement = document.getElementById("sort-price");
+const priceBtn = document.createElement("button");
+priceBtn.classList.add("sortBtn");
+priceBtn.innerHTML = "Sort" + " " + "&#9660;";
+priceBtnElement.appendChild(priceBtn);
+
+const sortTitles = ["Clear", "Alphabetical", "High-Low", "Low-High"];
+const sortListElement=document.getElementById("button-list")
+const sortDropDown = document.createElement("div");
+sortDropDown.classList.add("pricelist");
+sortListElement.style.display = "none";
+sortListElement.appendChild(sortDropDown)
+
+const innersortButtons = sortTitles.map((buttonName) => {
+  const sortElement = document.createElement("li");
+  sortElement.classList.add("sortHigh");
+  sortElement.innerHTML = buttonName;
+  sortDropDown.appendChild(sortElement);
+
+  if (buttonName === "Clear") {
+        sortElement.onclick = () => {
+            updateItemsInTable(Items);
             sortListElement.style.display = "none";
-          }
-      }
+        };
+  } 
+  else if (buttonName === "High-Low") {
+        sortElement.onclick = () => {
+            const highFirst=Items.sort((low,high)=> (high.price-low.price))
+            updateItemsInTable(highFirst);
+            sortListElement.style.display = "none";
+        };
+  } 
+  else if (buttonName === "Low-High") {
+        sortElement.onclick = () => {
+            const lowFirst= Items.sort((low,high) => (low.price-high.price))
+            updateItemsInTable(lowFirst);
+            sortListElement.style.display = "none";
+        };
+  }
+  else if (buttonName==="Alphabetical"){
+    sortElement.onclick=()=> {
+        const Alphabetically = Items.sort((a,b)=>{
+            let brandA=a.brand.toLocaleLowerCase()
+            let brandB=b.brand.toLocaleLowerCase()
+            if (brandA<brandB) return -1
+            if (brandA>brandB) return 1
+            return 0;
+
+        })
+        updateItemsInTable(Alphabetically)
+        sortListElement.style.display="none"
+    }
+  }
+
+  return sortElement;
+});
+priceBtn.onclick= () => {
+    if (sortListElement.style.display === "none") {
+      sortListElement.style.display = "contents";
+    } else {
+      sortListElement.style.display = "none";
+    }
+  };
+
+
 
     const searchBar=document.getElementById("search-bar")
     const input=document.createElement("input")
@@ -99,7 +147,7 @@ const Items = [
         console.log(searchInput);
       };
 
-const buttonTitles = ["All","Stick", "Glove", "Helmet","Pant"]
+const buttonTitles = ["All","Stick", "Glove", "Helmet","Pants"]
 const btnfilterContainer=document.getElementById("filter-button")
 const filterBtn=document.createElement("button")
 filterBtn.classList.add("filter-container")
@@ -118,7 +166,7 @@ filterBtn.onclick = () => {
     
 const innerFilterButtons = buttonTitles.map((buttonName) => {
     
-            console.log(document.getElementsByClassName("item-button").length === 0)
+            (document.getElementsByClassName("item-button").length === 0)
             const buttonElement = document.createElement("button")
             buttonElement.classList.add("item-button")
             buttonElement.innerHTML = buttonName
@@ -227,7 +275,6 @@ const updateItemsInTable = (filteredItems) => {
             itemDiv.appendChild(buyNowElement);
 
         })
-
 
 
 
