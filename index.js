@@ -81,40 +81,41 @@ const innersortButtons = sortTitles.map((buttonName) => {
   sortElement.innerHTML = buttonName;
   sortDropDown.appendChild(sortElement);
 
-  if (buttonName === "Clear") {
-        sortElement.onclick = () => {
-            updateItemsInTable(Items);
-            sortListElement.style.display = "none";
-        };
-  } 
-  else if (buttonName === "High-Low") {
+
+    if (buttonName === "High-Low") {
         sortElement.onclick = () => {
             const highFirst=Items.sort((low,high)=> (high.price-low.price))
             updateItemsInTable(highFirst);
             sortListElement.style.display = "none";
-        };
-  } 
-  else if (buttonName === "Low-High") {
+            };
+        } 
+   if (buttonName === "Low-High") {
         sortElement.onclick = () => {
             const lowFirst= Items.sort((low,high) => (low.price-high.price))
             updateItemsInTable(lowFirst);
             sortListElement.style.display = "none";
-        };
-  }
-  else if (buttonName==="Alphabetical"){
-    sortElement.onclick=()=> {
+            };
+        }
+  if (buttonName==="Alphabetical"){
+      sortElement.onclick=()=> {
         const Alphabetically = Items.sort((a,b)=>{
             let brandA=a.brand.toLocaleLowerCase()
             let brandB=b.brand.toLocaleLowerCase()
             if (brandA<brandB) return -1
             if (brandA>brandB) return 1
             return 0;
-
-        })
+      })
         updateItemsInTable(Alphabetically)
         sortListElement.style.display="none"
+        }
     }
-  }
+
+    else if (buttonName === "Clear") {
+      sortElement.onclick = () => {
+          updateItemsInTable(Items)
+          sortListElement.style.display = "none";
+      };} 
+  
 
   return sortElement;
 });
@@ -239,7 +240,7 @@ const updateItemsInTable = (filteredItems) => {
 
     
         const itemsContainer=document.getElementById("parent-container")
-        Items.map((item) => {
+     Items.map((item) => {
             const columnDiv = document.createElement("div")
             itemsContainer.appendChild(columnDiv)
             const itemDiv=document.createElement("div")

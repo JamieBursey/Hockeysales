@@ -37,7 +37,12 @@ pd {
     margin-right: 50%;
 
 }
-
+.about a{
+    float:left;
+    color:#E9E6E6;
+    margin-right: 2rem;
+    text-decoration: none;
+}
 .items {
     color: black;
     display: block;
