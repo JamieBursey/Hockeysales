@@ -32,36 +32,7 @@ const Items = [
     {type:"Pants",brand:"Bauer",style:"Bauer Vapor X-W Women's Hockey Pants (2020)",size:"XS-L",price:"112.49",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/f7aaacf5c43a21c0fa37f1b3dcfa8a0b_500x500_crop_center.jpg?v=1627462137",linkRef:"https://www.sourceforsports.ca/products/bauer-vapor-x-w-womens-hockey-pants"},
 ]
 
-
-
-
-//     const sortListElement=document.getElementById("button-list")
-//     const sortDropDown=document.createElement("div")
-//     sortDropDown.classList.add("pricelist")
-//     const sortLow=document.createElement("li")
-//     sortLow.classList.add("sortLow")
-//     sortLow.innerText="Low-High"
-//     const sortHigh=document.createElement("li")
-//     sortHigh.innerText="High-Low"
-//     sortHigh.classList.add("sortHigh")
-//     sortListElement.appendChild(sortHigh)
-//     sortListElement.appendChild(sortLow)
-//     sortDropDown.appendChild(sortHigh)
-//     sortDropDown.appendChild(sortLow)
-//     sortListElement.appendChild(sortDropDown)
-//     sortListElement.style.display="none"
     
-//    const sortHighBtn= sortHigh.onclick=()=>{
-//         const highFirst=Items.sort((low,high)=>(high.price-low.price))
-//         updateItemsInTable(highFirst)
-//         sortListElement.style.display = "none"
-//        }
-//    const sortLowBtn= sortLow.onclick=()=>{
-//        const lowFirst= Items.sort((low,high) => (low.price-high.price))
-//          updateItemsInTable(lowFirst)
-//          sortListElement.style.display = "none"
-//     }
-     
 const priceBtnElement = document.getElementById("sort-price");
 const priceBtn = document.createElement("button");
 priceBtn.classList.add("sortBtn");
@@ -74,6 +45,7 @@ const sortDropDown = document.createElement("div");
 sortDropDown.classList.add("pricelist");
 sortListElement.style.display = "none";
 sortListElement.appendChild(sortDropDown)
+let filteredArray=[...Items]
 
 const innersortButtons = sortTitles.map((buttonName) => {
   const sortElement = document.createElement("li");
@@ -84,21 +56,24 @@ const innersortButtons = sortTitles.map((buttonName) => {
 
     if (buttonName === "High-Low") {
         sortElement.onclick = () => {
-            const highFirst=Items.sort((low,high)=> (high.price-low.price))
+          const newItemsArray=[...filteredArray]
+            const highFirst=newItemsArray.sort((low,high)=> (high.price-low.price))
             updateItemsInTable(highFirst);
             sortListElement.style.display = "none";
             };
         } 
-   if (buttonName === "Low-High") {
+   else if (buttonName === "Low-High") {
         sortElement.onclick = () => {
-            const lowFirst= Items.sort((low,high) => (low.price-high.price))
+          const newItemsArray=[...filteredArray]
+            const lowFirst= newItemsArray.sort((low,high) => (low.price-high.price))
             updateItemsInTable(lowFirst);
             sortListElement.style.display = "none";
             };
         }
-  if (buttonName==="Alphabetical"){
+  else if (buttonName==="Alphabetical"){
       sortElement.onclick=()=> {
-        const Alphabetically = Items.sort((a,b)=>{
+        const newItemsArray=[...filteredArray]
+        const Alphabetically = newItemsArray.sort((a,b)=>{
             let brandA=a.brand.toLocaleLowerCase()
             let brandB=b.brand.toLocaleLowerCase()
             if (brandA<brandB) return -1
@@ -112,7 +87,7 @@ const innersortButtons = sortTitles.map((buttonName) => {
 
     else if (buttonName === "Clear") {
       sortElement.onclick = () => {
-          updateItemsInTable(Items)
+        updateItemsInTable(Items)
           sortListElement.style.display = "none";
       };} 
   
@@ -144,6 +119,18 @@ priceBtn.onclick= () => {
     input.onkeyup = () => {
         const searchInput = input.value.toLowerCase();
         const searchItems = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
+
+        if (searchItems.length === 0){
+          const noResults=document.getElementById("no-results")
+          noResults.innerText=("No Search Results")
+          console.log(searchItems.length)
+        }
+        else if (searchItems.length >=1){
+          const noResults=document.getElementById("no-results")
+          noResults.innerText=""
+        }
+
+        
         updateItemsInTable(searchItems);
         console.log(searchInput);
       };
@@ -156,6 +143,7 @@ filterBtn.innerHTML="Filter" + " " + "&#9660;"
 btnfilterContainer.appendChild(filterBtn)
 const buttonDiv = document.getElementById("myBtnContainer")
 buttonDiv.style.display="none"
+
 
 filterBtn.onclick = () => {
     if (buttonDiv.style.display === "none") {
@@ -174,8 +162,8 @@ const innerFilterButtons = buttonTitles.map((buttonName) => {
             buttonDiv.appendChild(buttonElement)
             buttonDiv.appendChild(buttonElement)
             buttonElement.onclick = () => {
-                const filteredItems = sortMyItems(buttonName)
-                updateItemsInTable(filteredItems)
+              filterMyItems(buttonName)
+                updateItemsInTable(filteredArray)
             }
             if (buttonName === "All") {
                 buttonElement.onclick = () => {
@@ -187,10 +175,8 @@ const innerFilterButtons = buttonTitles.map((buttonName) => {
         }
         )
 
-
-
-const sortMyItems = (type) => {
-    return Items.filter(item => item.type === type)
+const filterMyItems = (type) => {
+    filteredArray= Items.filter(item => item.type === type)
 
 }
 
@@ -240,7 +226,7 @@ const updateItemsInTable = (filteredItems) => {
 
     
         const itemsContainer=document.getElementById("parent-container")
-     Items.map((item) => {
+    mainItems=()=> Items.map((item) => {
             const columnDiv = document.createElement("div")
             itemsContainer.appendChild(columnDiv)
             const itemDiv=document.createElement("div")
@@ -276,6 +262,7 @@ const updateItemsInTable = (filteredItems) => {
             itemDiv.appendChild(buyNowElement);
 
         })
+        mainItems()
 
 
 
