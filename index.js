@@ -138,7 +138,7 @@ priceBtn.onclick= () => {
 const buttonTitles = ["All","Stick", "Glove", "Helmet","Pants"]
 const btnfilterContainer=document.getElementById("filter-button")
 const filterBtn=document.createElement("button")
-filterBtn.classList.add("filter-container")
+filterBtn.classList.add("filter-btn")
 filterBtn.innerHTML="Filter" + " " + "&#9660;"
 btnfilterContainer.appendChild(filterBtn)
 const buttonDiv = document.getElementById("myBtnContainer")
@@ -156,9 +156,10 @@ filterBtn.onclick = () => {
 const innerFilterButtons = buttonTitles.map((buttonName) => {
     
             (document.getElementsByClassName("item-button").length === 0)
-            const buttonElement = document.createElement("button")
+            const buttonElement = document.createElement("li")
             buttonElement.classList.add("item-button")
             buttonElement.innerHTML = buttonName
+
             buttonDiv.appendChild(buttonElement)
             buttonDiv.appendChild(buttonElement)
             buttonElement.onclick = () => {
