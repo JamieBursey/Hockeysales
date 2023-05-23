@@ -6,6 +6,7 @@ p1 {
     color: white;
     font-family: 'Calligraffiti', sans-serif;
     font-size: 500%;
+    opacity: 1;
 
 }
 
@@ -203,7 +204,9 @@ table,th,td {
     
 }
 .addWish-Container{
-    position: relative;
+    position: flex;
+    align-items: center;
+    justify-content: flex-end;
     margin-left: 80%;
     margin-top: 5px;
 
@@ -212,12 +215,18 @@ table,th,td {
     right:0;
     position:absolute;
     background-color: #A90B0B;
-    width: 30%;
+    width: 50%;
     height: 90%;
     margin-top: 25px;
     margin-right: 1rem;
     overflow: scroll;
-
+    opacity: 1;
+}
+.wishcolumn{
+    overflow:scroll;
+    align-items: center;
+    background-color: red;
+    overflow: auto;
 }
 
 .item-button{

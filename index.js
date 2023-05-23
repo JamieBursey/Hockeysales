@@ -269,6 +269,7 @@ let wishArray=[]
             itemDiv.appendChild(buyNowElement);
 
             wishButton.onclick=()=>{
+            
               wishArray.push(item)
               wishAdd()
             }
@@ -291,15 +292,12 @@ let wishArray=[]
         }
 
        const wishAdd=()=>{ wishArray.map((item)=>{
-          const columnDiv = document.createElement("div")
-          wishContainer.appendChild(columnDiv)
+          wishContainer.classList.add("wishcolumn")
           const itemDiv=document.createElement("div")
           const wishListElement=document.createElement("div")
           wishListElement.classList.add("addWish-Container")
           itemDiv.appendChild(wishListElement)
-          columnDiv.appendChild(itemDiv)
           itemDiv.classList.add("item")
-          columnDiv.classList.add("items-column")
           const brand = document.createElement("p")
           brand.innerHTML=`${item.brand}`
           const img = document.createElement("img");
@@ -327,7 +325,7 @@ let wishArray=[]
 
           buyNowElement.appendChild(link);
           itemDiv.appendChild(buyNowElement);
-          wishContainer.appendChild(columnDiv)
+          wishContainer.appendChild(itemDiv)
           
         })
       }
