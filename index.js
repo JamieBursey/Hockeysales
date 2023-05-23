@@ -224,13 +224,19 @@ const updateItemsInTable = (filteredItems) => {
 
 })}
     
-
+const wishArray=[]
     
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
             const columnDiv = document.createElement("div")
             itemsContainer.appendChild(columnDiv)
             const itemDiv=document.createElement("div")
+            const wishListElement=document.createElement("div")
+            wishListElement.classList.add("addWish-Container")
+            const wishButton=document.createElement("Button")
+            wishButton.innerHTML="&#xFF0B"
+            wishListElement.appendChild(wishButton)
+            itemDiv.appendChild(wishListElement)
             columnDiv.appendChild(itemDiv)
             itemDiv.classList.add("item")
             columnDiv.classList.add("items-column")
@@ -262,10 +268,14 @@ const updateItemsInTable = (filteredItems) => {
             buyNowElement.appendChild(link)
             itemDiv.appendChild(buyNowElement);
 
+            wishButton.onclick=()=>{
+              wishArray.push(item)
+            }
+
         })
         mainItems()
 
-
+console.log(wishArray)
 
 
 

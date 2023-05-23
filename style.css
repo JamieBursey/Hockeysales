@@ -192,9 +192,16 @@ table,th,td {
     background-color: black;
     float:right;
     margin-right: 5rem;
-    color:white
+    color:white;
+    border-radius: 2rem;
+    
 }
+.addWish-Container{
+    position: relative;
+    margin-left: 80%;
+    margin-top: 5px;
 
+}
 .item-button{
     margin-top:.5rem;
     margin-right: 5px;
