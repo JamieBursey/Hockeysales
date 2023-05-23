@@ -43,6 +43,12 @@ pd {
     margin-right: 2rem;
     text-decoration: none;
 }
+.about .wish-Btn{
+    position: relative;
+    float: right;
+    background-color: black;
+    color:white
+}
 .items {
     color: black;
     display: block;
@@ -202,6 +208,18 @@ table,th,td {
     margin-top: 5px;
 
 }
+.wishDisplay{
+    right:0;
+    position:absolute;
+    background-color: #A90B0B;
+    width: 30%;
+    height: 90%;
+    margin-top: 25px;
+    margin-right: 1rem;
+    overflow: scroll;
+
+}
+
 .item-button{
     margin-top:.5rem;
     margin-right: 5px;

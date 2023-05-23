@@ -36,7 +36,7 @@ const Items = [
 const priceBtnElement = document.getElementById("sort-price");
 const priceBtn = document.createElement("button");
 priceBtn.classList.add("sortBtn");
-priceBtn.innerHTML = "Sort" + " " + "&#9660;";
+priceBtn.innerHTML = "Sort" + " " + "&#9661;";
 priceBtnElement.appendChild(priceBtn);
 
 const sortTitles = ["Clear", "Alphabetical", "High-Low", "Low-High"];
@@ -139,7 +139,7 @@ const buttonTitles = ["All","Stick", "Glove", "Helmet","Pants"]
 const btnfilterContainer=document.getElementById("filter-button")
 const filterBtn=document.createElement("button")
 filterBtn.classList.add("filter-btn")
-filterBtn.innerHTML="Filter" + " " + "&#9660;"
+filterBtn.innerHTML="Filter" + " " + "&#9661;"
 btnfilterContainer.appendChild(filterBtn)
 const buttonDiv = document.getElementById("myBtnContainer")
 buttonDiv.style.display="none"
@@ -224,7 +224,7 @@ const updateItemsInTable = (filteredItems) => {
 
 })}
     
-const wishArray=[]
+let wishArray=[]
     
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
@@ -270,11 +270,71 @@ const wishArray=[]
 
             wishButton.onclick=()=>{
               wishArray.push(item)
+              wishAdd()
             }
 
         })
         mainItems()
+        const wishBtn=document.getElementById("wish-Btn")
+        wishBtn.innerHTML="Wish List"
 
+        const wishContainer= document.getElementById("wishList-Container")
+        wishContainer.classList.add("wishDisplay")
+        wishContainer.style.display="none"
+
+        wishBtn.onclick=()=>{
+          if( wishContainer.style.display === "none"
+          )
+          {
+          wishContainer.style.display="block"}
+          else {wishContainer.style.display="none"}
+        }
+
+       const wishAdd=()=>{ wishArray.map((item)=>{
+          const columnDiv = document.createElement("div")
+          wishContainer.appendChild(columnDiv)
+          const itemDiv=document.createElement("div")
+          const wishListElement=document.createElement("div")
+          wishListElement.classList.add("addWish-Container")
+          itemDiv.appendChild(wishListElement)
+          columnDiv.appendChild(itemDiv)
+          itemDiv.classList.add("item")
+          columnDiv.classList.add("items-column")
+          const brand = document.createElement("p")
+          brand.innerHTML=`${item.brand}`
+          const img = document.createElement("img");
+          img.setAttribute("width", "70%");
+          img.setAttribute("height", "50%");
+
+          const itemDetails = document.createElement("p")
+          itemDiv.appendChild(brand)
+          itemDiv.appendChild(img);
+          itemDetails.innerHTML = `${item.style}<br>${item.size}`
+          const prices=document.createElement("p")
+          prices.innerHTML=`$${item.price}`
+          prices.classList.add("price-font")
+          itemDiv.appendChild(itemDetails)
+          itemDiv.appendChild(prices)
+          const buyNowElement=document.createElement("div")
+          buyNowElement.classList.add("buyBtn")
+          const buyNow=document.createElement("p")
+          buyNow.innerText="BUY NOW"
+          buyNow.classList.add("buyNowFont")
+          const link = document.createElement("a");
+          link.classList.add("no-underline")
+          link.href = item.linkRef;
+          link.appendChild(buyNow)
+
+          buyNowElement.appendChild(link);
+          itemDiv.appendChild(buyNowElement);
+          wishContainer.appendChild(columnDiv)
+          
+        })
+      }
+
+
+
+        
 console.log(wishArray)
 
 
