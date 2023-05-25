@@ -225,7 +225,7 @@ table,th,td {
 .wishDisplay{
     right:0;
     position:absolute;
-    background-color: #A90B0B;
+    background-color:white;
     width: 50%;
     height: 90%;
     margin-top: 25px;

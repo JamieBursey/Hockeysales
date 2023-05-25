@@ -270,6 +270,7 @@ let wishArray=[]
 
             wishButton.onclick=()=>{
               wishContainer.innerHTML=""
+              if (!wishArray.includes(item))
               wishArray.push(item)
               wishAdd()
             }
