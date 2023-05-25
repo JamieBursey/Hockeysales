@@ -269,7 +269,7 @@ let wishArray=[]
             itemDiv.appendChild(buyNowElement);
 
             wishButton.onclick=()=>{
-            
+              wishContainer.innerHTML=""
               wishArray.push(item)
               wishAdd()
             }
@@ -281,6 +281,10 @@ let wishArray=[]
 
         const wishContainer= document.getElementById("wishList-Container")
         wishContainer.classList.add("wishDisplay")
+          const wishHeader=document.createElement("div")
+          wishHeader.innerHTML="Wish List"
+          wishHeader.classList.add("wish-title")
+          wishContainer.appendChild(wishHeader)
         wishContainer.style.display="none"
 
         wishBtn.onclick=()=>{
@@ -292,17 +296,14 @@ let wishArray=[]
         }
 
        const wishAdd=()=>{ wishArray.map((item)=>{
-          wishContainer.classList.add("wishcolumn")
-          const itemDiv=document.createElement("div")
-          const wishListElement=document.createElement("div")
-          wishListElement.classList.add("addWish-Container")
-          itemDiv.appendChild(wishListElement)
-          itemDiv.classList.add("item")
+          const itemDiv=document.createElement("li")
+          itemDiv.classList.add("wishItem")
           const brand = document.createElement("p")
           brand.innerHTML=`${item.brand}`
           const img = document.createElement("img");
-          img.setAttribute("width", "70%");
-          img.setAttribute("height", "50%");
+          img.src=item.imageUrl
+          img.setAttribute("width", "10%");
+          img.setAttribute("height", "5%");
 
           const itemDetails = document.createElement("p")
           itemDiv.appendChild(brand)
@@ -322,14 +323,14 @@ let wishArray=[]
           link.classList.add("no-underline")
           link.href = item.linkRef;
           link.appendChild(buyNow)
-
+          wishContainer.appendChild(wishHeader)
           buyNowElement.appendChild(link);
           itemDiv.appendChild(buyNowElement);
           wishContainer.appendChild(itemDiv)
           
         })
       }
-
+wishAdd()
 
 
         

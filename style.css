@@ -112,6 +112,7 @@ table,th,td {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
     box-shadow:3px 3px 3px rgb(91, 89, 89);
 }
 
@@ -209,7 +210,17 @@ table,th,td {
     justify-content: flex-end;
     margin-left: 80%;
     margin-top: 5px;
+    background-color: green;
 
+}
+.wish-title{
+    position:absolute;
+    color:blue;
+    top:0;
+    margin-left: 50%;
+    margin-bottom: 5px;
+
+    
 }
 .wishDisplay{
     right:0;
@@ -220,13 +231,19 @@ table,th,td {
     margin-top: 25px;
     margin-right: 1rem;
     overflow: scroll;
-    opacity: 1;
+
 }
-.wishcolumn{
-    overflow:scroll;
+
+.wishItem{
+    background-color:#E9E6E6;
+    border-radius: .5rem;
+    box-sizing: 300px; 
+    display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    background-color: red;
-    overflow: auto;
+    margin-right: 5px;
+    box-shadow:3px 3px 3px rgb(91, 89, 89);
+
 }
 
 .item-button{
