@@ -224,8 +224,7 @@ const updateItemsInTable = (filteredItems) => {
 
 })}
     
-let wishArray=[]
-    
+
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
             const columnDiv = document.createElement("div")
@@ -272,10 +271,22 @@ let wishArray=[]
               wishContainer.innerHTML=""
               if (!wishArray.includes(item))
               wishArray.push(item)
+              saveWishArray();
               wishAdd()
             }
 
         })
+        let wishArray=[]
+const saveWishArray = () => {
+  localStorage.setItem('wishList', JSON.stringify(wishArray));
+};
+
+const getWishListFromLocalStorage = () => {
+  const storedWishList = localStorage.getItem('wishList');
+  if (storedWishList) {
+    wishArray = JSON.parse(storedWishList);
+;}}
+        getWishListFromLocalStorage()
         mainItems()
         const wishBtn=document.getElementById("wish-Btn")
         wishBtn.innerHTML="Wish List"
@@ -296,9 +307,15 @@ let wishArray=[]
           else {wishContainer.style.display="none"}
         }
 
-       const wishAdd=()=>{ wishArray.map((item)=>{
+       const wishAdd=()=>{ wishArray.map((item,index)=>{
           const itemDiv=document.createElement("li")
           itemDiv.classList.add("wishItem")
+          const wishListElement=document.createElement("div")
+          wishListElement.classList.add("RemoveWish-Container")
+          const wishRemoveButton=document.createElement("Button")
+          wishRemoveButton.innerHTML="&#8861"
+          wishListElement.appendChild(wishRemoveButton)
+          itemDiv.appendChild(wishListElement)
           const brand = document.createElement("p")
           brand.innerHTML=`${item.brand}`
           const img = document.createElement("img");
@@ -329,8 +346,17 @@ let wishArray=[]
           itemDiv.appendChild(buyNowElement);
           wishContainer.appendChild(itemDiv)
           
-        })
-      }
+          wishRemoveButton.onclick = () => {
+            if (wishArray.includes(item)) {
+              wishArray.splice(index, 1);
+              saveWishArray();
+              wishContainer.innerHTML = "";
+              wishAdd();
+            }
+
+
+        }
+      })}
 wishAdd()
 
 

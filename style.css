@@ -22,9 +22,7 @@ p2 {
 
     }
 }
-.header {
-    margin-bottom: -100px;
-}
+
 @media (max-width:40rem){
     .header{
         margin-bottom: 10px;
@@ -55,7 +53,7 @@ pd {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: auto;
 
 }
 
@@ -153,7 +151,12 @@ table,th,td {
 .no-underline{
     text-decoration: none;
 }
+.all-buttons{
+    background-color: black;
+    position: relative;
+    margin-top: 15px;
 
+}
 .buyNowFont{
     color:white;
     font-size: 15px;
@@ -190,6 +193,7 @@ table,th,td {
 .search-filter{
     display: flex;
     float:right;
+
 }
 
 .searchBar{
@@ -211,6 +215,14 @@ table,th,td {
     margin-left: 80%;
     margin-top: 5px;
     background-color: green;
+
+}
+.RemoveWish-Container{
+    position: flex;
+    
+    justify-content: flex-end;
+    margin-left: 80%;
+    margin-top: 5px;
 
 }
 .wish-title{
