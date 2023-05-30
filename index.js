@@ -191,6 +191,12 @@ const updateItemsInTable = (filteredItems) => {
                 const columnDiv = document.createElement("div")
                 filteredContainer.appendChild(columnDiv)
                 const itemDiv=document.createElement("div")
+                const wishListElement=document.createElement("div")
+                wishListElement.classList.add("addWish-Container")
+                const wishButton=document.createElement("Button")
+                wishButton.innerHTML="&#xFF0B"
+                wishListElement.appendChild(wishButton)
+                itemDiv.appendChild(wishListElement)
                 columnDiv.appendChild(itemDiv)
                 itemDiv.classList.add("item")
                 columnDiv.classList.add("items-column")
@@ -222,6 +228,15 @@ const updateItemsInTable = (filteredItems) => {
                 buyNowElement.appendChild(link)
                 itemDiv.appendChild(buyNowElement);
 
+                wishButton.onclick=()=>{
+                  wishContainer.innerHTML=""
+                  if (!wishArray.includes(item))
+                  wishArray.push(item)
+                  else
+                  saveWishArray();
+                  wishAdd()
+                }
+
 })}
     
 
@@ -244,6 +259,7 @@ const updateItemsInTable = (filteredItems) => {
             const img = document.createElement("img");
             img.setAttribute("width", "70%");
             img.setAttribute("height", "50%");
+            img.classList.add("Item-Images")
 
             img.src = item.imageUrl;
             const itemDetails = document.createElement("p")
@@ -271,6 +287,7 @@ const updateItemsInTable = (filteredItems) => {
               wishContainer.innerHTML=""
               if (!wishArray.includes(item))
               wishArray.push(item)
+              else
               saveWishArray();
               wishAdd()
             }
@@ -280,12 +297,14 @@ const updateItemsInTable = (filteredItems) => {
 const saveWishArray = () => {
   localStorage.setItem('wishList', JSON.stringify(wishArray));
 };
+// sets ID of wishlist to the wishArray and converts to array to a Json string saved to local storage
 
 const getWishListFromLocalStorage = () => {
   const storedWishList = localStorage.getItem('wishList');
   if (storedWishList) {
     wishArray = JSON.parse(storedWishList);
 ;}}
+// searches for the ID wishlist and if it exists it restores the wishArray back to an Array?
         getWishListFromLocalStorage()
         mainItems()
         const wishBtn=document.getElementById("wish-Btn")
@@ -310,6 +329,7 @@ const getWishListFromLocalStorage = () => {
        const wishAdd=()=>{ wishArray.map((item,index)=>{
           const itemDiv=document.createElement("li")
           itemDiv.classList.add("wishItem")
+
           const wishListElement=document.createElement("div")
           wishListElement.classList.add("RemoveWish-Container")
           const wishRemoveButton=document.createElement("Button")
@@ -322,6 +342,7 @@ const getWishListFromLocalStorage = () => {
           img.src=item.imageUrl
           img.setAttribute("width", "10%");
           img.setAttribute("height", "5%");
+          img.classList.add("Item-Images")
 
           const itemDetails = document.createElement("p")
           itemDiv.appendChild(brand)
