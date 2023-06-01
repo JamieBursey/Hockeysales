@@ -108,6 +108,7 @@ priceBtn.onclick= () => {
     const input=document.createElement("input")
     input.type="text"
     input.placeholder="Search..."
+    input.classList.add("SearchBar")
     const searchButton=document.createElement("button")
     searchButton.type="submit"
     const searchIcon=document.createElement("i")

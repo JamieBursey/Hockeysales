@@ -27,6 +27,7 @@ p2 {
     .header{
         margin-bottom: 10px;
     }
+
 }
 
 pd {
@@ -135,6 +136,7 @@ table,th,td {
         width:50%;
         padding:15px
     }
+    
 }
 
 .buyBtn {
@@ -193,11 +195,20 @@ table,th,td {
 .search-filter{
     display: flex;
     float:right;
+    
 
 }
 
-.searchBar{
+.searchBarDiv{
     margin-right: 5rem;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.searchBar{
+max-width: 200px;
+width:100%
 }
 .filter-btn{
     position:relative;
@@ -282,9 +293,27 @@ table,th,td {
 
 @media (max-width:48rem){
     .search-filter{
-    display:contents
+    display:contents;
+    align-items: center;
+
        
     }
+    .searchBar{
+  
+    }
+    .searchBarDiv{
+        margin-left:25%;
+        margin-right: 25%;
+
+   
+    }
+    .filter-btn{
+        margin-right:1rem;
+    }
+    .sortBtn{
+        margin-left: 1rem;
+    }
+}
     .button-container{
         color:black;
         background-color:#E9E6E6;
@@ -302,12 +331,11 @@ table,th,td {
 
     }
 
-}
+
 
 .sortPriceBtn{
     position:relative;
     float:left;
-    margin-left: 2rem;
 }
 .sortBtn{
     background-color: black;
