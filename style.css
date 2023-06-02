@@ -214,9 +214,9 @@ width:100%
     position:relative;
     background-color: black;
     float:right;
-    margin-right: 5rem;
+    margin-right: 2rem;
     color:white;
-    border-radius: 2rem;
+    border-radius: 1rem;
     
 }
 .addWish-Container{
@@ -225,12 +225,10 @@ width:100%
     justify-content: flex-end;
     margin-left: 80%;
     margin-top: 5px;
-    background-color: green;
 
 }
 .RemoveWish-Container{
     position: flex;
-    
     justify-content: flex-end;
     margin-left: 80%;
     margin-top: 5px;
@@ -336,6 +334,7 @@ width:100%
 .sortPriceBtn{
     position:relative;
     float:left;
+    margin-left: 1rem;
 }
 .sortBtn{
     background-color: black;

@@ -1,8 +1,8 @@
 
 const Items = [
-    { type:"Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
-    { type:"Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
-    { type:"Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
+    {id:1, type:"Stick", brand: "CCM", style: "Ribcor Trigger 6", size: "Senior", price: "258.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6db0dc9f458615f750e9602df46e58c8_500x500_crop_center.jpg?v=1644279684", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-pro-grip-senior-hockey-stick" },
+    {id:2, type:"Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Senior", price: "244.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_500x500_crop_center.jpg?v=1631706509", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-senior-hockey-stick-87-flex" },
+    {id:3, type:"Stick", brand: "CCM", style: "Ribcor Trigger 6 Grip", size: "Senior", price: "174.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/39a1e4a000ce1f34bc6d236a572d9051_500x500_crop_center.jpg?v=1643656382", linkRef: "https://www.sourceforsports.ca/products/ccm-ribcor-trigger-6-grip-senior-hockey-stick" },
     { type:"Stick", brand: "True", style: "AX5 Grip", size: "Senior,", price: "111.97", imageUrl: "https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333127328_31_a-True-AX5-Hockey-Stick-AX5-SR-20?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520", linkRef: "https://www.sportchek.ca/categories/shop-by-sport/hockey/hockey-sticks/senior-composite-one-piece/product/true-ax5-grip-senior-hockey-stick-333127328.html#" },
     { type:"Stick", brand: "Bauer", style: "Nexus Geo Grip", size: "Intermediate", price: "223.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/6953fe96a6b7ae45ef6790d0ef38390b_e1303f90-7b57-4b44-a766-8b69bda36f3f_500x500_crop_center.jpg?v=1627526291", linkRef: "https://www.sourceforsports.ca/products/bauer-nexus-geo-grip-intermediate-hockey-stick-65-flex" },
     { type:"Stick", brand: "Bauer", style: "Vapor 2X Pro Grip", size: "Senior", price: "209.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c250ad1f3b15440b1a4ca4ec28f011e_500x500_crop_center.jpg?v=1627461707", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-2x-pro-grip-senior-hockey-stick" },
@@ -13,10 +13,10 @@ const Items = [
     { type:"Stick", brand:"Bauer",style:"Nexus 3N Pro Grip (2020)",size:"Senior",price:"174.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/cdd191c11b4646acafdb4404b3fa7678_8c4e2b04-3d1d-45ea-9039-5f187113d7ae_500x500_crop_center.jpg?v=1627464304",linkRef:"https://www.sourceforsports.ca/products/bauer-nexus-3n-pro-grip-senior-hockey-stick-87-flex"},
     { type:"Stick", brand:"Bauer",style:"Supreme 3S Pro Grip (2020)",size:"Senior",price:"209.99",imageUrl:"https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b8c3e97f814632df83a5c8e88cfb391f_500x500_crop_center.jpg?v=1627461865",linkRef:"https://www.sourceforsports.ca/products/bauer-supreme-3s-pro-grip-senior-hockey-stick-87-flex-2020"},
 
-    { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
-    { type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
-    { type: "Glove", brand: "Warrior", style: "Covert Krypto Pro", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive" },
-    { type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },
+    {id:10, type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
+    {id:11, type: "Glove", brand: "CCM", style: "Tacks Vector Premier", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/d28114195ea632e2c7f04941ed7c4ffb_500x500_crop_center.jpg?v=1657232195", linkRef: "https://www.sourceforsports.ca/products/ccm-tacks-vector-premier-senior-hockey-gloves-source-exclusive-2022" },
+    {id:12, type: "Glove", brand: "Warrior", style: "Covert Krypto Pro", size: "Senior", price: "149.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/dbe0ca72f321e083526c4a7ada81f022_500x500_crop_center.jpg?v=1657059445", linkRef: "https://www.sourceforsports.ca/products/warrior-covert-krypto-pro-senior-hockey-gloves-2022-source-exclusive" },
+    {id:13, type: "Glove", brand: "True Hockey", style: "Catalyst ", size: "Youth", price: "59.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/3c645b51a72cb8051a7c51e0f2af687d_500x500_crop_center.jpg?v=1627461521", linkRef: "https://www.sourceforsports.ca/products/true-hockey-catalyst-9x-youth-hockey-gloves" },
     { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
     { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
     { type: "Glove", brand: "Bauer", style: "Vapor (2022)", size: "Junior", price: "169.99", imageUrl: "https://cdn.shopify.com/s/files/1/0505/8838/5453/products/b1af3b490876395f8e8d17ea4a7efd4e_500x500_crop_center.jpg?v=1657318715", linkRef: "https://www.sourceforsports.ca/products/bauer-vapor-3x-pro-junior-hockey-gloves-2022" },
@@ -240,7 +240,7 @@ const updateItemsInTable = (filteredItems) => {
 
 })}
     
-
+let wishArray=[]
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
             const columnDiv = document.createElement("div")
@@ -284,20 +284,25 @@ const updateItemsInTable = (filteredItems) => {
             buyNowElement.appendChild(link)
             itemDiv.appendChild(buyNowElement);
 
+
             wishButton.onclick=()=>{
-              wishContainer.innerHTML=""
-              if (!wishArray.includes(item))
-              wishArray.push(item)
-              else
-              saveWishArray();
-              wishAdd()
+              console.log((!wishArray.find(wishListItem => wishListItem.id === item.id)))
+              if (!wishArray.find(wishListItem => wishListItem.id === item.id))
+              {
+                  wishArray.push(item)
+                  saveWishArray();
+                  wishAdd(item)
+              }
+              console.log(wishArray)
             }
 
         })
-        let wishArray=[]
+
+
 const saveWishArray = () => {
   localStorage.setItem('wishList', JSON.stringify(wishArray));
 };
+
 // sets ID of wishlist to the wishArray and converts to array to a Json string saved to local storage
 
 const getWishListFromLocalStorage = () => {
@@ -327,7 +332,8 @@ const getWishListFromLocalStorage = () => {
           else {wishContainer.style.display="none"}
         }
 
-       const wishAdd=()=>{ wishArray.map((item,index)=>{
+       const wishAdd=(item)=>{
+        console.log(item)
           const itemDiv=document.createElement("li")
           itemDiv.classList.add("wishItem")
 
@@ -369,19 +375,14 @@ const getWishListFromLocalStorage = () => {
           wishContainer.appendChild(itemDiv)
           
           wishRemoveButton.onclick = () => {
-            if (wishArray.includes(item)) {
-              wishArray.splice(index, 1);
-              saveWishArray();
-              wishContainer.innerHTML = "";
-              wishAdd();
-            }
+              itemDiv.remove()
+              wishArray.splice(wishArray.indexOf(item),1)
+              saveWishArray()
+          }         
+      }
+ wishArray.forEach((item) => wishAdd(item))
 
-
-        }
-      })}
-wishAdd()
-
-
+//all items saved in local storage to be rendered in
         
 console.log(wishArray)
 
