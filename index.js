@@ -304,7 +304,7 @@ let wishButtons=[]
                   wishAdd(item,wishButton)
                   wishButton.innerHTML = "&#x2665;"
                   wishButton.style.color="red"
-                  wishButton.style.size="20px"
+                  wishButton.style.fontSize="30px"
               }
 
               console.log(wishArray)
@@ -392,6 +392,7 @@ const getWishListFromLocalStorage = () => {
             if (wishButtons.includes(wishButton)){
               wishButton.innerHTML = "&#x2661";
               wishButton.style.color=""
+              wishButton.style.fontSize=""
             }
               
             } 
