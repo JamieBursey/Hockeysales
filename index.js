@@ -299,10 +299,6 @@ let wishArray=[]
                   wishAdd(item)
                   wishButton.innerHTML = "&#x2665;"
                   wishButton.style.color="red"
-              }else{
-                wishArray=wishArray.filter((wishListItem)=> wishListItem.id == item.id)
-                wishButton.innerHTML = "&#x2661;"
-                wishButton.style.color=""
               }
               console.log(wishArray)
             }
@@ -340,7 +336,7 @@ const getWishListFromLocalStorage = () => {
           else {wishContainer.style.display="none"}
         }
 
-       const wishAdd=(item)=>{
+       const wishAdd=(item,wishButton)=>{
         console.log(item)
           const itemDiv=document.createElement("li")
           itemDiv.classList.add("wishItem")
@@ -386,9 +382,17 @@ const getWishListFromLocalStorage = () => {
               itemDiv.remove()
               wishArray.splice(wishArray.indexOf(item),1)
               saveWishArray()
-          } 
-          return itemDiv        
+              clearItems()
+              mainItems()
+            } 
+       
       }
+      const clearItems = () => {
+        const itemsContainer = document.getElementById("parent-container");
+        while (itemsContainer.firstChild) {
+          itemsContainer.firstChild.remove();
+        }
+      };
  wishArray.forEach((item) => wishAdd(item))
         
 console.log(wishArray)
