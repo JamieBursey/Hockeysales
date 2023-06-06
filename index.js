@@ -179,17 +179,18 @@ const innerFilterButtons = buttonTitles.map((buttonName) => {
             return buttonElement
         }
         )
-
+        let isFilterActive = false;
 const filterMyItems = (type) => {
     filteredArray= Items.filter(item => item.type === type)
+    isFilterActive=(type !== "all")
 
 }
 
-
+const filteredContainer = document.getElementById("parent-container")
 const updateItemsInTable = (filteredItems) => {
     while (itemsContainer.hasChildNodes()) { itemsContainer.removeChild(itemsContainer.firstChild) }
 
-    const filteredContainer = document.getElementById("parent-container")
+
 
             filteredItems.map((item) => {
                 const columnDiv = document.createElement("div")
@@ -198,7 +199,7 @@ const updateItemsInTable = (filteredItems) => {
                 const wishListElement=document.createElement("div")
                 wishListElement.classList.add("addWish-Container")
                 const wishButton=document.createElement("Button")
-                wishButton.innerHTML="&#xFF0B"
+                wishButton.innerHTML="&#x2661"
                 wishListElement.appendChild(wishButton)
                 itemDiv.appendChild(wishListElement)
                 columnDiv.appendChild(itemDiv)
@@ -239,13 +240,17 @@ const updateItemsInTable = (filteredItems) => {
                       wishArray.push(item)
                       saveWishArray();
                       wishAdd(item)
+                      wishButton.innerHTML = "&#x2665;"
+                      wishButton.style.color="red"
                   }
+
                   wishAdd()
                 }
 
 })}
     
 let wishArray=[]
+let wishButtons=[]
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
             const columnDiv = document.createElement("div")
@@ -296,25 +301,28 @@ let wishArray=[]
               {
                   wishArray.push(item)
                   saveWishArray();
-                  wishAdd(item)
+                  wishAdd(item,wishButton)
                   wishButton.innerHTML = "&#x2665;"
                   wishButton.style.color="red"
+                  wishButton.style.size="20px"
               }
+
               console.log(wishArray)
             }
-
+            wishButtons.push(wishButton)
         })
-
+console.log(wishButtons)
 
 const saveWishArray = () => {
   localStorage.setItem('wishList', JSON.stringify(wishArray));
 };
 
 const getWishListFromLocalStorage = () => {
-  const storedWishList = localStorage.getItem('wishList');
-  if (storedWishList) {
-    wishArray = JSON.parse(storedWishList);
-;}}
+      const storedWishList = localStorage.getItem('wishList');
+          if (storedWishList) {
+          wishArray = JSON.parse(storedWishList);
+        }
+}
         getWishListFromLocalStorage()
         mainItems()
         const wishBtn=document.getElementById("wish-Btn")
@@ -328,15 +336,14 @@ const getWishListFromLocalStorage = () => {
           wishContainer.appendChild(wishHeader)
         wishContainer.style.display="none"
 
-        wishBtn.onclick=()=>{
-          if( wishContainer.style.display === "none"
-          )
+      wishBtn.onclick=()=>{
+          if( wishContainer.style.display === "none")
           {
           wishContainer.style.display="block"}
           else {wishContainer.style.display="none"}
-        }
+      }
 
-       const wishAdd=(item,wishButton)=>{
+      const wishAdd=(item,wishButton)=>{
         console.log(item)
           const itemDiv=document.createElement("li")
           itemDiv.classList.add("wishItem")
@@ -382,17 +389,16 @@ const getWishListFromLocalStorage = () => {
               itemDiv.remove()
               wishArray.splice(wishArray.indexOf(item),1)
               saveWishArray()
-              clearItems()
-              mainItems()
+            if (wishButtons.includes(wishButton)){
+              wishButton.innerHTML = "&#x2661";
+              wishButton.style.color=""
+            }
+              
             } 
+            
        
       }
-      const clearItems = () => {
-        const itemsContainer = document.getElementById("parent-container");
-        while (itemsContainer.firstChild) {
-          itemsContainer.firstChild.remove();
-        }
-      };
+
  wishArray.forEach((item) => wishAdd(item))
         
 console.log(wishArray)
