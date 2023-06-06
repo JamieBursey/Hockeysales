@@ -233,11 +233,13 @@ const updateItemsInTable = (filteredItems) => {
                 itemDiv.appendChild(buyNowElement);
 
                 wishButton.onclick=()=>{
-                  wishContainer.innerHTML=""
-                  if (!wishArray.includes(item))
-                  wishArray.push(item)
-                  else
-                  saveWishArray();
+
+                  if (!wishArray.find(wishListItem => wishListItem.id === item.id))
+                  {
+                      wishArray.push(item)
+                      saveWishArray();
+                      wishAdd(item)
+                  }
                   wishAdd()
                 }
 
@@ -252,7 +254,7 @@ let wishArray=[]
             const wishListElement=document.createElement("div")
             wishListElement.classList.add("addWish-Container")
             const wishButton=document.createElement("Button")
-            wishButton.innerHTML="&#xFF0B"
+            wishButton.innerHTML="&#x2661"
             wishListElement.appendChild(wishButton)
             itemDiv.appendChild(wishListElement)
             columnDiv.appendChild(itemDiv)
@@ -295,6 +297,12 @@ let wishArray=[]
                   wishArray.push(item)
                   saveWishArray();
                   wishAdd(item)
+                  wishButton.innerHTML = "&#x2665;"
+                  wishButton.style.color="red"
+              }else{
+                wishArray=wishArray.filter((wishListItem)=> wishListItem.id == item.id)
+                wishButton.innerHTML = "&#x2661;"
+                wishButton.style.color=""
               }
               console.log(wishArray)
             }
@@ -306,14 +314,11 @@ const saveWishArray = () => {
   localStorage.setItem('wishList', JSON.stringify(wishArray));
 };
 
-// sets ID of wishlist to the wishArray and converts to array to a Json string saved to local storage
-
 const getWishListFromLocalStorage = () => {
   const storedWishList = localStorage.getItem('wishList');
   if (storedWishList) {
     wishArray = JSON.parse(storedWishList);
 ;}}
-// searches for the ID wishlist and if it exists it restores the wishArray back to an Array?
         getWishListFromLocalStorage()
         mainItems()
         const wishBtn=document.getElementById("wish-Btn")
@@ -381,11 +386,10 @@ const getWishListFromLocalStorage = () => {
               itemDiv.remove()
               wishArray.splice(wishArray.indexOf(item),1)
               saveWishArray()
-          }         
+          } 
+          return itemDiv        
       }
  wishArray.forEach((item) => wishAdd(item))
-
-//all items saved in local storage to be rendered in
         
 console.log(wishArray)
 
