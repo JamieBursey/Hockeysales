@@ -242,15 +242,18 @@ const updateItemsInTable = (filteredItems) => {
                       wishAdd(item)
                       wishButton.innerHTML = "&#x2665;"
                       wishButton.style.color="red"
+                      
                   }
 
-                  wishAdd()
+
+                  wishAdd(item,wishButton)
                 }
+
 
 })}
     
 let wishArray=[]
-let wishButtons=[]
+
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
             const columnDiv = document.createElement("div")
@@ -296,29 +299,39 @@ let wishButtons=[]
 
 
             wishButton.onclick=()=>{
-              console.log((!wishArray.find(wishListItem => wishListItem.id === item.id)))
+              
               if (!wishArray.find(wishListItem => wishListItem.id === item.id))
               {
                   wishArray.push(item)
                   saveWishArray();
-                  wishAdd(item,wishButton)
+                  wishAdd(item)
                   wishButton.innerHTML = "&#x2665;"
                   wishButton.style.color="red"
-                  wishButton.style.fontSize="30px"
+                  wishButton.style.fontSize="30px" 
+                  console.log("addItem")
               }
+              else {
+                const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
+                wishArray.splice(wishArray.indexOf(wishListedItem),1)
+                if (wishArray.length===0){
+                  wishButton.style=""
+                  wishButton.innerHTML="&#x2661"
+                }
 
-              console.log(wishArray)
+              }
+              console.log("remove",wishArray)
             }
-            wishButtons.push(wishButton)
+
         })
-console.log(wishButtons)
+
+
 
 const saveWishArray = () => {
-  localStorage.setItem('wishList', JSON.stringify(wishArray));
+  localStorage.setItem("wishList", JSON.stringify(wishArray));
 };
 
 const getWishListFromLocalStorage = () => {
-      const storedWishList = localStorage.getItem('wishList');
+      const storedWishList = localStorage.getItem("wishList");
           if (storedWishList) {
           wishArray = JSON.parse(storedWishList);
         }
@@ -343,7 +356,7 @@ const getWishListFromLocalStorage = () => {
           else {wishContainer.style.display="none"}
       }
 
-      const wishAdd=(item,wishButton)=>{
+      const wishAdd=(item)=>{
         console.log(item)
           const itemDiv=document.createElement("li")
           itemDiv.classList.add("wishItem")
@@ -388,17 +401,8 @@ const getWishListFromLocalStorage = () => {
           wishRemoveButton.onclick = () => {
               itemDiv.remove()
               wishArray.splice(wishArray.indexOf(item),1)
-              saveWishArray()
-            if (wishButtons.includes(wishButton)){
-              wishButton.innerHTML = "&#x2661";
-              wishButton.style.color=""
-              wishButton.style.fontSize=""
-            }
-              
-            } 
-            
-       
-      }
+              saveWishArray() 
+      }}
 
  wishArray.forEach((item) => wishAdd(item))
         
