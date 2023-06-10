@@ -243,6 +243,7 @@ const updateItemsInTable = (filteredItems) => {
                       wishButton.innerHTML = "&#x2665;"
                       wishButton.style.color="red"  
                   }
+                  wishAdd(item)
                 }
 
 
@@ -252,72 +253,72 @@ let wishArray=[]
 
         const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
-            const columnDiv = document.createElement("div")
-            itemsContainer.appendChild(columnDiv)
-            const itemDiv=document.createElement("div")
-            const wishListElement=document.createElement("div")
-            wishListElement.classList.add("addWish-Container")
-            const wishButton=document.createElement("Button")
-            wishButton.innerHTML="&#x2661"
-            wishListElement.appendChild(wishButton)
-            itemDiv.appendChild(wishListElement)
-            columnDiv.appendChild(itemDiv)
-            itemDiv.classList.add("item")
-            columnDiv.classList.add("items-column")
-            const brand = document.createElement("p")
-            brand.innerHTML=`${item.brand}`
-            const img = document.createElement("img");
-            img.setAttribute("width", "70%");
-            img.setAttribute("height", "50%");
-            img.classList.add("Item-Images")
+      const columnDiv = document.createElement("div")
+      itemsContainer.appendChild(columnDiv)
+      const itemDiv=document.createElement("div")
+      const wishListElement=document.createElement("div")
+      wishListElement.classList.add("addWish-Container")
+      const wishButton=document.createElement("Button")
+      wishButton.innerHTML="&#x2661"
+      wishListElement.appendChild(wishButton)
+      itemDiv.appendChild(wishListElement)
+      columnDiv.appendChild(itemDiv)
+      itemDiv.classList.add("item")
+      columnDiv.classList.add("items-column")
+      const brand = document.createElement("p")
+      brand.innerHTML=`${item.brand}`
+      const img = document.createElement("img");
+      img.setAttribute("width", "70%");
+      img.setAttribute("height", "50%");
+      img.classList.add("Item-Images")
 
-            img.src = item.imageUrl;
-            const itemDetails = document.createElement("p")
-            itemDiv.appendChild(brand)
-            itemDiv.appendChild(img);
-            itemDetails.innerHTML = `${item.style}<br>${item.size}`
-            const prices=document.createElement("p")
-            prices.innerHTML=`$${item.price}`
-            prices.classList.add("price-font")
-            itemDiv.appendChild(itemDetails)
-            itemDiv.appendChild(prices)
-            const buyNowElement=document.createElement("div")
-            buyNowElement.classList.add("buyBtn")
-            const buyNow=document.createElement("p")
-            buyNow.innerText="BUY NOW"
-            buyNow.classList.add("buyNowFont")
-            const link = document.createElement("a");
-            link.classList.add("no-underline")
-            link.href = item.linkRef;
-            link.appendChild(buyNow)
-            buyNowElement.appendChild(link)
-            itemDiv.appendChild(buyNowElement);
+      img.src = item.imageUrl;
+      const itemDetails = document.createElement("p")
+      itemDiv.appendChild(brand)
+      itemDiv.appendChild(img);
+      itemDetails.innerHTML = `${item.style}<br>${item.size}`
+      const prices=document.createElement("p")
+      prices.innerHTML=`$${item.price}`
+      prices.classList.add("price-font")
+      itemDiv.appendChild(itemDetails)
+      itemDiv.appendChild(prices)
+      const buyNowElement=document.createElement("div")
+      buyNowElement.classList.add("buyBtn")
+      const buyNow=document.createElement("p")
+      buyNow.innerText="BUY NOW"
+      buyNow.classList.add("buyNowFont")
+      const link = document.createElement("a");
+      link.classList.add("no-underline")
+      link.href = item.linkRef;
+      link.appendChild(buyNow)
+      buyNowElement.appendChild(link)
+      itemDiv.appendChild(buyNowElement);
 
-
-            wishButton.onclick=()=>{
-              
-              if (!wishArray.find(wishListItem => wishListItem.id === item.id))
-              {
-                  wishArray.push(item)
-                  wishAdd(item)
-                  wishButton.innerHTML = "&#x2665;"
-                  wishButton.style.color="red"
-                  wishButton.style.fontSize="30px" 
-                  console.log("addItem")
-              }
-              else {
-                const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
-                wishArray.splice(wishArray.indexOf(wishListedItem),1)
-                if (wishArray.length===0){
-                  wishButton.style=""
-                  wishButton.innerHTML="&#x2661"
-                }
-              }
-              saveWishArray()
-              console.log("remove",wishArray)
+        wishButton.onclick=()=>{    
+          if (!wishArray.find(wishListItem => wishListItem.id === item.id)){
+            wishArray.push(item)
+            wishAdd(item)
+            wishButton.innerHTML = "&#x2665;"
+            wishButton.style.color="red"
+            wishButton.style.fontSize="30px" 
+            console.log("addItem")
             }
-
-      })
+          else {
+            const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
+            wishArray.splice(wishArray.indexOf(wishListedItem),1)
+                wishButton.style=""
+                wishButton.innerHTML="&#x2661"
+                console.log("remove",wishArray)
+              
+          }
+          saveWishArray()
+          const wishListContainer = document.getElementById("wishList-Container");
+          wishListContainer.innerHTML = "";
+          wishArray.forEach(wishItem => {
+            wishAdd(wishItem);
+            });
+        }
+  })
 
 
 
@@ -353,15 +354,15 @@ const getWishListFromLocalStorage = () => {
 
       const wishAdd=(item)=>{
         console.log(item)
-          const itemDiv=document.createElement("li")
-          itemDiv.classList.add("wishItem")
-
+          const itemLi=document.createElement("li")
+          itemLi.classList.add("wishItem")
+          itemLi.id=item.id
           const wishListElement=document.createElement("div")
           wishListElement.classList.add("RemoveWish-Container")
           const wishRemoveButton=document.createElement("Button")
           wishRemoveButton.innerHTML="&#8861"
           wishListElement.appendChild(wishRemoveButton)
-          itemDiv.appendChild(wishListElement)
+          itemLi.appendChild(wishListElement)
           const brand = document.createElement("p")
           brand.innerHTML=`${item.brand}`
           const img = document.createElement("img");
@@ -371,14 +372,14 @@ const getWishListFromLocalStorage = () => {
           img.classList.add("Item-Images")
 
           const itemDetails = document.createElement("p")
-          itemDiv.appendChild(brand)
-          itemDiv.appendChild(img);
+          itemLi.appendChild(brand)
+          itemLi.appendChild(img);
           itemDetails.innerHTML = `${item.style}<br>${item.size}`
           const prices=document.createElement("p")
           prices.innerHTML=`$${item.price}`
           prices.classList.add("price-font")
-          itemDiv.appendChild(itemDetails)
-          itemDiv.appendChild(prices)
+          itemLi.appendChild(itemDetails)
+          itemLi.appendChild(prices)
           const buyNowElement=document.createElement("div")
           buyNowElement.classList.add("buyBtn")
           const buyNow=document.createElement("p")
@@ -390,20 +391,21 @@ const getWishListFromLocalStorage = () => {
           link.appendChild(buyNow)
           wishContainer.appendChild(wishHeader)
           buyNowElement.appendChild(link);
-          itemDiv.appendChild(buyNowElement);
-          wishContainer.appendChild(itemDiv)
+          itemLi.appendChild(buyNowElement);
+          wishContainer.appendChild(itemLi)
+
+          console.log(itemLi)
           
             wishRemoveButton.onclick = () => {
-              itemDiv.remove()
+              itemLi.remove()
               wishArray.splice(wishArray.indexOf(item),1)
+
               saveWishArray() 
             }
     }
-   
-
  wishArray.forEach((item) => wishAdd(item))
         
-console.log(wishArray)
+
 
 
 
