@@ -241,12 +241,8 @@ const updateItemsInTable = (filteredItems) => {
                       saveWishArray();
                       wishAdd(item)
                       wishButton.innerHTML = "&#x2665;"
-                      wishButton.style.color="red"
-                      
+                      wishButton.style.color="red"  
                   }
-
-
-                  wishAdd(item,wishButton)
                 }
 
 
@@ -303,7 +299,6 @@ let wishArray=[]
               if (!wishArray.find(wishListItem => wishListItem.id === item.id))
               {
                   wishArray.push(item)
-                  saveWishArray();
                   wishAdd(item)
                   wishButton.innerHTML = "&#x2665;"
                   wishButton.style.color="red"
@@ -317,12 +312,12 @@ let wishArray=[]
                   wishButton.style=""
                   wishButton.innerHTML="&#x2661"
                 }
-
               }
+              saveWishArray()
               console.log("remove",wishArray)
             }
 
-        })
+      })
 
 
 
@@ -332,7 +327,7 @@ const saveWishArray = () => {
 
 const getWishListFromLocalStorage = () => {
       const storedWishList = localStorage.getItem("wishList");
-          if (storedWishList) {
+        if (storedWishList) {
           wishArray = JSON.parse(storedWishList);
         }
 }
@@ -350,10 +345,10 @@ const getWishListFromLocalStorage = () => {
         wishContainer.style.display="none"
 
       wishBtn.onclick=()=>{
-          if( wishContainer.style.display === "none")
-          {
+        if( wishContainer.style.display === "none"){
           wishContainer.style.display="block"}
-          else {wishContainer.style.display="none"}
+          else {wishContainer.style.display="none"
+        }
       }
 
       const wishAdd=(item)=>{
@@ -398,11 +393,13 @@ const getWishListFromLocalStorage = () => {
           itemDiv.appendChild(buyNowElement);
           wishContainer.appendChild(itemDiv)
           
-          wishRemoveButton.onclick = () => {
+            wishRemoveButton.onclick = () => {
               itemDiv.remove()
               wishArray.splice(wishArray.indexOf(item),1)
               saveWishArray() 
-      }}
+            }
+    }
+   
 
  wishArray.forEach((item) => wishAdd(item))
         
