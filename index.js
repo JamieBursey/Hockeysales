@@ -59,7 +59,7 @@ const innersortButtons = sortTitles.map((buttonName) => {
 
     if (buttonName === "High-Low") {
         sortElement.onclick = () => {
-          const newItemsArray=[...filteredArray]
+          const newItemsArray=filteredArray
             const highFirst=newItemsArray.sort((low,high)=> (high.price-low.price))
             updateItemsInTable(highFirst);
             sortListElement.style.display = "none";
@@ -67,7 +67,7 @@ const innersortButtons = sortTitles.map((buttonName) => {
         } 
    else if (buttonName === "Low-High") {
         sortElement.onclick = () => {
-          const newItemsArray=[...filteredArray]
+          const newItemsArray=filteredArray
             const lowFirst= newItemsArray.sort((low,high) => (low.price-high.price))
             updateItemsInTable(lowFirst);
             sortListElement.style.display = "none";
@@ -75,14 +75,14 @@ const innersortButtons = sortTitles.map((buttonName) => {
         }
   else if (buttonName==="Alphabetical"){
       sortElement.onclick=()=> {
-        const newItemsArray=[...filteredArray]
+        const newItemsArray=filteredArray
         const Alphabetically = newItemsArray.sort((a,b)=>{
             let brandA=a.brand.toLocaleLowerCase()
             let brandB=b.brand.toLocaleLowerCase()
             if (brandA<brandB) return -1
             if (brandA>brandB) return 1
             return 0;
-      })
+            })
         updateItemsInTable(Alphabetically)
         sortListElement.style.display="none"
         }
@@ -92,20 +92,19 @@ const innersortButtons = sortTitles.map((buttonName) => {
       sortElement.onclick = () => {
         updateItemsInTable(Items)
           sortListElement.style.display = "none";
-      };} 
+        };
+    } 
   
-
   return sortElement;
 });
 priceBtn.onclick= () => {
     if (sortListElement.style.display === "none") {
       sortListElement.style.display = "contents";
-    } else {
-      sortListElement.style.display = "none";
-    }
+    }   
+        else {
+          sortListElement.style.display = "none";
+        }
   };
-
-
 
     const searchBar=document.getElementById("search-bar")
     const input=document.createElement("input")
@@ -238,10 +237,11 @@ const updateItemsInTable = (filteredItems) => {
                   if (!wishArray.find(wishListItem => wishListItem.id === item.id))
                   {
                       wishArray.push(item)
-                      saveWishArray();
+                      saveWishArray(); 
                       wishAdd(item)
                       wishButton.innerHTML = "&#x2665;"
-                      wishButton.style.color="red"  
+                      wishButton.style.color="red"
+                      wishButton.style.fontSize="30px"  
                   }
                   else {
                     const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
@@ -502,3 +502,4 @@ const getWishListFromLocalStorage = () => {
 //     button.onclick = onClickHandler
 //     button.innerHTML="test click";
 //     gloveColumn.appendChild(button);
+

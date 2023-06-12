@@ -428,7 +428,7 @@ width:100%
     }
 }*/
 
-.pie-container {
+/* .pie-container {
     margin-top: 100px;
     width: 400px;
     height: 400px;
@@ -465,4 +465,4 @@ width:100%
 
 .pie-images:nth-child(5) {
     transform: rotate(288deg) translateX(100px) rotate(-288deg);
-}
+} */
