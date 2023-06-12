@@ -412,7 +412,9 @@ const getWishListFromLocalStorage = () => {
               itemLi.remove()
               wishArray.splice(wishArray.indexOf(item),1)
 
-              saveWishArray() 
+              saveWishArray()
+              itemsContainer.innerHTML=""
+              mainItems()
             }
     }
  wishArray.forEach((item) => wishAdd(item))
