@@ -243,7 +243,20 @@ const updateItemsInTable = (filteredItems) => {
                       wishButton.innerHTML = "&#x2665;"
                       wishButton.style.color="red"  
                   }
-                  wishAdd(item)
+                  else {
+                    const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
+                    wishArray.splice(wishArray.indexOf(wishListedItem),1)
+                        wishButton.style=""
+                        wishButton.innerHTML="&#x2661"
+                        console.log("remove",wishArray)
+                      
+                  }
+                  saveWishArray()
+                  const wishListContainer = document.getElementById("wishList-Container");
+                  wishListContainer.innerHTML = "";
+                  wishArray.forEach(Item => {
+                    wishAdd(Item);
+                    });
                 }
 
 
@@ -308,14 +321,13 @@ let wishArray=[]
             wishArray.splice(wishArray.indexOf(wishListedItem),1)
                 wishButton.style=""
                 wishButton.innerHTML="&#x2661"
-                console.log("remove",wishArray)
-              
-          }
+                console.log("remove",wishArray)          
+            }
           saveWishArray()
           const wishListContainer = document.getElementById("wishList-Container");
           wishListContainer.innerHTML = "";
-          wishArray.forEach(wishItem => {
-            wishAdd(wishItem);
+          wishArray.forEach(Item => {
+            wishAdd(Item);
             });
         }
   })
