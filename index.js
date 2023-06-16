@@ -158,11 +158,9 @@ filterBtn.onclick = () => {
 }
     
 const innerFilterButtons = buttonTitles.map((buttonName) => {   
-    document.getElementsByClassName("item-button").length === 0
     const buttonElement = document.createElement("li")
     buttonElement.classList.add("item-button")
     buttonElement.innerHTML = buttonName
-    buttonDiv.appendChild(buttonElement)
     buttonDiv.appendChild(buttonElement)
     buttonElement.onclick = () => {
       filterMyItems(buttonName)
@@ -170,7 +168,8 @@ const innerFilterButtons = buttonTitles.map((buttonName) => {
     }
     if (buttonName === "All") {
         buttonElement.onclick = () => {
-            updateFilterItems(Items)
+          filteredArray=Items
+          updateFilterItems(filteredArray)
         }
     }
     btnfilterContainer.appendChild(filterBtn)
@@ -251,8 +250,8 @@ const updateFilterItems = (filteredItems) => {
       saveWishArray()
       const wishListContainer = document.getElementById("wishList-Container");
       wishListContainer.innerHTML = "";
-      wishArray.forEach(Item => {
-        wishAdd(Item);
+      wishArray.forEach(item => {
+        wishAdd(item);
         });
     }
 })}
@@ -401,11 +400,17 @@ const wishAdd=(item)=>{
       wishRemoveButton.onclick = () => {
         itemLi.remove()
         wishArray.splice(wishArray.indexOf(item),1)
+        if (itemsContainer.querySelector="grid"){
+          item.wishList=false
+          itemsContainer.innerHTML=""
+          mainItems(Items)
+        }
           if(filteredContainer.querySelector="grid"){
             item.wishList=false
             filteredContainer.innerHTML=""
             updateFilterItems(filteredArray)
           }
+          
         saveWishArray()
         console.log(wishRemoveButton)
       }
