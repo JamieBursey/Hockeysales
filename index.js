@@ -33,8 +33,9 @@ const Items = [
 ];
 Items.forEach((item,index)=> {
 item.id=index +1
+item.wishList=false
 })
-  
+
     
 const priceBtnElement = document.getElementById("sort-price");
 const priceBtn = document.createElement("button");
@@ -126,7 +127,7 @@ priceBtn.onclick= () => {
         if (searchItems.length === 0){
           const noResults=document.getElementById("no-results")
           noResults.innerText=("No Search Results")
-          console.log(searchItems.length)
+
         }
         else if (searchItems.length >=1){
           const noResults=document.getElementById("no-results")
@@ -135,7 +136,7 @@ priceBtn.onclick= () => {
 
         
         updateItemsInTable(searchItems);
-        console.log(searchInput);
+
       };
 
 const buttonTitles = ["All","Stick", "Glove", "Helmet","Pants"]
@@ -156,115 +157,104 @@ filterBtn.onclick = () => {
     }
 }
     
-const innerFilterButtons = buttonTitles.map((buttonName) => {
-    
-            (document.getElementsByClassName("item-button").length === 0)
-            const buttonElement = document.createElement("li")
-            buttonElement.classList.add("item-button")
-            buttonElement.innerHTML = buttonName
-
-            buttonDiv.appendChild(buttonElement)
-            buttonDiv.appendChild(buttonElement)
-            buttonElement.onclick = () => {
-              filterMyItems(buttonName)
-                updateItemsInTable(filteredArray)
-            }
-            if (buttonName === "All") {
-                buttonElement.onclick = () => {
-                    updateItemsInTable(Items)
-                }
-            }
-            btnfilterContainer.appendChild(filterBtn)
-            return buttonElement
+const innerFilterButtons = buttonTitles.map((buttonName) => {   
+    document.getElementsByClassName("item-button").length === 0
+    const buttonElement = document.createElement("li")
+    buttonElement.classList.add("item-button")
+    buttonElement.innerHTML = buttonName
+    buttonDiv.appendChild(buttonElement)
+    buttonDiv.appendChild(buttonElement)
+    buttonElement.onclick = () => {
+      filterMyItems(buttonName)
+        updateItemsInTable(filteredArray)
+    }
+    if (buttonName === "All") {
+        buttonElement.onclick = () => {
+            updateItemsInTable(Items)
         }
-        )
-        let isFilterActive = false;
+    }
+    btnfilterContainer.appendChild(filterBtn)
+    return buttonElement
+})
+
 const filterMyItems = (type) => {
     filteredArray= Items.filter(item => item.type === type)
-    isFilterActive=(type !== "all")
-
 }
 
 const filteredContainer = document.getElementById("parent-container")
 const updateItemsInTable = (filteredItems) => {
-    while (itemsContainer.hasChildNodes()) { itemsContainer.removeChild(itemsContainer.firstChild) }
+  while (itemsContainer.hasChildNodes()) { itemsContainer.removeChild(itemsContainer.firstChild) }
+  console.log(filteredArray)
+  filteredItems.map((item) => {
+    const columnDiv = document.createElement("div")
+    filteredContainer.appendChild(columnDiv)
+    const itemDiv=document.createElement("div")
+    const wishListElement=document.createElement("div")
+    wishListElement.classList.add("addWish-Container")
+    const wishButton=document.createElement("Button")
+    wishButton.innerHTML="&#x2661" 
+    console.log(wishButton)
+    wishListElement.appendChild(wishButton)
+    itemDiv.appendChild(wishListElement)
+    columnDiv.appendChild(itemDiv)
+    itemDiv.classList.add("item")
+    columnDiv.classList.add("items-column")
+    const brand = document.createElement("p")
+    brand.innerHTML=`${item.brand}`
+    const img = document.createElement("img");
+    img.setAttribute("width", "70%");
+    img.setAttribute("height", "50%");
+    img.src = item.imageUrl;
 
+    const itemDetails = document.createElement("p")
+    itemDiv.appendChild(brand)
+    itemDiv.appendChild(img);
+    itemDetails.innerHTML = `${item.style}<br>${item.size}`
+    const prices=document.createElement("p")
+    prices.innerHTML=`$${item.price}`
+    prices.classList.add("price-font")
+    itemDiv.appendChild(itemDetails)
+    itemDiv.appendChild(prices)
+    const buyNowElement=document.createElement("div")
+    buyNowElement.classList.add("buyBtn")
+    const buyNow=document.createElement("p")
+    buyNow.innerText="BUY NOW"
+    buyNow.classList.add("buyNowFont")
+    const link = document.createElement("a");
+    link.classList.add("no-underline")
+    link.href = item.linkRef;
+    link.appendChild(buyNow)
+    buyNowElement.appendChild(link)
+    itemDiv.appendChild(buyNowElement);
 
+    wishButton.onclick=()=>{
 
-            filteredItems.map((item) => {
-                const columnDiv = document.createElement("div")
-                filteredContainer.appendChild(columnDiv)
-                const itemDiv=document.createElement("div")
-                const wishListElement=document.createElement("div")
-                wishListElement.classList.add("addWish-Container")
-                const wishButton=document.createElement("Button")
-                wishButton.innerHTML="&#x2661"
-                wishListElement.appendChild(wishButton)
-                itemDiv.appendChild(wishListElement)
-                columnDiv.appendChild(itemDiv)
-                itemDiv.classList.add("item")
-                columnDiv.classList.add("items-column")
-                const brand = document.createElement("p")
-                brand.innerHTML=`${item.brand}`
-                const img = document.createElement("img");
-                img.setAttribute("width", "70%");
-                img.setAttribute("height", "50%");
-                img.src = item.imageUrl;
-
-                const itemDetails = document.createElement("p")
-                itemDiv.appendChild(brand)
-                itemDiv.appendChild(img);
-                itemDetails.innerHTML = `${item.style}<br>${item.size}`
-                const prices=document.createElement("p")
-                prices.innerHTML=`$${item.price}`
-                prices.classList.add("price-font")
-                itemDiv.appendChild(itemDetails)
-                itemDiv.appendChild(prices)
-                const buyNowElement=document.createElement("div")
-                buyNowElement.classList.add("buyBtn")
-                const buyNow=document.createElement("p")
-                buyNow.innerText="BUY NOW"
-                buyNow.classList.add("buyNowFont")
-                const link = document.createElement("a");
-                link.classList.add("no-underline")
-                link.href = item.linkRef;
-                link.appendChild(buyNow)
-                buyNowElement.appendChild(link)
-                itemDiv.appendChild(buyNowElement);
-
-                wishButton.onclick=()=>{
-
-                  if (!wishArray.find(wishListItem => wishListItem.id === item.id))
-                  {
-                      wishArray.push(item)
-                      saveWishArray(); 
-                      wishAdd(item)
-                      wishButton.innerHTML = "&#x2665;"
-                      wishButton.style.color="red"
-                      wishButton.style.fontSize="30px"  
-                  }
-                  else {
-                    const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
-                    wishArray.splice(wishArray.indexOf(wishListedItem),1)
-                        wishButton.style=""
-                        wishButton.innerHTML="&#x2661"
-                        console.log("remove",wishArray)
-                      
-                  }
-                  saveWishArray()
-                  const wishListContainer = document.getElementById("wishList-Container");
-                  wishListContainer.innerHTML = "";
-                  wishArray.forEach(Item => {
-                    wishAdd(Item);
-                    });
-                }
-
-
+      if (!wishArray.find(wishListItem => wishListItem.id === item.id))
+      {
+          item.wishList=true
+          wishArray.push(item)
+          saveWishArray(); 
+          wishAdd(item)
+          updateItemsInTable(filteredArray)
+      }
+      else {
+        const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
+        wishArray.splice(wishArray.indexOf(wishListedItem),1)
+            wishButton.style=""
+            wishButton.innerHTML="&#x2661"
+      }
+      saveWishArray()
+      const wishListContainer = document.getElementById("wishList-Container");
+      wishListContainer.innerHTML = "";
+      wishArray.forEach(Item => {
+        wishAdd(Item);
+        });
+    }
 })}
     
 let wishArray=[]
 
-        const itemsContainer=document.getElementById("parent-container")
+  const itemsContainer=document.getElementById("parent-container")
     mainItems=()=> Items.map((item) => {
       const columnDiv = document.createElement("div")
       itemsContainer.appendChild(columnDiv)
@@ -314,14 +304,12 @@ let wishArray=[]
             wishButton.innerHTML = "&#x2665;"
             wishButton.style.color="red"
             wishButton.style.fontSize="30px" 
-            console.log("addItem")
             }
           else {
             const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
             wishArray.splice(wishArray.indexOf(wishListedItem),1)
                 wishButton.style=""
-                wishButton.innerHTML="&#x2661"
-                console.log("remove",wishArray)          
+                wishButton.innerHTML="&#x2661"         
             }
           saveWishArray()
           const wishListContainer = document.getElementById("wishList-Container");
@@ -365,7 +353,6 @@ const getWishListFromLocalStorage = () => {
       }
 
       const wishAdd=(item)=>{
-        console.log(item)
           const itemLi=document.createElement("li")
           itemLi.classList.add("wishItem")
           itemLi.id=item.id
@@ -405,22 +392,18 @@ const getWishListFromLocalStorage = () => {
           buyNowElement.appendChild(link);
           itemLi.appendChild(buyNowElement);
           wishContainer.appendChild(itemLi)
-
-          console.log(itemLi)
           
             wishRemoveButton.onclick = () => {
               itemLi.remove()
               wishArray.splice(wishArray.indexOf(item),1)
 
               saveWishArray()
-              itemsContainer.innerHTML=""
-              mainItems()
             }
     }
  wishArray.forEach((item) => wishAdd(item))
         
 
-
+//make new property isWishList = true
 
 
 
