@@ -192,8 +192,12 @@ const updateItemsInTable = (filteredItems) => {
     const wishListElement=document.createElement("div")
     wishListElement.classList.add("addWish-Container")
     const wishButton=document.createElement("Button")
-    wishButton.innerHTML="&#x2661" 
-    console.log(wishButton)
+    wishButton.innerHTML="&#x2661"
+    if (item.wishList){
+      wishButton.innerHTML = "&#x2665;"
+      wishButton.style.color="red"
+      wishButton.style.fontSize="30px"  
+    console.log(wishButton)}
     wishListElement.appendChild(wishButton)
     itemDiv.appendChild(wishListElement)
     columnDiv.appendChild(itemDiv)
@@ -242,6 +246,7 @@ const updateItemsInTable = (filteredItems) => {
         wishArray.splice(wishArray.indexOf(wishListedItem),1)
             wishButton.style=""
             wishButton.innerHTML="&#x2661"
+            item.wishList=false
       }
       saveWishArray()
       const wishListContainer = document.getElementById("wishList-Container");
