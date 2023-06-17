@@ -347,7 +347,10 @@ const getWishListFromLocalStorage = () => {
   const wishContainer= document.getElementById("wishList-Container")
   wishContainer.classList.add("wishDisplay")
   const wishHeader=document.createElement("div")
-  wishHeader.innerHTML="Wish List"
+  const wishHeaderImg=document.createElement("img")
+  wishHeaderImg.src="./images/wishHeader.png"
+  wishHeaderImg.setAttribute("width", "70%")
+  wishHeader.appendChild(wishHeaderImg)
   wishHeader.classList.add("wish-title")
   wishContainer.appendChild(wishHeader)
   wishContainer.style.display="none"
