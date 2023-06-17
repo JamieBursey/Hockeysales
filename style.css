@@ -247,10 +247,14 @@ width:100%
 
 }
 .wish-title{
-    position:absolute;
-    color:blue;
+    position:relative;
+    font-size: large;
+    color:white;
+    background-color: black;
+    width:90%;
     top:0;
-    margin-left: 50%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 5px;
 
     

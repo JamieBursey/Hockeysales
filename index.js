@@ -250,6 +250,7 @@ const updateFilterItems = (filteredItems) => {
       saveWishArray()
       const wishListContainer = document.getElementById("wishList-Container");
       wishListContainer.innerHTML = "";
+      wishListContainer.appendChild(wishHeader)
       wishArray.forEach(item => {
         wishAdd(item);
         });
@@ -313,11 +314,13 @@ let wishArray=[]
             const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
             wishArray.splice(wishArray.indexOf(wishListedItem),1)
                 wishButton.style=""
-                wishButton.innerHTML="&#x2661"         
+                wishButton.innerHTML="&#x2661" 
+                        
             }
           saveWishArray()
           const wishListContainer = document.getElementById("wishList-Container");
           wishListContainer.innerHTML = "";
+          wishListContainer.appendChild(wishHeader)
           wishArray.forEach(Item => {
             wishAdd(Item);
             });
@@ -410,7 +413,7 @@ const wishAdd=(item)=>{
             filteredContainer.innerHTML=""
             updateFilterItems(filteredArray)
           }
-          
+
         saveWishArray()
         console.log(wishRemoveButton)
       }
