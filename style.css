@@ -129,6 +129,10 @@ pd {
     overflow: hidden;
     padding-bottom: 5px;
 }
+.no-results{
+    color:red;
+    margin-right: 5px;
+}
 
 @media (Max-width:48rem) {
     .items-column{
@@ -144,6 +148,13 @@ pd {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
+        
+    }
+    .searchBarDiv{
+        margin-right: 5rem;
+        background-size: cover;
+        background-position: center;
+        max-width: 40px;
         
     }
     
@@ -167,7 +178,8 @@ pd {
     background-color: black;
     position: relative;
     margin-top: 15px;
-
+    align-items: baseline
+    
 }
 .buyNowFont{
     color:white;
@@ -205,20 +217,18 @@ pd {
 .search-filter{
     display: flex;
     float:right;
-    
-
 }
 
 .searchBarDiv{
     margin-right: 5rem;
     background-size: cover;
     background-position: center;
-    
+    max-width: fit-content;
 }
 
 .searchBar{
-max-width: 200px;
-width:100%
+max-width: 100px;
+
 }
 .filter-btn{
     position:relative;
@@ -281,10 +291,6 @@ width:100%
     margin-right: 5px;
     margin-top:5px;
     box-shadow:3px 3px 3px rgb(91, 89, 89);
-
-}
-.Item-Images{
-    /* mix-blend-mode: color-burn; */
 }
 
 .item-button{

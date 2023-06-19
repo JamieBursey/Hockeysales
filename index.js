@@ -120,18 +120,19 @@ priceBtn.onclick= () => {
     searchBar.appendChild(input)
     searchBar.appendChild(searchButton)
 
+
     input.onkeyup = () => {
         const searchInput = input.value.toLowerCase();
         const searchItems = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
-
+        const noResults=document.getElementById("no-results")
         if (searchItems.length === 0){
-          const noResults=document.getElementById("no-results")
           noResults.innerText=("No Search Results")
 
         }
         else if (searchItems.length >=1){
           const noResults=document.getElementById("no-results")
           noResults.innerText=""
+          console.log(noResults)
         }
 
         
