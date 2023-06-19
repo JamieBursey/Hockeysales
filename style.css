@@ -153,9 +153,10 @@ pd {
     .searchBarDiv{
         margin-right: 5rem;
         background-size: cover;
-        background-position: center;
-        max-width: 40px;
-        
+        background-position: center;    
+    }
+    .SearchBar{
+        max-width: 100px;
     }
     
 }
@@ -386,7 +387,7 @@ max-width: 100px;
 
 /*about page*/
 
-/* .pie-container {
+.pie-container {
     margin-top: 100px;
     width: 400px;
     height: 400px;
@@ -434,7 +435,7 @@ max-width: 100px;
     100% {
         transform: rotateY(360deg);
     }
-} */
+} 
 
 /* .pie-container {
     margin-top: 100px;

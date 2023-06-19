@@ -132,7 +132,7 @@ priceBtn.onclick= () => {
         else if (searchItems.length >=1){
           const noResults=document.getElementById("no-results")
           noResults.innerText=""
-          console.log(noResults)
+          
         }
 
         
