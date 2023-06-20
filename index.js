@@ -189,8 +189,8 @@ const updateFilterItems = (filteredItems) => {
     const columnDiv = document.createElement("div")
     filteredContainer.appendChild(columnDiv)
     const itemDiv=document.createElement("div")
-    const wishListElement=document.createElement("div")
-    wishListElement.classList.add("addWish-Container")
+    const heartElementDiv=document.createElement("div")
+    heartElementDiv.classList.add("addWish-Container")
     const wishButton=document.createElement("Button")
     wishButton.classList.add("wishButton")
     wishButton.innerHTML="&#x2661"
@@ -198,8 +198,8 @@ const updateFilterItems = (filteredItems) => {
       wishButton.innerHTML = "&#x2665;"
       wishButton.style.color="red"
       wishButton.style.fontSize="30px"}  
-    wishListElement.appendChild(wishButton)
-    itemDiv.appendChild(wishListElement)
+    heartElementDiv.appendChild(wishButton)
+    itemDiv.appendChild(heartElementDiv)
     columnDiv.appendChild(itemDiv)
     itemDiv.classList.add("item")
     columnDiv.classList.add("items-column")
@@ -249,9 +249,8 @@ const updateFilterItems = (filteredItems) => {
             item.wishList=false
       }
       saveWishArray()
-      const wishListContainer = document.getElementById("wishList-Container");
-      wishListContainer.innerHTML = "";
-      wishListContainer.appendChild(wishHeader)
+
+      wishItemContainer.innerHTML = "";
       wishArray.forEach(item => {
         wishAdd(item);
         });
@@ -267,16 +266,16 @@ let wishArray=[]
       const columnDiv = document.createElement("div")
       itemsContainer.appendChild(columnDiv)
       const itemDiv=document.createElement("div")
-      const wishListElement=document.createElement("div")
-      wishListElement.classList.add("addWish-Container")
+      const heartElementDiv=document.createElement("div")
+      heartElementDiv.classList.add("addWish-Heart")
       const wishButton=document.createElement("Button")
       wishButton.innerHTML="&#x2661"
       if (item.wishList){
         wishButton.innerHTML = "&#x2665;"
         wishButton.style.color="red"
         wishButton.style.fontSize="30px"} 
-      wishListElement.appendChild(wishButton)
-      itemDiv.appendChild(wishListElement)
+      heartElementDiv.appendChild(wishButton)
+      itemDiv.appendChild(heartElementDiv)
       columnDiv.appendChild(itemDiv)
       itemDiv.classList.add("item")
       columnDiv.classList.add("items-column")
@@ -322,13 +321,15 @@ let wishArray=[]
             wishArray.splice(wishArray.indexOf(wishListedItem),1)
             wishButton.style=""
             wishButton.innerHTML="&#x2661"
-            item.wishList=false  
+            item.wishList=false 
+            wishItemContainer.innerHTML = "";
+
             mainItems()         
             }
           saveWishArray()
-          const wishListContainer = document.getElementById("wishList-Container");
-          wishListContainer.innerHTML = "";
-          wishListContainer.appendChild(wishHeader)
+          wishItemContainer.innerHTML = "";
+
+
           wishArray.forEach(Item => {
             wishAdd(Item);
             });
@@ -354,13 +355,16 @@ const getWishListFromLocalStorage = () => {
 
   const wishContainer= document.getElementById("wishList-Container")
   wishContainer.classList.add("wishDisplay")
+  const wishItemContainer=document.createElement("div")
+  wishItemContainer.classList.add("wish-Items")
   const wishHeader=document.createElement("div")
   const wishHeaderImg=document.createElement("img")
   wishHeaderImg.src="./images/wishHeader.png"
   wishHeaderImg.setAttribute("width", "70%")
   wishHeader.appendChild(wishHeaderImg)
-  wishHeader.classList.add("wish-title")
+  wishHeader.classList.add("wish-Header")
   wishContainer.appendChild(wishHeader)
+  wishContainer.appendChild(wishItemContainer)
   wishContainer.style.display="none"
 
 wishBtn.onclick=()=>{
@@ -374,12 +378,12 @@ const wishAdd=(item)=>{
     const itemLi=document.createElement("li")
     itemLi.classList.add("wishItem")
     itemLi.id=item.id
-    const wishListElement=document.createElement("div")
-    wishListElement.classList.add("RemoveWish-Container")
+    const heartElementDiv=document.createElement("div")
+    heartElementDiv.classList.add("RemoveWish-Container")
     const wishRemoveButton=document.createElement("Button")
     wishRemoveButton.innerHTML="&#8861"
-    wishListElement.appendChild(wishRemoveButton)
-    itemLi.appendChild(wishListElement)
+    heartElementDiv.appendChild(wishRemoveButton)
+    itemLi.appendChild(heartElementDiv)
     const brand = document.createElement("p")
     brand.innerHTML=`${item.brand}`
     const img = document.createElement("img");
@@ -406,10 +410,9 @@ const wishAdd=(item)=>{
     link.classList.add("no-underline")
     link.href = item.linkRef;
     link.appendChild(buyNow)
-    wishContainer.appendChild(wishHeader)
     buyNowElement.appendChild(link);
     itemLi.appendChild(buyNowElement);
-    wishContainer.appendChild(itemLi)
+    wishItemContainer.appendChild(itemLi)
     
       wishRemoveButton.onclick = () => {
         itemLi.remove()
