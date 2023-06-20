@@ -315,16 +315,15 @@ let wishArray=[]
             wishArray.push(item)
             saveWishArray(); 
             wishAdd(item)
-            mainItems(Items)
-            console.log(Items)
+            mainItems()
             }
           else {
             const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
             wishArray.splice(wishArray.indexOf(wishListedItem),1)
             wishButton.style=""
             wishButton.innerHTML="&#x2661"
-            item.wishList=false
-            mainItems(Items)            
+            item.wishList=false  
+            mainItems()         
             }
           saveWishArray()
           const wishListContainer = document.getElementById("wishList-Container");
