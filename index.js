@@ -261,7 +261,9 @@ const updateFilterItems = (filteredItems) => {
 let wishArray=[]
 
   const itemsContainer=document.getElementById("parent-container")
-    mainItems=()=> Items.map((item) => {
+    mainItems=()=> {
+      itemsContainer.innerHTML=""
+      Items.map((item) => {
       const columnDiv = document.createElement("div")
       itemsContainer.appendChild(columnDiv)
       const itemDiv=document.createElement("div")
@@ -313,7 +315,8 @@ let wishArray=[]
             wishArray.push(item)
             saveWishArray(); 
             wishAdd(item)
-            mainItems()
+            mainItems(Items)
+            console.log(Items)
             }
           else {
             const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
@@ -321,7 +324,7 @@ let wishArray=[]
             wishButton.style=""
             wishButton.innerHTML="&#x2661"
             item.wishList=false
-            mainItems()            
+            mainItems(Items)            
             }
           saveWishArray()
           const wishListContainer = document.getElementById("wishList-Container");
@@ -331,7 +334,7 @@ let wishArray=[]
             wishAdd(Item);
             });
         }
-  })
+  })}
 
 
 
@@ -424,7 +427,6 @@ const wishAdd=(item)=>{
           }
 
         saveWishArray()
-        console.log(wishRemoveButton)
       }
 }
  wishArray.forEach((item) => wishAdd(item))
