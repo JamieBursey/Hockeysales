@@ -269,6 +269,10 @@ let wishArray=[]
       wishListElement.classList.add("addWish-Container")
       const wishButton=document.createElement("Button")
       wishButton.innerHTML="&#x2661"
+      if (item.wishList){
+        wishButton.innerHTML = "&#x2665;"
+        wishButton.style.color="red"
+        wishButton.style.fontSize="30px"} 
       wishListElement.appendChild(wishButton)
       itemDiv.appendChild(wishListElement)
       columnDiv.appendChild(itemDiv)
@@ -305,18 +309,19 @@ let wishArray=[]
 
         wishButton.onclick=()=>{    
           if (!wishArray.find(wishListItem => wishListItem.id === item.id)){
+            item.wishList=true
             wishArray.push(item)
+            saveWishArray(); 
             wishAdd(item)
-            wishButton.innerHTML = "&#x2665;"
-            wishButton.style.color="red"
-            wishButton.style.fontSize="30px" 
+            mainItems()
             }
           else {
             const wishListedItem=wishArray.find(wishListItem => wishListItem.id === item.id)
             wishArray.splice(wishArray.indexOf(wishListedItem),1)
-                wishButton.style=""
-                wishButton.innerHTML="&#x2661" 
-                        
+            wishButton.style=""
+            wishButton.innerHTML="&#x2661"
+            item.wishList=false
+            mainItems()            
             }
           saveWishArray()
           const wishListContainer = document.getElementById("wishList-Container");
