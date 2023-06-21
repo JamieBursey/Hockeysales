@@ -388,11 +388,18 @@ max-width: 100px;
     margin-top:2rem
     
 }
-  
+
+
+.pages a {
+    color:#E9E6E6;
+    margin-right: 2rem;
+    text-decoration: none;
+}
+
 
 /*about page*/
 
-/* .pie-container {
+.pie-container {
     margin-top: 100px;
     width: 400px;
     height: 400px;
@@ -400,12 +407,12 @@ max-width: 100px;
     position: relative;
     transform-style: preserve-3d;
     animation: rotatePie 6s linear infinite;
+    margin-top: 100px;
 }
+
 
 .pie-container img {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -440,7 +447,7 @@ max-width: 100px;
     100% {
         transform: rotateY(360deg);
     }
-} */
+}
 
 /* .pie-container {
     margin-top: 100px;
