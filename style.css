@@ -23,8 +23,8 @@ p2 {
     }
 }
 
-@media (max-width:40rem){
-    .header{
+@media (max-width:40rem) {
+    .header {
         margin-bottom: 10px;
     }
 
@@ -37,18 +37,21 @@ pd {
     margin-right: 50%;
 
 }
-.about a{
-    float:left;
-    color:#E9E6E6;
+
+.about a {
+    float: left;
+    color: #E9E6E6;
     margin-right: 2rem;
     text-decoration: none;
 }
-.about .wish-Btn{
+
+.about .wish-Btn {
     position: relative;
     float: right;
     background-color: black;
-    color:white
+    color: white
 }
+
 .items {
     color: black;
     display: block;
@@ -102,24 +105,21 @@ pd {
 
 
 
-.item{
-    background-color:#E9E6E6;
+.item {
+    background-color: #E9E6E6;
     border-radius: .5rem;
-    box-sizing: 300px; 
+    box-sizing: 300px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 40px;
-    box-shadow:3px 3px 3px rgb(91, 89, 89);
+    box-shadow: 3px 3px 3px rgb(91, 89, 89);
 
 
 }
 
-.itemImg{
-    
-}
-.items-column {  
-    
+.items-column {
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,17 +129,41 @@ pd {
     overflow: hidden;
     padding-bottom: 5px;
 }
-.no-results{
-    color:red;
+
+.no-results {
+    color: red;
     margin-right: 5px;
 }
 
+.searchBar {
+    width: 150px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    color: white
+}
+
+.searchBar::placeholder {
+    color: #D9D9D9;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+.btn-search {
+    background-color: transparent;
+    color: white;
+}
+
+
+
 @media (Max-width:48rem) {
-    .items-column{
-       
-        padding:15px
+    .items-column {
+
+        padding: 15px
     }
-    .parentContainer{
+
+    .parentContainer {
         background-color: #D9D9D9;
         max-width: 100%;
         margin: auto;
@@ -148,21 +172,77 @@ pd {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
-        
+
     }
-    .searchBarDiv{
-        margin-right: 5rem;
-        background-size: cover;
-        background-position: center;    
+
+    .searchBarDiv {
+        left: 15%;
+        width: fit-content;
+        height: fit-content;
+        position: relative;
     }
-    .SearchBar{
-        max-width: 100px;
+
+    .searchBar {
+        height: 40px;
+        width: 10px;
+        border-style: none;
+        padding: 5px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        outline: none;
+        border-radius: 25px;
+        transition: all .5s ease-in-out;
+        background-color: #D9D9D9;
+        padding-right: 40px;
     }
-    
+
+    .searchBar::placeholder {
+        color: #D9D9D9;
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: 100;
+    }
+
+    .btn-search {
+        width: 50px;
+        height: 50px;
+        border-style: none;
+        font-size: 20px;
+        font-weight: bold;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        right: 0px;
+        color: #ffffff;
+        background-color: transparent;
+        pointer-events: painted;
+    }
+
+    .btn-search:focus~.searchBar {
+        width: 100px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+        color: white;
+    }
+
+    .searchBar:focus {
+        width: 300px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, .5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+        color: white
+    }
+
+
+
 }
 
 .buyBtn {
-    background-color:#A90B0B;
+    background-color: #A90B0B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,20 +250,21 @@ pd {
     max-height: 2rem;
     border-radius: 5rem;
     margin-bottom: .5rem;
-  }
+}
 
-.no-underline{
+.no-underline {
     text-decoration: none;
 }
-.all-buttons{
+
+.all-buttons {
     background-color: black;
     position: relative;
     margin-top: 15px;
     align-items: baseline
-    
 }
-.buyNowFont{
-    color:white;
+
+.buyNowFont {
+    color: white;
     font-size: 15px;
 
 }
@@ -215,32 +296,29 @@ pd {
     margin-right: 10%;
 }
 
-.search-filter{
+.search-filter {
     display: flex;
-    float:right;
+    float: right;
 }
 
-.searchBarDiv{
+.searchBarDiv {
     margin-right: 5rem;
     background-size: cover;
     background-position: center;
     max-width: fit-content;
 }
 
-.searchBar{
-max-width: 100px;
+.filter-btn {
+    position: relative;
+    background-color: black;
+    float: right;
+    margin-right: 2rem;
+    color: white;
+    border-radius: 1rem;
 
 }
-.filter-btn{
-    position:relative;
-    background-color: black;
-    float:right;
-    margin-right: 2rem;
-    color:white;
-    border-radius: 1rem;
-    
-}
-.addWish-Heart{
+
+.addWish-Heart {
     position: flex;
     align-items: center;
     justify-content: flex-end;
@@ -249,149 +327,151 @@ max-width: 100px;
 
 
 }
-.RemoveWish-Container{
+
+.RemoveWish-Container {
     position: flex;
     justify-content: flex-end;
     margin-left: 80%;
     margin-top: 5px;
 
 }
-.wish-Header{
-    position:relative;
+
+.wish-Header {
+    position: relative;
     font-size: large;
-    width:90%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5px;
     display: block;
 
-    
+
 }
-.wish-Items{
+
+.wish-Items {
     background-color: red;
 }
-.wishDisplay{
-    position:relative;
-    background-color:#D9D9D9;;
+
+.wishDisplay {
+    position: relative;
+    background-color: #D9D9D9;
+    ;
     width: 90%;
     height: 500px;
     margin-top: 25px;
     margin-right: 1rem;
     overflow: scroll;
-    display:block;
+    display: block;
     flex-wrap: wrap;
     z-index: 1;
-    
+
 
 }
-.wishItem{
+
+.wishItem {
     position: relative;
     color: black;
-    background-color:#E9E6E6;
+    background-color: #E9E6E6;
     border-radius: .5rem;
     box-sizing: 300px;
-    width:80%; 
+    width: 80%;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     margin-right: 5px;
-    margin-top:5px;
-    box-shadow:3px 3px 3px rgb(91, 89, 89);
+    margin-top: 5px;
+    box-shadow: 3px 3px 3px rgb(91, 89, 89);
 }
 
-.item-button{
-    margin-top:.5rem;
+.item-button {
+    margin-top: .5rem;
     margin-right: 5px;
     list-style-type: none;
-    cursor:pointer;
+    cursor: pointer;
 }
-.button-container{
-    color:black;
-    background-color:#E9E6E6;
+
+.button-container {
+    color: black;
+    background-color: #E9E6E6;
     position: absolute;
     width: 100px;
     overflow: auto;
     margin-left: 10px;
-    margin-top:2rem;
+    margin-top: 2rem;
 
 }
 
-@media (max-width:48rem){
-    .search-filter{
-    display:contents;
-    align-items: center;
+@media (max-width:48rem) {
+    .search-filter {
+        display: contents;
+        align-items: center;
 
-       
+
     }
-    .searchBar{
-  
-    }
-    .searchBarDiv{
-        margin-left:25%;
+
+    .searchBarDiv {
+        margin-left: 25%;
         margin-right: 25%;
 
-   
+
     }
-    .filter-btn{
-        margin-right:1rem;
+
+    .filter-btn {
+        margin-right: 1rem;
     }
-    .sortBtn{
+
+    .sortBtn {
         margin-left: 1rem;
     }
 }
-    .button-container{
-        color:black;
-        background-color:#E9E6E6;
-        position: absolute;
-        width: 100px;
-        overflow: auto;
-        margin-left: 10px;
-        margin-right:30px;
-        margin-top:2rem;
-        right:0
-    
 
-    }
-    .filter-container{
+.button-container {
+    color: black;
+    background-color: #E9E6E6;
+    position: absolute;
+    width: 100px;
+    overflow: auto;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-top: 2rem;
+    right: 0
+}
 
-    }
-
-
-
-.sortPriceBtn{
-    position:relative;
-    float:left;
+.sortPriceBtn {
+    position: relative;
+    float: left;
     margin-left: 1rem;
 }
-.sortBtn{
+
+.sortBtn {
     background-color: black;
-    color:white;
+    color: white;
     border-radius: .5rem;
 }
 
-.sortHigh{
-    margin-top:.5rem;
+.sortHigh {
+    margin-top: .5rem;
     margin-right: 5px;
     list-style-type: none;
-    cursor:pointer;
+    cursor: pointer;
 
 }
-.pricelist{
-    color:black;
-    background-color:#E9E6E6;
+
+.pricelist {
+    color: black;
+    background-color: #E9E6E6;
     position: absolute;
     max-width: 100px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     margin-left: 10px;
-    margin-top:2rem
-    
+    margin-top: 2rem
 }
 
 
 .pages a {
-    color:#E9E6E6;
+    color: #E9E6E6;
     margin-right: 2rem;
     text-decoration: none;
 }
@@ -444,6 +524,7 @@ max-width: 100px;
     0% {
         transform: rotateY(0deg);
     }
+
     100% {
         transform: rotateY(360deg);
     }
