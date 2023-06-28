@@ -120,11 +120,11 @@ searchBar.appendChild(searchButton)
 searchButton.appendChild(searchIcon)
 searchBar.appendChild(input)
 
-
+let searchItems = Items
 
 input.onkeyup = () => {
   const searchInput = input.value.toLowerCase();
-  const searchItems = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
+  searchItems = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
   const noResults = document.getElementById("no-results")
   if (searchItems.length === 0) {
     noResults.innerText = ("No Search Results")
@@ -135,8 +135,6 @@ input.onkeyup = () => {
     noResults.innerText = ""
 
   }
-
-
   updateFilterItems(searchItems);
 
 };
@@ -185,7 +183,6 @@ const itemsContainer = document.getElementById("parent-container")
 const updateFilterItems = (filteredItems) => {
 
   while (itemsContainer.hasChildNodes()) { itemsContainer.removeChild(itemsContainer.firstChild) }
-  console.log(filteredArray)
   filteredItems.map((item) => {
     const columnDiv = document.createElement("div")
     itemsContainer.appendChild(columnDiv)
@@ -234,8 +231,15 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(buyNowElement);
 
     wishButton.onclick = () => {
+      if (searchItems.length >= 1) {
+        item.wishList = true
+        wishArray.push(item)
+        saveWishArray();
+        wishAdd(item)
+        updateFilterItems(searchItems)
+      }
 
-      if (!wishArray.find(wishListItem => wishListItem.id === item.id)) {
+      else if (!wishArray.find(wishListItem => wishListItem.id === item.id)) {
         item.wishList = true
         wishArray.push(item)
         saveWishArray();
