@@ -181,9 +181,9 @@ const innerFilterButtons = buttonTitles.map((buttonName) => {
 const filterMyItems = (type) => {
   filteredArray = Items.filter(item => item.type === type)
 }
-
+const itemsContainer = document.getElementById("parent-container")
 const updateFilterItems = (filteredItems) => {
-  const itemsContainer = document.getElementById("parent-container")
+
   while (itemsContainer.hasChildNodes()) { itemsContainer.removeChild(itemsContainer.firstChild) }
   console.log(filteredArray)
   filteredItems.map((item) => {
@@ -343,7 +343,7 @@ const wishAdd = (item) => {
     if (itemsContainer.querySelector = "grid") {
       item.wishList = false
       itemsContainer.innerHTML = ""
-      updateFilterItems(filteredArray)
+      updateFilterItems(Items)
     }
 
     saveWishArray()
