@@ -231,20 +231,16 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(buyNowElement);
 
     wishButton.onclick = () => {
-      if (searchItems.length >= 1) {
-        item.wishList = true
-        wishArray.push(item)
-        saveWishArray();
-        wishAdd(item)
-        updateFilterItems(searchItems)
-      }
 
-      else if (!wishArray.find(wishListItem => wishListItem.id === item.id)) {
+      if (!wishArray.find(wishListItem => wishListItem.id === item.id)) {
         item.wishList = true
         wishArray.push(item)
         saveWishArray();
         wishAdd(item)
         updateFilterItems(filteredArray)
+        if (searchItems.length >= 1) {
+          updateFilterItems(searchItems)
+        }
       }
       else {
         const wishListedItem = wishArray.find(wishListItem => wishListItem.id === item.id)
@@ -348,6 +344,9 @@ const wishAdd = (item) => {
       item.wishList = false
       itemsContainer.innerHTML = ""
       updateFilterItems(Items)
+      if (searchItems.length >= 1) {
+        updateFilterItems(searchItems)
+      }
     }
 
     saveWishArray()
