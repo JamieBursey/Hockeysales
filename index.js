@@ -124,18 +124,18 @@ let searchItems = Items
 
 input.onkeyup = () => {
   const searchInput = input.value.toLowerCase();
-  searchItems = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
+  filteredArray = Items.filter((item) => (item.type + item.brand + item.style + item.size).toLowerCase().includes(searchInput))
   const noResults = document.getElementById("no-results")
-  if (searchItems.length === 0) {
+  if (filteredArray.length === 0) {
     noResults.innerText = ("No Search Results")
 
   }
-  else if (searchItems.length >= 1) {
+  else if (filteredArray.length >= 1) {
     const noResults = document.getElementById("no-results")
     noResults.innerText = ""
 
   }
-  updateFilterItems(searchItems);
+  updateFilterItems(filteredArray);
 
 };
 
@@ -238,9 +238,7 @@ const updateFilterItems = (filteredItems) => {
         saveWishArray();
         wishAdd(item)
         updateFilterItems(filteredArray)
-        if (searchItems.length >= 1) {
-          updateFilterItems(searchItems)
-        }
+
       }
       else {
         const wishListedItem = wishArray.find(wishListItem => wishListItem.id === item.id)
@@ -344,9 +342,7 @@ const wishAdd = (item) => {
       item.wishList = false
       itemsContainer.innerHTML = ""
       updateFilterItems(Items)
-      if (searchItems.length >= 1) {
-        updateFilterItems(searchItems)
-      }
+
     }
 
     saveWishArray()
