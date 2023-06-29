@@ -58,7 +58,6 @@ pd {
     margin-left: auto;
     margin-right: auto;
     width: auto;
-
 }
 
 .header {
@@ -108,7 +107,7 @@ pd {
 .item {
     background-color: #E9E6E6;
     border-radius: .5rem;
-    box-sizing: 300px;
+    height: 95%;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -349,9 +348,7 @@ pd {
 
 }
 
-.wish-Items {
-    background-color: red;
-}
+.wish-Items {}
 
 .wishDisplay {
     position: relative;

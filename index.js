@@ -188,7 +188,7 @@ const updateFilterItems = (filteredItems) => {
     itemsContainer.appendChild(columnDiv)
     const itemDiv = document.createElement("div")
     const heartElementDiv = document.createElement("div")
-    heartElementDiv.classList.add("addWish-Container")
+    heartElementDiv.classList.add("addWish-Heart")
     const wishButton = document.createElement("Button")
     wishButton.classList.add("wishButton")
     wishButton.innerHTML = "&#x2661"
@@ -341,7 +341,7 @@ const wishAdd = (item) => {
     if (itemsContainer.querySelector = "grid") {
       item.wishList = false
       itemsContainer.innerHTML = ""
-      updateFilterItems(Items)
+      updateFilterItems(filteredArray)
 
     }
 
