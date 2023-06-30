@@ -36,6 +36,24 @@ Items.forEach((item, index) => {
   item.wishList = false
 })
 
+const loginContainer = document.getElementById("login-container")
+const loginForm = document.getElementById("login-form")
+const InputUserName = document.createElement("input")
+InputUserName.type = "text"
+InputUserName.placeholder = "UserName"
+const InputPassword = document.createElement("input")
+InputPassword.type = "password"
+InputPassword.placeholder = "Password"
+const logInButton = document.createElement("button")
+logInButton.innerHTML = "Sign In"
+
+loginForm.appendChild(InputUserName)
+loginForm.appendChild(InputPassword)
+loginForm.appendChild(logInButton)
+
+logInButton.onclick = () => {
+
+}
 
 const priceBtnElement = document.getElementById("sort-price");
 const priceBtn = document.createElement("button");
@@ -269,6 +287,7 @@ const getWishListFromLocalStorage = () => {
     wishArray = JSON.parse(storedWishList);
   }
 }
+
 const wishBtn = document.getElementById("wish-Btn")
 wishBtn.innerHTML = "Wish List"
 
@@ -348,7 +367,8 @@ const wishAdd = (item) => {
     saveWishArray()
   }
 }
+getWishListFromLocalStorage()
 wishArray.forEach((item) => wishAdd(item))
 //first load     
 updateFilterItems(Items)
-getWishListFromLocalStorage()
+
