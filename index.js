@@ -262,8 +262,10 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(brand)
     itemDiv.appendChild(img);
     itemStyle.innerHTML = `${item.style}`
+    itemStyle.classList.add("item-style")
     const itemSize = document.createElement("p")
     itemSize.innerHTML = `${item.size}`
+    itemSize.classList.add("item-size")
     itemDiv.appendChild(itemDetails)
     itemDetails.appendChild(itemStyle)
     itemDetails.appendChild(itemSize)

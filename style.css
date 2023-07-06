@@ -136,6 +136,11 @@ pd {
     text-decoration: line-through;
 }
 
+.brand-font {
+    margin-top: 0px;
+    font-weight: bolder;
+}
+
 .price-font {
     float: right;
     color: red;
@@ -240,12 +245,12 @@ pd {
         outline: none;
         border-radius: 25px;
         transition: all .5s ease-in-out;
-        background-color: #D9D9D9;
+        background-color: black;
         padding-right: 40px;
     }
 
     .searchBar::placeholder {
-        color: #D9D9D9;
+        color: white;
         font-size: 18px;
         letter-spacing: 2px;
         font-weight: 100;
@@ -263,7 +268,7 @@ pd {
         position: absolute;
         right: 0px;
         color: #ffffff;
-        background-color: transparent;
+        background-color: black;
         pointer-events: painted;
     }
 
@@ -285,7 +290,6 @@ pd {
         transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
         color: white
     }
-
 
 
 }
