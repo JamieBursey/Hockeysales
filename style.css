@@ -48,6 +48,13 @@ pd {
     text-decoration: none;
 }
 
+.login-btn {
+    color: white;
+    background-color: black;
+    float: right;
+    margin-left: .5rem
+}
+
 .about .wish-Btn {
     position: relative;
     float: right;
@@ -111,6 +118,7 @@ pd {
     background-color: #E9E6E6;
     border-radius: .5rem;
     height: 95%;
+    width: 95%;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -118,6 +126,19 @@ pd {
     box-shadow: 3px 3px 3px rgb(91, 89, 89);
 
 
+}
+
+.priceDiv {}
+
+.full-price {
+    float: left;
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+.price-font {
+    float: right;
+    color: red;
 }
 
 .items-column {
@@ -163,6 +184,32 @@ pd {
     .items-column {
 
         padding: 15px
+    }
+
+    .priceDiv {}
+
+    .price-font {
+        margin-top: -10px;
+        float: right;
+    }
+
+    .brand-font {
+        margin-top: 0px;
+        font-weight: bolder;
+    }
+
+    .item {
+        background-color: #E9E6E6;
+        border-radius: .5rem;
+        height: 95%;
+        width: 80%;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        box-shadow: 3px 3px 3px rgb(91, 89, 89);
+
+
     }
 
     .parentContainer {
@@ -447,7 +494,7 @@ pd {
 .sortBtn {
     background-color: black;
     color: white;
-    border-radius: .5rem;
+    border-radius: 1rem;
 }
 
 .sortHigh {
