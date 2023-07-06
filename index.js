@@ -258,6 +258,7 @@ const updateFilterItems = (filteredItems) => {
     img.src = item.imageUrl;
 
     const itemDetails = document.createElement("div")
+    itemDetails.classList.add("item-details")
     const itemStyle = document.createElement("p")
     itemDiv.appendChild(brand)
     itemDiv.appendChild(img);

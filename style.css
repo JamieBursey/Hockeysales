@@ -146,6 +146,17 @@ pd {
     color: red;
 }
 
+.item-style {
+    margin-top: 5px;
+}
+
+.item-size {
+    margin-top: 0px;
+    text-decoration: underline;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
 .items-column {
 
     display: flex;
@@ -201,6 +212,18 @@ pd {
         margin-top: 0px;
         font-weight: bolder;
     }
+
+    .item-style {
+        margin-top: 5px;
+    }
+
+    .item-size {
+        margin-top: 0px;
+        text-decoration: underline;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
 
     .item {
         background-color: #E9E6E6;
