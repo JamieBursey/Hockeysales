@@ -257,10 +257,18 @@ const updateFilterItems = (filteredItems) => {
     img.setAttribute("height", "40%");
     img.src = item.imageUrl;
 
-    const itemDetails = document.createElement("p")
+    const itemDetails = document.createElement("div")
+    const itemStyle = document.createElement("p")
     itemDiv.appendChild(brand)
     itemDiv.appendChild(img);
-    itemDetails.innerHTML = `${item.style}<br>${item.size}`
+    itemStyle.innerHTML = `${item.style}`
+    const itemSize = document.createElement("p")
+    itemSize.innerHTML = `${item.size}`
+    itemDiv.appendChild(itemDetails)
+    itemDetails.appendChild(itemStyle)
+    itemDetails.appendChild(itemSize)
+
+
     const priceDiv = document.createElement("div")
     priceDiv.classList.add("priceDiv")
     const prices = document.createElement("p")
@@ -272,7 +280,6 @@ const updateFilterItems = (filteredItems) => {
     prices.classList.add("price-font")
     itemDiv.appendChild(priceDiv)
     priceDiv.appendChild(prices)
-    itemDiv.appendChild(itemDetails)
     const buyNowElement = document.createElement("div")
     buyNowElement.classList.add("buyBtn")
     const buyNow = document.createElement("p")
@@ -365,19 +372,25 @@ const wishAdd = (item) => {
   brand.innerHTML = `${item.brand}`
   const img = document.createElement("img");
   img.src = item.imageUrl
-  img.setAttribute("width", "10%");
-  img.setAttribute("height", "5%");
+  img.setAttribute("width", "25%");
+  img.setAttribute("height", "25%");
   img.classList.add("Item-Images")
 
-  const itemDetails = document.createElement("p")
+  const itemStyle = document.createElement("p")
   itemLi.appendChild(brand)
   itemLi.appendChild(img);
-  itemDetails.innerHTML = `${item.style}<br>${item.size}`
+  itemStyle.innerHTML = `${item.style}<br>${item.size}`
+  const priceDiv = document.createElement("div")
+  priceDiv.classList.add("priceDiv")
   const prices = document.createElement("p")
+  const fullPrice = document.createElement("p")
+  fullPrice.innerHTML = `$${item.fullPrice}`
+  fullPrice.classList.add("full-price")
+  priceDiv.appendChild(fullPrice)
   prices.innerHTML = `$${item.price}`
   prices.classList.add("price-font")
-  itemLi.appendChild(itemDetails)
-  itemLi.appendChild(prices)
+  itemLi.appendChild(priceDiv)
+  priceDiv.appendChild(prices)
   const buyNowElement = document.createElement("div")
   buyNowElement.classList.add("buyBtn")
   const buyNow = document.createElement("p")
