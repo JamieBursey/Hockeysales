@@ -48,11 +48,25 @@ pd {
     text-decoration: none;
 }
 
+.login-container {}
+
 .login-btn {
     color: white;
     background-color: black;
     float: right;
     margin-left: .5rem
+}
+
+.register {
+    float: right;
+    margin-right: 30%;
+    margin-bottom: 10px;
+
+}
+
+.login {
+    margin-left: 30%;
+    margin-bottom: 10px;
 }
 
 .about .wish-Btn {

@@ -65,10 +65,11 @@ logInButton.onclick = () => {
   if (InputUserName.value in userData) {
     if (userData[InputUserName.value] === InputPassword.value) {
       console.log("login")
-    } else { console.log("incorrect password") }
-  } else { console.log("incorrect username") }
+    } else { alert("incorrect password") }
+  } else { alert("incorrect username") }
 }
 const registerContainer = document.getElementById("register-form")
+registerContainer.style.display = "none"
 const registerUserName = document.createElement("input")
 registerUserName.type = "text"
 registerUserName.placeholder = "Create User Name"
@@ -81,8 +82,39 @@ const registerBtn = document.createElement("button")
 registerBtn.innerHTML = "Register"
 registerContainer.appendChild(registerBtn)
 registerBtn.onclick = () => {
-
+  if (registerUserName.value && registerPassword.value) {
+    userData[registerUserName.value] = registerPassword.value
+    console.log("success")
+    console.log(userData)
+  }
+  else { console.log("fail") }
 }
+
+const loginRegister = document.getElementById("login-register")
+const loginDisplayBtn = document.createElement("button")
+loginDisplayBtn.classList.add("login")
+loginDisplayBtn.innerHTML = "Sign In"
+loginRegister.appendChild(loginDisplayBtn)
+const registerDisplay = document.getElementById("register-display")
+const registerDisplayBtn = document.createElement("button")
+registerDisplayBtn.innerHTML = "Register"
+registerDisplayBtn.classList.add("register")
+loginRegister.appendChild(registerDisplayBtn)
+
+registerDisplayBtn.onclick = () => {
+  if (registerContainer.style.display === "none") {
+    registerContainer.style.display = "block"
+    loginForm.style.display = "none"
+  }
+  else { registerContainer.style.display = "none" }
+}
+loginDisplayBtn.onclick = () => {
+  if (loginForm.style.display === "none") {
+    loginForm.style.display = "block"
+    registerContainer.style.display = "none"
+  }
+}
+
 
 const priceBtnElement = document.getElementById("sort-price");
 const priceBtn = document.createElement("button");
@@ -379,10 +411,23 @@ const wishAdd = (item) => {
   img.setAttribute("height", "25%");
   img.classList.add("Item-Images")
 
+
+  itemLi.appendChild(brand)
+  itemLi.appendChild(img);
+  const itemDetails = document.createElement("div")
+  itemDetails.classList.add("item-details")
   const itemStyle = document.createElement("p")
   itemLi.appendChild(brand)
   itemLi.appendChild(img);
-  itemStyle.innerHTML = `${item.style}<br>${item.size}`
+  itemStyle.innerHTML = `${item.style}`
+  itemStyle.classList.add("item-style")
+  const itemSize = document.createElement("p")
+  itemSize.innerHTML = `${item.size}`
+  itemSize.classList.add("item-size")
+  itemLi.appendChild(itemDetails)
+  itemDetails.appendChild(itemStyle)
+  itemDetails.appendChild(itemSize)
+
   const priceDiv = document.createElement("div")
   priceDiv.classList.add("priceDiv")
   const prices = document.createElement("p")
