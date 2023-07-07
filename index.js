@@ -36,7 +36,15 @@ Items.forEach((item, index) => {
   item.wishList = false
 })
 
-const userData = { Jamie: "testpassword" }
+const saveAccounts = () => { localStorage.setItem("saveAccounts", JSON.stringify(registeredAccounts)); }
+const retrieveAccounts = () => {
+  const getAccounts = localStorage.getItem("saveAccounts")
+  if (getAccounts) {
+    registeredAccounts = JSON.parse(getAccounts)
+  }
+}
+
+let registeredAccounts = {}
 const loginBtn = document.getElementById("login-btn")
 loginBtn.classList.add("login-btn")
 loginBtn.onclick = () => {
@@ -62,8 +70,8 @@ loginForm.appendChild(InputPassword)
 loginForm.appendChild(logInButton)
 loginContainer.style.display = "none"
 logInButton.onclick = () => {
-  if (InputUserName.value in userData) {
-    if (userData[InputUserName.value] === InputPassword.value) {
+  if (InputUserName.value in registeredAccounts) {
+    if (registeredAccounts[InputUserName.value] === InputPassword.value) {
       console.log("login")
     } else { alert("incorrect password") }
   } else { alert("incorrect username") }
@@ -83,9 +91,10 @@ registerBtn.innerHTML = "Register"
 registerContainer.appendChild(registerBtn)
 registerBtn.onclick = () => {
   if (registerUserName.value && registerPassword.value) {
-    userData[registerUserName.value] = registerPassword.value
+    registeredAccounts[registerUserName.value] = registerPassword.value
+    saveAccounts()
     console.log("success")
-    console.log(userData)
+    console.log(registeredAccounts)
   }
   else { console.log("fail") }
 }
@@ -469,4 +478,6 @@ getWishListFromLocalStorage()
 wishArray.forEach((item) => wishAdd(item))
 //first load     
 updateFilterItems(Items)
+retrieveAccounts(registeredAccounts)
+
 
