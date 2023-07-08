@@ -100,16 +100,39 @@ pd {
     border-radius: 4px;
     transition: background-color 0.3s ease;
     cursor: pointer;
+    animation: pulsate 1.5s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
 }
 
-.signInBtn:hover {
-    background-color: blue;
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
-.signInBtn:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #FF4500;
+.signInBtn:before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(45deg, #FF6347, #00FFFF, #f0e9e7, purple);
+    background-size: 400% 400%;
+    animation: gradient-border 10s ease infinite;
+    border-radius: 6px;
 }
+
 
 .login-btn {
     color: white;
