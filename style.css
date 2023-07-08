@@ -48,7 +48,37 @@ pd {
     text-decoration: none;
 }
 
-.login-container {}
+.login-container {
+    background-color: red;
+}
+
+.placeholder-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-user {
+    width: 70px;
+    height: 20px;
+
+
+}
+
+.login-password {
+    width: 70px;
+    height: 20px;
+
+
+}
+
+.loginBtnDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInBtn {}
 
 .login-btn {
     color: white;

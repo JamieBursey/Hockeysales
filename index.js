@@ -59,15 +59,21 @@ const loginForm = document.getElementById("login-form")
 const InputUserName = document.createElement("input")
 InputUserName.type = "text"
 InputUserName.placeholder = "UserName"
+InputUserName.classList.add("input-user")
 const InputPassword = document.createElement("input")
 InputPassword.type = "password"
 InputPassword.placeholder = "Password"
+InputPassword.classList.add("login-password")
+const logInButtonDiv = document.createElement("div")
 const logInButton = document.createElement("button")
+logInButtonDiv.classList.add("loginBtnDiv")
 logInButton.innerHTML = "Sign In"
+logInButton.classList.add("signInBtn")
+logInButtonDiv.appendChild(logInButton)
 
 loginForm.appendChild(InputUserName)
 loginForm.appendChild(InputPassword)
-loginForm.appendChild(logInButton)
+loginContainer.appendChild(logInButtonDiv)
 loginContainer.style.display = "none"
 logInButton.onclick = () => {
   if (InputUserName.value in registeredAccounts) {
@@ -112,14 +118,14 @@ loginRegister.appendChild(registerDisplayBtn)
 
 registerDisplayBtn.onclick = () => {
   if (registerContainer.style.display === "none") {
-    registerContainer.style.display = "block"
+    registerContainer.style.display = "flex"
     loginForm.style.display = "none"
   }
   else { registerContainer.style.display = "none" }
 }
 loginDisplayBtn.onclick = () => {
   if (loginForm.style.display === "none") {
-    loginForm.style.display = "block"
+    loginForm.style.display = "flex"
     registerContainer.style.display = "none"
   }
 }
