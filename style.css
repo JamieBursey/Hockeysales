@@ -50,35 +50,66 @@ pd {
 
 .login-container {
     background-color: red;
+    width: 70%;
+    height: 10rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .placeholder-div {
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 2rem;
 }
 
 .input-user {
-    width: 70px;
-    height: 20px;
+    border: none;
+    width: 5rem;
+    height: 1rem;
+    border-radius: .5rem;
+    border-color: white;
+    box-shadow: #A90B0B;
+
 
 
 }
 
 .login-password {
-    width: 70px;
-    height: 20px;
-
-
+    border: none;
+    width: 5rem;
+    height: 1rem;
+    margin-left: .5rem;
 }
 
 .loginBtnDiv {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
 }
 
-.signInBtn {}
+.signInBtn {
+    display: inline-block;
+    border: none;
+    background-color: #FF4500;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.signInBtn:hover {
+    background-color: blue;
+}
+
+.signInBtn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #FF4500;
+}
 
 .login-btn {
     color: white;
@@ -87,17 +118,17 @@ pd {
     margin-left: .5rem
 }
 
+.login-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .register {
-    float: right;
-    margin-right: 30%;
-    margin-bottom: 10px;
-
+    margin-left: .2rem;
 }
 
-.login {
-    margin-left: 30%;
-    margin-bottom: 10px;
-}
+.login {}
 
 .about .wish-Btn {
     position: relative;
