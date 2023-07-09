@@ -59,23 +59,23 @@ const loginForm = document.getElementById("login-form")
 const InputUserName = document.createElement("input")
 InputUserName.type = "text"
 InputUserName.placeholder = "UserName"
-InputUserName.classList.add("input-user")
+InputUserName.classList.add("userName-password")
 const InputPassword = document.createElement("input")
 InputPassword.type = "password"
 InputPassword.placeholder = "Password"
-InputPassword.classList.add("login-password")
+InputPassword.classList.add("userName-password")
 const logInButtonDiv = document.createElement("div")
-const logInButton = document.createElement("button")
+const signInButton = document.createElement("button")
 logInButtonDiv.classList.add("loginBtnDiv")
-logInButton.innerHTML = "Sign In"
-logInButton.classList.add("signInBtn")
-logInButtonDiv.appendChild(logInButton)
+signInButton.innerHTML = "Sign In"
+signInButton.classList.add("signInBtn")
+logInButtonDiv.appendChild(signInButton)
 
 loginForm.appendChild(InputUserName)
 loginForm.appendChild(InputPassword)
 loginContainer.appendChild(logInButtonDiv)
 loginContainer.style.display = "none"
-logInButton.onclick = () => {
+signInButton.onclick = () => {
   if (InputUserName.value in registeredAccounts) {
     if (registeredAccounts[InputUserName.value] === InputPassword.value) {
       console.log("login")
@@ -87,15 +87,21 @@ registerContainer.style.display = "none"
 const registerUserName = document.createElement("input")
 registerUserName.type = "text"
 registerUserName.placeholder = "Create User Name"
+registerUserName.classList.add("userName-password")
 registerContainer.appendChild(registerUserName)
 const registerPassword = document.createElement("input")
 registerPassword.type = "password"
 registerPassword.placeholder = "Create Password"
+registerPassword.classList.add("userName-password")
 registerContainer.appendChild(registerPassword)
-const registerBtn = document.createElement("button")
-registerBtn.innerHTML = "Register"
-registerContainer.appendChild(registerBtn)
-registerBtn.onclick = () => {
+const registerBtnDiv = document.createElement("div")
+const submitRegisterBtn = document.createElement("button")
+submitRegisterBtn.innerHTML = "Register"
+submitRegisterBtn.classList.add("signInBtn")
+submitRegisterBtn.style.display = "none"
+logInButtonDiv.appendChild(registerBtnDiv)
+registerBtnDiv.appendChild(submitRegisterBtn)
+submitRegisterBtn.onclick = () => {
   if (registerUserName.value && registerPassword.value) {
     registeredAccounts[registerUserName.value] = registerPassword.value
     saveAccounts()
@@ -113,13 +119,15 @@ loginRegister.appendChild(loginDisplayBtn)
 const registerDisplay = document.getElementById("register-display")
 const registerDisplayBtn = document.createElement("button")
 registerDisplayBtn.innerHTML = "Register"
-registerDisplayBtn.classList.add("register")
+registerDisplayBtn.classList.add("register-display")
 loginRegister.appendChild(registerDisplayBtn)
 
 registerDisplayBtn.onclick = () => {
   if (registerContainer.style.display === "none") {
     registerContainer.style.display = "flex"
     loginForm.style.display = "none"
+    signInButton.style.display = "none"
+    submitRegisterBtn.style.display = "flex"
   }
   else { registerContainer.style.display = "none" }
 }

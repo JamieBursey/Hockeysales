@@ -62,7 +62,7 @@ pd {
     margin-top: 2rem;
 }
 
-.input-user {
+.userName-password {
     border: none;
     width: 5rem;
     height: 1rem;
@@ -74,12 +74,6 @@ pd {
 
 }
 
-.login-password {
-    border: none;
-    width: 5rem;
-    height: 1rem;
-    margin-left: .5rem;
-}
 
 .loginBtnDiv {
     display: flex;
@@ -157,7 +151,8 @@ pd {
     position: relative;
     float: right;
     background-color: black;
-    color: white
+    color: white;
+    width: 4.5rem
 }
 
 .items {
