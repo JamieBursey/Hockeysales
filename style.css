@@ -44,8 +44,9 @@ pd {
 .about a {
     float: left;
     color: #E9E6E6;
-    margin-right: 2rem;
+    margin-right: 1rem;
     text-decoration: none;
+    margin-right: .5rem;
 }
 
 .login-container {
