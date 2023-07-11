@@ -45,6 +45,8 @@ const retrieveAccounts = () => {
 }
 
 let registeredAccounts = {}
+let wishArray = {}
+
 const loginBtn = document.getElementById("login-btn")
 loginBtn.classList.add("login-btn")
 loginBtn.onclick = () => {
@@ -78,9 +80,14 @@ loginContainer.style.display = "none"
 signInButton.onclick = () => {
   if (InputUserName.value in registeredAccounts) {
     if (registeredAccounts[InputUserName.value] === InputPassword.value) {
-      console.log("login")
+      console.log("login");
+      const userWishList = wishArray[InputUserName.value];
+      userWishList.forEach((item) => {
+        wishAdd(item);
+      });
     } else { alert("incorrect password") }
   } else { alert("incorrect username") }
+  console.log(wishArray)
 }
 const registerContainer = document.getElementById("register-form")
 registerContainer.style.display = "none"
@@ -113,7 +120,7 @@ submitRegisterBtn.onclick = () => {
 
 const loginRegister = document.getElementById("login-register")
 const loginDisplayBtn = document.createElement("button")
-loginDisplayBtn.classList.add("login")
+loginDisplayBtn.classList.add("loginDisplay")
 loginDisplayBtn.innerHTML = "Sign In"
 loginRegister.appendChild(loginDisplayBtn)
 const registerDisplay = document.getElementById("register-display")
@@ -135,6 +142,8 @@ loginDisplayBtn.onclick = () => {
   if (loginForm.style.display === "none") {
     loginForm.style.display = "flex"
     registerContainer.style.display = "none"
+    submitRegisterBtn.style.display = "none"
+    signInButton.style.display = "flex"
   }
 }
 
@@ -377,7 +386,6 @@ const updateFilterItems = (filteredItems) => {
   })
 }
 
-let wishArray = []
 
 const saveWishArray = () => {
   localStorage.setItem("wishList", JSON.stringify(wishArray));
