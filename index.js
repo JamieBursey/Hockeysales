@@ -44,9 +44,14 @@ const retrieveAccounts = () => {
   }
 }
 
-let registeredAccounts = {}
-let wishArray = {}
+let registeredAccounts = {
+  userID: {
+    userName: "",
+    wishlist: []
 
+  }
+}
+let wishArray = []
 const loginBtn = document.getElementById("login-btn")
 loginBtn.classList.add("login-btn")
 loginBtn.onclick = () => {
@@ -81,14 +86,20 @@ signInButton.onclick = () => {
   if (InputUserName.value in registeredAccounts) {
     if (registeredAccounts[InputUserName.value] === InputPassword.value) {
       console.log("login");
-      const userWishList = wishArray[InputUserName.value];
-      userWishList.forEach((item) => {
-        wishAdd(item);
-      });
-    } else { alert("incorrect password") }
-  } else { alert("incorrect username") }
-  console.log(wishArray)
+      const userWishList = wishArray.find((user) => user.userName === InputUserName.value);
+      if (userWishList) {
+        userWishList.items.forEach((item) => {
+          wishAdd(item);
+        });
+      }
+    } else {
+      alert("Incorrect password");
+    }
+  } else {
+    alert("Incorrect username");
+  }
 }
+
 const registerContainer = document.getElementById("register-form")
 registerContainer.style.display = "none"
 const registerUserName = document.createElement("input")
@@ -110,13 +121,14 @@ logInButtonDiv.appendChild(registerBtnDiv)
 registerBtnDiv.appendChild(submitRegisterBtn)
 submitRegisterBtn.onclick = () => {
   if (registerUserName.value && registerPassword.value) {
-    registeredAccounts[registerUserName.value] = registerPassword.value
+    registeredAccounts[userName = registerUserName.value] = registerPassword.value
     saveAccounts()
     console.log("success")
     console.log(registeredAccounts)
   }
   else { console.log("fail") }
 }
+
 
 const loginRegister = document.getElementById("login-register")
 const loginDisplayBtn = document.createElement("button")
@@ -497,7 +509,11 @@ const wishAdd = (item) => {
   }
 }
 getWishListFromLocalStorage()
-wishArray.forEach((item) => wishAdd(item))
+const signedInUser = InputUserName.value
+const userWishList = wishArray[signedInUser] || [];
+userWishList.forEach((item) => {
+  wishAdd(item);
+});
 //first load     
 updateFilterItems(Items)
 retrieveAccounts(registeredAccounts)
