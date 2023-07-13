@@ -44,11 +44,11 @@ const retrieveAccounts = () => {
   }
 }
 
-let registeredAccounts = {
+let registeredUsers = {
   userID: {
     userName: "",
-    wishlist: []
-
+    password: "",
+    userWishlist: []
   }
 }
 let wishArray = []
@@ -60,7 +60,6 @@ loginBtn.onclick = () => {
   }
   else { loginContainer.style.display = "none" }
 }
-
 const loginContainer = document.getElementById("login-container")
 const loginForm = document.getElementById("login-form")
 const InputUserName = document.createElement("input")
@@ -83,12 +82,13 @@ loginForm.appendChild(InputPassword)
 loginContainer.appendChild(logInButtonDiv)
 loginContainer.style.display = "none"
 signInButton.onclick = () => {
-  if (InputUserName.value in registeredAccounts) {
-    if (registeredAccounts[InputUserName.value] === InputPassword.value) {
+  if (InputUserName.value in registeredUsers) {
+    const user = registeredUsers[InputUserName.value];
+    if (user.password === InputPassword.value) {
       console.log("login");
-      const userWishList = wishArray.find((user) => user.userName === InputUserName.value);
+      const userWishList = user.userWishList;
       if (userWishList) {
-        userWishList.items.forEach((item) => {
+        userWishList.forEach((item) => {
           wishAdd(item);
         });
       }
@@ -96,9 +96,11 @@ signInButton.onclick = () => {
       alert("Incorrect password");
     }
   } else {
-    alert("Incorrect username");
+    alert("Incorrect userName");
   }
-}
+  console.log(userWishList)
+};
+
 
 const registerContainer = document.getElementById("register-form")
 registerContainer.style.display = "none"
@@ -120,13 +122,21 @@ submitRegisterBtn.style.display = "none"
 logInButtonDiv.appendChild(registerBtnDiv)
 registerBtnDiv.appendChild(submitRegisterBtn)
 submitRegisterBtn.onclick = () => {
-  if (registerUserName.value && registerPassword.value) {
-    registeredAccounts[userName = registerUserName.value] = registerPassword.value
+  const userID = registerUserName.value
+  const password = registerPassword.value
+  if (userID && password) {
+    if (registeredUsers.hasOwnProperty((userID))
+    ) alert("userName already Exist")
+
+    const newUserID = {
+      password: password,
+      userWishList: []
+    }
+    registeredUsers[userID] = newUserID
     saveAccounts()
     console.log("success")
-    console.log(registeredAccounts)
-  }
-  else { console.log("fail") }
+    console.log(registeredUsers)
+  } else { console.log("fail") }
 }
 
 
@@ -372,10 +382,11 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(buyNowElement);
 
     wishButton.onclick = () => {
-
-      if (!wishArray.find(wishListItem => wishListItem.id === item.id)) {
+      const user = registeredUsers[userID]
+      const wishListArray = user.userWishList
+      if (!wishListArray.find(wishListItem => wishListItem.id === item.id)) {
         item.wishList = true
-        wishArray.push(item)
+        wishListArray.push(item)
         saveWishArray();
         wishAdd(item)
         updateFilterItems(filteredArray)
@@ -516,6 +527,6 @@ userWishList.forEach((item) => {
 });
 //first load     
 updateFilterItems(Items)
-retrieveAccounts(registeredAccounts)
+retrieveAccounts(registeredUsers)
 
 
