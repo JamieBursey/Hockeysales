@@ -382,7 +382,7 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(buyNowElement);
 
     wishButton.onclick = () => {
-      const user = registeredUsers[userID]
+      const user = registeredUsers[InputUserName.value]
       const wishListArray = user.userWishList
       if (!wishListArray.find(wishListItem => wishListItem.id === item.id)) {
         item.wishList = true
