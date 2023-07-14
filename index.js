@@ -393,7 +393,7 @@ const updateFilterItems = (filteredItems) => {
 
       }
       else {
-        const wishListedItem = wishArray.find(wishListItem => wishListItem.id === item.id)
+        const wishListedItem = wishListArray.find(wishListItem => wishListItem.id === item.id)
         wishArray.splice(wishArray.indexOf(wishListedItem), 1)
         wishButton.style = ""
         wishButton.innerHTML = "&#x2661"
@@ -402,7 +402,7 @@ const updateFilterItems = (filteredItems) => {
       saveWishArray()
 
       wishItemContainer.innerHTML = "";
-      wishArray.forEach(item => {
+      wishListArray.forEach(item => {
         wishAdd(item);
       });
     }
