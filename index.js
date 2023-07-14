@@ -36,21 +36,17 @@ Items.forEach((item, index) => {
   item.wishList = false
 })
 
-const saveAccounts = () => { localStorage.setItem("saveAccounts", JSON.stringify(registeredAccounts)); }
+const saveAccounts = () => { localStorage.setItem("saveAccounts", JSON.stringify(registeredUsers)); }
 const retrieveAccounts = () => {
   const getAccounts = localStorage.getItem("saveAccounts")
   if (getAccounts) {
-    registeredAccounts = JSON.parse(getAccounts)
+    registeredUsers = JSON.parse(getAccounts)
   }
 }
 
 let registeredUsers = {
-  userID: {
-    userName: "",
-    password: "",
-    userWishlist: []
-  }
 }
+
 let wishArray = []
 const loginBtn = document.getElementById("login-btn")
 loginBtn.classList.add("login-btn")
@@ -60,6 +56,12 @@ loginBtn.onclick = () => {
   }
   else { loginContainer.style.display = "none" }
 }
+const logOutContainer = document.getElementById("logOutContainer")
+const signOutButton = document.createElement("button")
+signOutButton.innerHTML = "Sign Out"
+signOutButton.classList.add("signout-button")
+logOutContainer.appendChild(signOutButton)
+logOutContainer.style.display = "none"
 const loginContainer = document.getElementById("login-container")
 const loginForm = document.getElementById("login-form")
 const InputUserName = document.createElement("input")
@@ -85,20 +87,26 @@ signInButton.onclick = () => {
   if (InputUserName.value in registeredUsers) {
     const user = registeredUsers[InputUserName.value];
     if (user.password === InputPassword.value) {
-      console.log("login");
+      alert("Welcome " + InputUserName.value);
       const userWishList = user.userWishList;
-      if (userWishList) {
-        userWishList.forEach((item) => {
-          wishAdd(item);
-        });
+      wishItemContainer.innerHTML = ""
+      userWishList.forEach((item) => {
+        wishAdd(item);
+      });
+      loginBtn.innerHTML = InputUserName.value
+      loginBtn.onclick = () => {
+        if (logOutContainer.style.display == "none") { logOutContainer.style.display = "flex" }
+        else { logOutContainer.style.display = "none" }
       }
+      loginContainer.style.display = "none"
     } else {
       alert("Incorrect password");
     }
   } else {
     alert("Incorrect userName");
   }
-  console.log(userWishList)
+
+
 };
 
 
@@ -324,11 +332,12 @@ const updateFilterItems = (filteredItems) => {
     heartElementDiv.classList.add("addWish-Heart")
     const wishButton = document.createElement("Button")
     wishButton.classList.add("wishButton")
-    wishButton.innerHTML = "&#x2661"
-    if (item.wishList) {
+    if (item.wishList == true) {
       wishButton.innerHTML = "&#x2665;"
       wishButton.style.color = "red"
       wishButton.style.fontSize = "30px"
+    } else {
+      wishButton.innerHTML = "&#x2661"
     }
     heartElementDiv.appendChild(wishButton)
     itemDiv.appendChild(heartElementDiv)
@@ -391,15 +400,16 @@ const updateFilterItems = (filteredItems) => {
         wishAdd(item)
         updateFilterItems(filteredArray)
 
+
       }
       else {
         const wishListedItem = wishListArray.find(wishListItem => wishListItem.id === item.id)
-        wishArray.splice(wishArray.indexOf(wishListedItem), 1)
+        wishListArray.splice(wishListArray.indexOf(wishListedItem), 1)
         wishButton.style = ""
         wishButton.innerHTML = "&#x2661"
         item.wishList = false
       }
-      saveWishArray()
+      saveAccounts()
 
       wishItemContainer.innerHTML = "";
       wishListArray.forEach(item => {
@@ -411,13 +421,13 @@ const updateFilterItems = (filteredItems) => {
 
 
 const saveWishArray = () => {
-  localStorage.setItem("wishList", JSON.stringify(wishArray));
+  localStorage.setItem("wishList", JSON.stringify(wishListArray));
 };
 
 const getWishListFromLocalStorage = () => {
   const storedWishList = localStorage.getItem("wishList");
   if (storedWishList) {
-    wishArray = JSON.parse(storedWishList);
+    wishListArray = JSON.parse(storedWishList);
   }
 }
 
@@ -508,7 +518,7 @@ const wishAdd = (item) => {
 
   wishRemoveButton.onclick = () => {
     itemLi.remove()
-    wishArray.splice(wishArray.indexOf(item), 1)
+    userWishList.splice(userWishList.indexOf(item), 1)
     if (itemsContainer.querySelector = "grid") {
       item.wishList = false
       itemsContainer.innerHTML = ""
@@ -518,10 +528,11 @@ const wishAdd = (item) => {
 
     saveWishArray()
   }
+  updateFilterItems(Items)
 }
 getWishListFromLocalStorage()
 const signedInUser = InputUserName.value
-const userWishList = wishArray[signedInUser] || [];
+const userWishList = wishListArray[signedInUser] || [];
 userWishList.forEach((item) => {
   wishAdd(item);
 });
