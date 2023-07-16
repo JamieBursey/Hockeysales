@@ -35,19 +35,18 @@ Items.forEach((item, index) => {
   item.id = index + 1
   item.wishList = false
 })
-
-const saveAccounts = () => { localStorage.setItem("saveAccounts", JSON.stringify(registeredUsers)); }
+// write a function that can save an account into the registeredUsers
+// retive the accounts key from localStorage.
+const saveAccounts = () => { localStorage.setItem("accounts", JSON.stringify(registeredUsers)); }
 const retrieveAccounts = () => {
-  const getAccounts = localStorage.getItem("saveAccounts")
+  const getAccounts = localStorage.getItem("accounts")
   if (getAccounts) {
-    registeredUsers = JSON.parse(getAccounts)
+    JSON.parse(getAccounts)
   }
 }
+const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
 
-let registeredUsers = {
-}
-
-let wishArray = []
+let wishListArray = []
 const loginBtn = document.getElementById("login-btn")
 loginBtn.classList.add("login-btn")
 loginBtn.onclick = () => {
@@ -68,17 +67,7 @@ signOutButton.onclick = () => {
   logOutContainer.style.display = "none";
 
   loginBtn.innerHTML = "Log in"
-  loginBtn.onclick = () => {
-    if (loginContainer.style.display === "none") {
-      loginContainer.style.display = "block"
-    }
-    else { loginContainer.style.display = "none" }
-  }
-
-
 };
-
-
 
 logOutContainer.appendChild(signOutButton)
 logOutContainer.style.display = "none"
@@ -104,6 +93,7 @@ loginForm.appendChild(InputPassword)
 loginContainer.appendChild(logInButtonDiv)
 loginContainer.style.display = "none"
 signInButton.onclick = () => {
+  const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
   if (InputUserName.value in registeredUsers) {
     const user = registeredUsers[InputUserName.value];
     if (user.password === InputPassword.value) {
@@ -153,12 +143,16 @@ submitRegisterBtn.onclick = () => {
   const userID = registerUserName.value
   const password = registerPassword.value
   if (userID && password) {
-    if (registeredUsers.hasOwnProperty((userID))
-    ) alert("userName already Exist")
+    const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
+    if (registeredUsers.hasOwnProperty((userID))) {
+      alert("userName already Exist")
+      return
+    }
+
 
     const newUserID = {
       password: password,
-      userWishList: []
+      wishListArray: []
     }
     registeredUsers[userID] = newUserID
     saveAccounts()
@@ -409,13 +403,13 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(buyNowElement);
 
     wishButton.onclick = () => {
+      const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
       const user = registeredUsers[InputUserName.value]
       const wishListArray = user.userWishList
       if (!wishListArray.find(wishListItem => wishListItem.id === item.id)) {
         item.wishList = true
         wishListArray.push(item)
-        // saveWishArray();
-        saveAccounts()
+        saveWishArray();
         wishAdd(item)
         updateFilterItems(filteredArray)
 
@@ -439,16 +433,16 @@ const updateFilterItems = (filteredItems) => {
 }
 
 
-// const saveWishArray = () => {
-//   localStorage.setItem("wishList", JSON.stringify(wishListArray));
-// };
+const saveWishArray = () => {
+  localStorage.setItem("wishList", JSON.stringify(wishListArray));
+};
 
-// const getWishListFromLocalStorage = () => {
-//   const storedWishList = localStorage.getItem("wishList");
-//   if (storedWishList) {
-//     wishListArray = JSON.parse(storedWishList);
-//   }
-// }
+const getWishListFromLocalStorage = () => {
+  const storedWishList = localStorage.getItem("wishList");
+  if (storedWishList) {
+    wishListArray = JSON.parse(storedWishList);
+  }
+}
 
 const wishBtn = document.getElementById("wish-Btn")
 wishBtn.innerHTML = "Wish List"
@@ -549,12 +543,13 @@ const wishAdd = (item) => {
   }
   updateFilterItems(Items)
 }
-// getWishListFromLocalStorage()
+getWishListFromLocalStorage()
 const signedInUser = InputUserName.value
 const userWishList = wishListArray[signedInUser] || [];
 userWishList.forEach((item) => {
   wishAdd(item);
 });
+
 //first load     
 updateFilterItems(Items)
 retrieveAccounts(registeredUsers)
