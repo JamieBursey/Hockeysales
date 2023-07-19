@@ -444,26 +444,22 @@ logInButtonDiv.appendChild(registerBtnDiv);
 registerBtnDiv.appendChild(submitRegisterBtn);
 
 submitRegisterBtn.onclick = () => {
-  const userID = registerUserName.value || "";
-  const password = registerPassword.value || "";
-  if (userID && password) {
+  const authenticatedUser = registerUserName.value || "";
+  const passwordInput = registerPassword.value || "";
+  if (authenticatedUser && passwordInput) {
     const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-    if (registeredUsers?.hasOwnProperty(userID)) {
+    if (registeredUsers?.hasOwnProperty(authenticatedUser)) {
       alert("userName already Exist");
       return;
     }
-
-    const newUserID = {
-      password: password,
-      wishListArray: [],
-    };
-    registeredUsers[userID] = newUserID;
-    saveAccounts();
-    console.log("success");
-    console.log(registeredUsers);
-  } else {
-    console.log("fail");
+    localStorage.setItem("accounts", JSON.stringify({
+      [authenticatedUser]: {
+        password: passwordInput,
+        wish_list: []
+      }
+    }))
   }
+  console.log("success");
 };
 
 const loginRegister = document.getElementById("login-register");
@@ -712,7 +708,7 @@ const updateFilterItems = (filteredItems) => {
 
       const user = registeredUsers[authenticatedUser];
 
-      const wishListArray = user?.wish_list;
+      const wishListArray = user.wish_list;
 
       if (!wishListArray.find((wishListItem) => wishListItem.id === item.id)) {
         item.wishList = true;
@@ -826,11 +822,15 @@ const createWishListItemHTML = (item) => {
 
   wishRemoveButton.onclick = () => {
     itemLi.remove();
-    wishList.splice(wishList.indexOf(item), 1);
+    const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
+    const user = registeredUsers[authenticatedUser]
+    const wishListArray = user.wish_list
+    wishListArray.splice(wishListArray.indexOf(item), 1);
     if ((itemsContainer.querySelector = "grid")) {
       item.wishList = false;
       itemsContainer.innerHTML = "";
       updateFilterItems(filteredArray);
+      localStorage.setItem("accounts", JSON.stringify(user))
     }
   };
   updateFilterItems(Items);
