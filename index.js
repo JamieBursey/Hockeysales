@@ -444,23 +444,30 @@ logInButtonDiv.appendChild(registerBtnDiv);
 registerBtnDiv.appendChild(submitRegisterBtn);
 
 submitRegisterBtn.onclick = () => {
-  const authenticatedUser = registerUserName.value || "";
-  const passwordInput = registerPassword.value || "";
-  if (authenticatedUser && passwordInput) {
-    const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-    if (registeredUsers?.hasOwnProperty(authenticatedUser)) {
-      alert("userName already Exist");
+  const newUser = registerUserName.value
+  const passwordInput = registerPassword.value
+
+  if (newUser && passwordInput) {
+    let registeredUsers = JSON.parse(localStorage.getItem("accounts")) || {}
+
+    if (registeredUsers.hasOwnProperty(newUser)) {
+      alert("Username already exists!")
       return;
     }
-    localStorage.setItem("accounts", JSON.stringify({
-      [authenticatedUser]: {
-        password: passwordInput,
-        wish_list: []
-      }
-    }))
+
+    registeredUsers[newUser] = {
+      password: passwordInput,
+      wish_list: []
+    };
+
+    localStorage.setItem("accounts", JSON.stringify(registeredUsers))
+
+    alert("Registration successful!")
+    registerContainer.style.display = "none"
   }
-  console.log("success");
 };
+
+
 
 const loginRegister = document.getElementById("login-register");
 const loginDisplayBtn = document.createElement("button");
@@ -705,11 +712,10 @@ const updateFilterItems = (filteredItems) => {
 
     wishButton.onclick = () => {
       const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-
+      authenticatedUser = InputUserName.value
       const user = registeredUsers[authenticatedUser];
 
       const wishListArray = user.wish_list;
-
       if (!wishListArray.find((wishListItem) => wishListItem.id === item.id)) {
         item.wishList = true;
 
@@ -726,6 +732,9 @@ const updateFilterItems = (filteredItems) => {
         wishButton.style = "";
         wishButton.innerHTML = "&#x2661";
         item.wishList = false;
+        createWishListItemHTML(item);
+        console.log("wishBtn", wishButton)
+        console.log(wishListArray)
       }
 
       wishItemContainer.innerHTML = "";
@@ -822,15 +831,17 @@ const createWishListItemHTML = (item) => {
 
   wishRemoveButton.onclick = () => {
     itemLi.remove();
-    const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-    const user = registeredUsers[authenticatedUser]
-    const wishListArray = user.wish_list
-    wishListArray.splice(wishListArray.indexOf(item), 1);
+    let registeredUsers = JSON.parse(localStorage.getItem("accounts"));
+    const wishListArray = registeredUsers[authenticatedUser].wish_list
+    const ItemToRemove = wishListArray.findIndex((wishListItem) => wishListItem.id === item.id)
+    wishListArray.splice(ItemToRemove, 1);
     if ((itemsContainer.querySelector = "grid")) {
       item.wishList = false;
-      itemsContainer.innerHTML = "";
+      wishItemContainer.innerHTML = "";
       updateFilterItems(filteredArray);
-      localStorage.setItem("accounts", JSON.stringify(user))
+      wishListArray.forEach((item) => { createWishListItemHTML(item); })
+      localStorage.setItem("accounts", JSON.stringify(registeredUsers));
+      console.log(wishListArray)
     }
   };
   updateFilterItems(Items);
