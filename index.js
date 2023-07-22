@@ -403,7 +403,7 @@ signInButton.onclick = () => {
       wishList.forEach((item) => {
         createWishListItemHTML(item);
       });
-
+      localStorage.setItem("save-user", InputUserName.value)
       loginButtonElement.innerHTML = InputUserName.value;
       loginButtonElement.onclick = () => {
         if (logOutContainer.style.display == "none") {
@@ -725,7 +725,7 @@ const updateFilterItems = (filteredItems) => {
 
         createWishListItemHTML(item);
       } else {
-        const wishListedItem = wishListArray.find(
+        const wishListedItem = wishListArray.findIndex(
           (wishListItem) => wishListItem.id === item.id
         );
         wishListArray.splice(wishListArray.indexOf(wishListedItem), 1);
@@ -742,6 +742,7 @@ const updateFilterItems = (filteredItems) => {
       wishListArray.forEach((item) => {
         createWishListItemHTML(item);
       });
+      localStorage.setItem("accounts", JSON.stringify(registeredUsers))
     };
   });
 };
@@ -837,8 +838,8 @@ const createWishListItemHTML = (item) => {
     wishListArray.splice(ItemToRemove, 1);
     if ((itemsContainer.querySelector = "grid")) {
       item.wishList = false;
-      wishItemContainer.innerHTML = "";
-      updateFilterItems(filteredArray);
+      wishItemContainer.innerHTML = ""
+      updateFilterItems(filteredArray)
       wishListArray.forEach((item) => { createWishListItemHTML(item); })
       localStorage.setItem("accounts", JSON.stringify(registeredUsers));
       console.log(wishListArray)
@@ -862,8 +863,33 @@ if (!localStorage.getItem("accounts")) {
     })
   );
 }
+if (localStorage.getItem("save-user")) {
+  const saveUser = localStorage.getItem("save-user")
+  const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
+  const user = registeredUsers[saveUser]
+  const wishListArray = user.wish_list
+  wishListArray.forEach((item) => {
+    createWishListItemHTML(item);
+  });
+
+  loginButtonElement.innerHTML = saveUser
+  loginButtonElement.onclick = () => {
+    if (logOutContainer.style.display === "none") {
+      logOutContainer.style.display = "flex"
+    } else {
+      logOutContainer.style.display = "none"
+    }
+  };
+  loginContainer.style.display = "none"
+  logOutContainer.style.display = "block"
+  console.log("firstload")
+}
+
+
+
 
 updateFilterItems(Items);
+
 
 
 // new key to keep track of who is signed in so when you refresh the page you dont need to sign in.
