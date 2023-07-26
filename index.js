@@ -851,24 +851,9 @@ const createWishListItemHTML = (item) => {
         localStorage.setItem("accounts", JSON.stringify(registeredUsers));
         updateFilterItems(filteredArray) //disable Heart
       }
-      userWishArray.forEach((item) => { createWishListItemHTML(item) })
-
     }
-    else {
-      let registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-      const wishListArray = registeredUsers[authenticatedUser].wish_list
-      const ItemToRemove = wishListArray.findIndex((wishListItem) => wishListItem.id === item.id)
-      wishListArray.splice(ItemToRemove, 1);
-      if ((itemsContainer.querySelector = "grid")) {
-        item.wishList = false
-        wishItemContainer.innerHTML = ""
-        wishListArray.forEach((item) => { createWishListItemHTML(item); })
-        localStorage.setItem("accounts", JSON.stringify(registeredUsers));
-        updateFilterItems(filteredArray) //disable Heart
-      }
-    };
   }
-  updateFilterItems(Items);
+  updateFilterItems(filteredArray);
 };
 
 //first load
@@ -891,9 +876,9 @@ if (localStorage.getItem("save-user")) {
   const saveUser = localStorage.getItem("save-user")
   const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
   const user = registeredUsers[saveUser]
-  const userWishArray = user.wish_list
+  const wishListArray = user.wish_list
   wishBtn.style.display = "flex"
-  userWishArray.forEach((item) => {
+  wishListArray.forEach((item) => {
     createWishListItemHTML(item)
   });
 
@@ -913,7 +898,7 @@ if (localStorage.getItem("save-user")) {
 
 
 
-updateFilterItems(Items);
+updateFilterItems(filteredArray);
 
 
 
