@@ -353,8 +353,8 @@ signOutButton.onclick = () => {
   wishItemContainer.innerHTML = "";
   loginContainer.style.display = "block";
   logOutContainer.style.display = "none";
-
   loginButtonElement.innerHTML = "Log in";
+  localStorage.removeItem("save-user")
 };
 
 logOutContainer.appendChild(signOutButton);
@@ -413,6 +413,7 @@ signInButton.onclick = () => {
         }
       };
       loginContainer.style.display = "none";
+      wishBtn.style.display = "flex"
     } else {
       alert("Incorrect password");
     }
@@ -711,9 +712,12 @@ const updateFilterItems = (filteredItems) => {
     itemDiv.appendChild(buyNowElement);
 
     wishButton.onclick = () => {
+
       const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-      authenticatedUser = InputUserName.value
+
+      authenticatedUser = localStorage.getItem("save-user")
       const user = registeredUsers[authenticatedUser];
+      console.log(user)
 
       const wishListArray = user.wish_list;
       if (!wishListArray.find((wishListItem) => wishListItem.id === item.id)) {
@@ -733,8 +737,7 @@ const updateFilterItems = (filteredItems) => {
         wishButton.innerHTML = "&#x2661";
         item.wishList = false;
         createWishListItemHTML(item);
-        console.log("wishBtn", wishButton)
-        console.log(wishListArray)
+
       }
 
       wishItemContainer.innerHTML = "";
@@ -749,6 +752,7 @@ const updateFilterItems = (filteredItems) => {
 
 const wishBtn = document.getElementById("wish-Btn");
 wishBtn.innerHTML = "Wish List";
+wishBtn.style.display = "none"
 
 const wishContainer = document.getElementById("wishList-Container");
 wishContainer.classList.add("wishDisplay");
@@ -832,19 +836,38 @@ const createWishListItemHTML = (item) => {
 
   wishRemoveButton.onclick = () => {
     itemLi.remove();
-    let registeredUsers = JSON.parse(localStorage.getItem("accounts"));
-    const wishListArray = registeredUsers[authenticatedUser].wish_list
-    const ItemToRemove = wishListArray.findIndex((wishListItem) => wishListItem.id === item.id)
-    wishListArray.splice(ItemToRemove, 1);
-    if ((itemsContainer.querySelector = "grid")) {
-      item.wishList = false;
-      wishItemContainer.innerHTML = ""
-      updateFilterItems(filteredArray)
-      wishListArray.forEach((item) => { createWishListItemHTML(item); })
-      localStorage.setItem("accounts", JSON.stringify(registeredUsers));
-      console.log(wishListArray)
+    if (localStorage.getItem("save-user")) {
+      const saveUser = localStorage.getItem("save-user")
+      const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
+      const user = registeredUsers[saveUser]
+      const userWishArray = user.wish_list
+
+      const itemToRemove = userWishArray.findIndex((wishListItem) => wishListItem.id === item.id)
+      userWishArray.splice(itemToRemove, 1)
+      if ((itemsContainer.querySelector = "grid")) {
+        item.wishList = false
+        wishItemContainer.innerHTML = ""
+        userWishArray.forEach((item) => { createWishListItemHTML(item) })
+        localStorage.setItem("accounts", JSON.stringify(registeredUsers));
+        updateFilterItems(filteredArray) //disable Heart
+      }
+      userWishArray.forEach((item) => { createWishListItemHTML(item) })
+
     }
-  };
+    else {
+      let registeredUsers = JSON.parse(localStorage.getItem("accounts"));
+      const wishListArray = registeredUsers[authenticatedUser].wish_list
+      const ItemToRemove = wishListArray.findIndex((wishListItem) => wishListItem.id === item.id)
+      wishListArray.splice(ItemToRemove, 1);
+      if ((itemsContainer.querySelector = "grid")) {
+        item.wishList = false
+        wishItemContainer.innerHTML = ""
+        wishListArray.forEach((item) => { createWishListItemHTML(item); })
+        localStorage.setItem("accounts", JSON.stringify(registeredUsers));
+        updateFilterItems(filteredArray) //disable Heart
+      }
+    };
+  }
   updateFilterItems(Items);
 };
 
@@ -863,13 +886,15 @@ if (!localStorage.getItem("accounts")) {
     })
   );
 }
+
 if (localStorage.getItem("save-user")) {
   const saveUser = localStorage.getItem("save-user")
   const registeredUsers = JSON.parse(localStorage.getItem("accounts"))
   const user = registeredUsers[saveUser]
-  const wishListArray = user.wish_list
-  wishListArray.forEach((item) => {
-    createWishListItemHTML(item);
+  const userWishArray = user.wish_list
+  wishBtn.style.display = "flex"
+  userWishArray.forEach((item) => {
+    createWishListItemHTML(item)
   });
 
   loginButtonElement.innerHTML = saveUser
