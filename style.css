@@ -57,6 +57,13 @@ pd {
     margin-right: auto;
 }
 
+.logout-container {
+    right: 0px;
+    position: absolute;
+    margin-top: 30px;
+
+}
+
 .placeholder-div {
     display: flex;
     justify-content: center;
