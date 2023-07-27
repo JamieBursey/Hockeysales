@@ -146,8 +146,6 @@ pd {
     margin-left: .2rem;
 }
 
-.login {}
-
 .about .wish-Btn {
     position: relative;
     float: right;
@@ -223,8 +221,6 @@ pd {
 
 }
 
-.priceDiv {}
-
 .full-price {
     float: left;
     margin-right: 10px;
@@ -297,7 +293,6 @@ pd {
         padding: 15px
     }
 
-    .priceDiv {}
 
     .price-font {
         float: right;
@@ -518,8 +513,6 @@ pd {
 
 
 }
-
-.wish-Items {}
 
 .wishDisplay {
     position: relative;

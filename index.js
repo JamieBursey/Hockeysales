@@ -654,7 +654,7 @@ const updateFilterItems = (filteredItems) => {
     heartElementDiv.classList.add("addWish-Heart");
     const wishButton = document.createElement("Button");
     wishButton.classList.add("wishButton");
-    if (item.wishList == true) {
+    if (item.wishList) {
       wishButton.innerHTML = "&#x2665;";
       wishButton.style.color = "red";
       wishButton.style.fontSize = "30px";
@@ -733,8 +733,6 @@ const updateFilterItems = (filteredItems) => {
           (wishListItem) => wishListItem.id === item.id
         );
         wishListArray.splice(wishListArray.indexOf(wishListedItem), 1);
-        wishButton.style = "";
-        wishButton.innerHTML = "&#x2661";
         item.wishList = false;
         createWishListItemHTML(item);
 
@@ -845,12 +843,13 @@ const createWishListItemHTML = (item) => {
       const itemToRemove = userWishArray.findIndex((wishListItem) => wishListItem.id === item.id)
       userWishArray.splice(itemToRemove, 1)
       if ((itemsContainer.querySelector = "grid")) {
-        item.wishList = false
+        const heartArray = filteredArray.findIndex((wishListedItem) => wishListedItem.id === item.id)
+        filteredArray[heartArray].wishList = false
         wishItemContainer.innerHTML = ""
         userWishArray.forEach((item) => { createWishListItemHTML(item) })
-        localStorage.setItem("accounts", JSON.stringify(registeredUsers));
-        updateFilterItems(filteredArray) //disable Heart
+        updateFilterItems(filteredArray);
       }
+      localStorage.setItem("accounts", JSON.stringify(registeredUsers));
     }
   }
   updateFilterItems(filteredArray);
