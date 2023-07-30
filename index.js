@@ -344,6 +344,7 @@ loginButtonElement.onclick = () => {
   }
 };
 const logOutContainer = document.getElementById("logOutContainer");
+logOutContainer.style.display = "none"
 const signOutButton = document.createElement("button");
 signOutButton.innerHTML = "Sign Out";
 signOutButton.classList.add("signout-button");
@@ -357,17 +358,21 @@ signOutButton.onclick = () => {
   localStorage.removeItem("save-user")
 };
 
+
 logOutContainer.appendChild(signOutButton);
 logOutContainer.style.display = "none";
 
 const loginContainer = document.getElementById("login-container");
 const loginForm = document.getElementById("login-form");
+const inputUserNameDiv = document.createElement("div")
+loginForm.appendChild(inputUserNameDiv)
 const InputUserName = document.createElement("input");
+
 
 InputUserName.type = "text";
 InputUserName.placeholder = "UserName";
 InputUserName.classList.add("userName-password");
-
+const inputPasswordDiv = document.createElement("div")
 const passwordInputElement = document.createElement("input");
 passwordInputElement.type = "password";
 passwordInputElement.placeholder = "Password";
@@ -380,8 +385,9 @@ signInButton.innerHTML = "Sign In";
 signInButton.classList.add("signInBtn");
 logInButtonDiv.appendChild(signInButton);
 
-loginForm.appendChild(InputUserName);
-loginForm.appendChild(passwordInputElement);
+inputUserNameDiv.appendChild(InputUserName);
+inputPasswordDiv.appendChild(passwordInputElement);
+loginForm.appendChild(inputPasswordDiv)
 loginContainer.appendChild(logInButtonDiv);
 loginContainer.style.display = "none";
 
@@ -890,16 +896,9 @@ if (localStorage.getItem("save-user")) {
     }
   };
   loginContainer.style.display = "none"
-  logOutContainer.style.display = "block"
   console.log("firstload")
 }
-
-
-
-
 updateFilterItems(filteredArray);
 
 
 
-// new key to keep track of who is signed in so when you refresh the page you dont need to sign in.
-// 
