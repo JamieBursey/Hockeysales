@@ -19,20 +19,6 @@ h2 {
     color: white
 }
 
-@media (max-width:40rem) {
-    p1 {
-        font-size: 20px;
-
-    }
-}
-
-@media (max-width:40rem) {
-    .header {
-        margin-bottom: 10px;
-    }
-
-}
-
 pd {
     bottom: 5px;
     position: relative;
@@ -55,10 +41,30 @@ pd {
     background-color: rgba(255, 255, 255, 0.5);
     background-position: center;
     width: 70%;
-    height: 10rem;
+    height: 15rem;
     margin-left: auto;
     margin-right: auto;
     border-radius: 2rem;
+}
+
+@media (max-width:40rem) {
+    p1 {
+        font-size: 20px;
+
+    }
+
+    .wishButton {
+        margin-right: 1rem;
+    }
+
+    .header {
+        margin-bottom: 10px;
+    }
+
+    .login-container {
+        height: 10rem;
+        width: 80%;
+    }
 }
 
 .logout-container {
@@ -155,11 +161,23 @@ pd {
 .login-register {
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.loginDisplay {
+    margin-top: .5rem;
+}
+
+.register-display {
+    margin-top: .5rem;
 }
 
 .register {
     margin-left: .2rem;
+}
+
+.aboutMe {
+    background-color: white;
+    color: black
 }
 
 .about .wish-Btn {
@@ -709,6 +727,13 @@ pd {
 
 
 /*contact Page*/
+.social-media {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
 #socials {
     font-size: 5rem;
     background-color: #18191f;
