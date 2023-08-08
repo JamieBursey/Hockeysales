@@ -370,7 +370,7 @@ const InputUserName = document.createElement("input");
 
 
 InputUserName.type = "text";
-InputUserName.placeholder = "UserName";
+InputUserName.placeholder = "User Name";
 InputUserName.classList.add("userName-password");
 const inputPasswordDiv = document.createElement("div")
 const passwordInputElement = document.createElement("input");
@@ -432,12 +432,12 @@ const registerContainer = document.getElementById("register-form");
 registerContainer.style.display = "none";
 const registerUserName = document.createElement("input");
 registerUserName.type = "text";
-registerUserName.placeholder = "Create User Name";
+registerUserName.placeholder = "User Name";
 registerUserName.classList.add("userName-password");
 registerContainer.appendChild(registerUserName);
 const registerPassword = document.createElement("input");
 registerPassword.type = "password";
-registerPassword.placeholder = "Create Password";
+registerPassword.placeholder = "Password";
 registerPassword.classList.add("userName-password");
 registerContainer.appendChild(registerPassword);
 const registerBtnDiv = document.createElement("div");
@@ -676,7 +676,7 @@ const updateFilterItems = (filteredItems) => {
     brand.innerHTML = `${item.brand}`;
     brand.classList.add("brand-font");
     const img = document.createElement("img");
-    img.setAttribute("width", "40%");
+    img.setAttribute("width", "95%");
     img.setAttribute("height", "40%");
     img.src = item.imageUrl;
 
