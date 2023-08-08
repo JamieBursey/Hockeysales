@@ -850,7 +850,7 @@ const createWishListItemHTML = (item) => {
       userWishArray.splice(itemToRemove, 1)
       if ((itemsContainer.querySelector = "grid")) {
         const heartArray = filteredArray.findIndex((wishListedItem) => wishListedItem.id === item.id)
-        filteredArray[heartArray].wishList = false
+        filteredArray[heartArray].wishList = false;
         wishItemContainer.innerHTML = ""
         userWishArray.forEach((item) => { createWishListItemHTML(item) })
         updateFilterItems(filteredArray);
