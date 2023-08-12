@@ -334,6 +334,59 @@ Items.forEach((item, index) => {
   item.wishList = false;
 });
 
+const aboutElement = document.getElementById("aboutHeader")
+const contactPage = document.createElement("a")
+contactPage.innerHTML = "Contact"
+contactPage.href = "contact.html"
+const aboutPage = document.createElement("a")
+aboutPage.innerHTML = "About"
+aboutPage.href = "about.html"
+const homePage = document.createElement("a")
+homePage.innerHTML = "Home"
+homePage.href = "index.html"
+
+aboutElement.appendChild(homePage)
+aboutElement.appendChild(aboutPage)
+aboutElement.appendChild(contactPage)
+
+const mediaMenu = () => {
+  const mediaQuery = window.matchMedia("(max-width: 48rem)")
+
+  if (mediaQuery.matches) {
+    while (aboutElement.firstChild) {
+      aboutElement.removeChild(aboutElement.firstChild)
+    }
+    const toggleDiv = document.createElement("div")
+    const pagesButton = document.createElement("button")
+    pagesButton.className = "fas fa-bars hamburgerMenu"
+    const pagesList = document.createElement("ul")
+    pagesList.style.display = "none"
+    pagesButton.onclick = () => {
+      if (pagesList.style.display == "none") {
+        pagesButton.className = "fas fa-bars fa-rotate-90 hamburgerMenu"
+        pagesList.style.display = "flex"
+      }
+
+      else if (pagesList.style.display === "flex") {
+        pagesButton.className = "fas fa-bars hamburgerMenu"
+        pagesList.style.display = "none"
+      }
+
+    }
+    pagesList.appendChild(homePage)
+    pagesList.appendChild(aboutPage)
+    pagesList.appendChild(contactPage)
+    toggleDiv.appendChild(pagesList)
+    aboutElement.appendChild(toggleDiv)
+    toggleDiv.appendChild(pagesButton)
+
+
+
+  }
+}
+mediaMenu()
+
+
 const loginButtonElement = document.getElementById("login-btn");
 loginButtonElement.classList.add("login-btn");
 loginButtonElement.onclick = () => {

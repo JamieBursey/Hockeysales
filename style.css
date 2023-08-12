@@ -47,7 +47,7 @@ pd {
     border-radius: 2rem;
 }
 
-@media (max-width:40rem) {
+@media (max-width:48rem) {
     p1 {
         font-size: 20px;
 
@@ -593,6 +593,14 @@ pd {
 
     .sortBtn {
         margin-left: 1rem;
+        background: none;
+    }
+
+    .hamburgerMenu {
+        border: none;
+        background: none;
+        color: white;
+        float: left
     }
 }
 
