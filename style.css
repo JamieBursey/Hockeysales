@@ -74,6 +74,11 @@ pd {
         height: 10rem;
         width: 80%;
     }
+
+    .social-media {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .logout-container {
