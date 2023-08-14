@@ -359,7 +359,8 @@ const mediaMenu = () => {
     const toggleDiv = document.createElement("div")
     const pagesButton = document.createElement("button")
     pagesButton.className = "fas fa-bars hamburgerMenu"
-    const pagesList = document.createElement("ul")
+    const pagesList = document.createElement("div")
+    pagesList.classList.add("pagesList")
     pagesList.style.display = "none"
     pagesButton.onclick = () => {
       if (pagesList.style.display == "none") {
@@ -373,12 +374,13 @@ const mediaMenu = () => {
       }
 
     }
+    toggleDiv.appendChild(pagesButton)
     pagesList.appendChild(homePage)
     pagesList.appendChild(aboutPage)
     pagesList.appendChild(contactPage)
     toggleDiv.appendChild(pagesList)
     aboutElement.appendChild(toggleDiv)
-    toggleDiv.appendChild(pagesButton)
+
 
 
 
@@ -816,9 +818,19 @@ wishContainer.classList.add("wishDisplay");
 const wishItemContainer = document.createElement("div");
 wishItemContainer.classList.add("wish-Items");
 const wishHeader = document.createElement("div");
+const wish_Display_Btn = document.createElement("button")
+wish_Display_Btn.innerHTML = "&#9447;"
+wish_Display_Btn.style.float = "right"
+wish_Display_Btn.classList.add("wishDisplayBtn")
+wish_Display_Btn.onclick = () => {
+  if (wishContainer.style.display === "block") {
+    wishContainer.style.display = "none"
+  }
+}
 const wishHeaderImg = document.createElement("img");
 wishHeaderImg.src = "./images/wishHeader.png";
-wishHeaderImg.setAttribute("width", "70%");
+wishHeaderImg.setAttribute("width", "60%");
+wishHeader.appendChild(wish_Display_Btn)
 wishHeader.appendChild(wishHeaderImg);
 wishHeader.classList.add("wish-Header");
 wishContainer.appendChild(wishHeader);
