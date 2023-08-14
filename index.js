@@ -851,8 +851,6 @@ const startDrag = (event) => {
     offset.x = touchEvent.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = touchEvent.clientY - parseFloat(wishContainer.style.top || 0)
   }
-
-  wishContainer.style.cursor = "grabbing"
 };
 
 const onDrag = (event) => {
@@ -873,14 +871,13 @@ const onDrag = (event) => {
 const stopDrag = () => {
   if (divDrag) {
     divDrag = false;
-    wishContainer.style.cursor = "grab"
   }
 }
 
 document.onmousedown = startDrag
 document.ontouchstart = startDrag
 document.onmousemove = onDrag
-document.ontouchmove = onDrag
+document.ontouchmove = onDrag()
 document.onmouseup = stopDrag
 document.ontouchend = stopDrag
 wishBtn.onclick = () => {
