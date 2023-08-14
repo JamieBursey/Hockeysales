@@ -860,9 +860,11 @@ const stopDrag = () => {
 };
 
 document.onmousedown = startDrag;
+document.ontouchstart = startDrag
 document.onmousemove = onDrag;
+document.ontouchmove = onDrag
 document.onmouseup = stopDrag;
-
+document.ontouchend = stopDrag
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
     wishContainer.style.display = "block";
