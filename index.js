@@ -838,6 +838,7 @@ let divDrag = false
 let offset = { x: 0, y: 0 }
 
 const startDrag = (event) => {
+
   if (wishContainer.style.display === "none") return
 
   divDrag = true
@@ -850,8 +851,6 @@ const startDrag = (event) => {
     offset.x = touchEvent.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = touchEvent.clientY - parseFloat(wishContainer.style.top || 0)
   }
-
-  wishContainer.style.cursor = "grabbing"
 };
 
 const onDrag = (event) => {
@@ -870,16 +869,15 @@ const onDrag = (event) => {
 const stopDrag = () => {
   if (divDrag) {
     divDrag = false;
-    wishContainer.style.cursor = "grab"
   }
 }
 
 document.onmousedown = startDrag
-document.ontouchstart = startDrag
+document.addEventListener("touchstart", startDrag)
 document.onmousemove = onDrag
-document.ontouchmove = onDrag
+document.addEventListener("touchmove", onDrag)
 document.onmouseup = stopDrag
-document.ontouchend = stopDrag
+document.addEventListener("touchend", stopDrag)
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
     wishContainer.style.display = "block";
