@@ -42,6 +42,7 @@ pd {
 
 .pagesList a {
     display: block;
+    font-size: larger;
 }
 
 .login-container {
@@ -557,6 +558,7 @@ pd {
     display: block;
     flex-wrap: wrap;
     z-index: 1;
+    opacity: .95;
 }
 
 .wishItem {
