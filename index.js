@@ -381,9 +381,6 @@ const mediaMenu = () => {
     toggleDiv.appendChild(pagesList)
     aboutElement.appendChild(toggleDiv)
 
-
-
-
   }
 }
 mediaMenu()
@@ -841,29 +838,50 @@ let divDrag = false
 let offset = { x: 0, y: 0 }
 
 const startDrag = (event) => {
+  event.preventDefault();
   if (wishContainer.style.display === "none") return
+
   divDrag = true
-  offset.x = event.clientX - parseFloat(wishContainer.style.left || 0)
-  offset.y = event.clientY - parseFloat(wishContainer.style.top || 0)
+
+  if (event.type === "mousedown") {
+    offset.x = event.clientX - parseFloat(wishContainer.style.left || 0)
+    offset.y = event.clientY - parseFloat(wishContainer.style.top || 0)
+  } else if (event.type === "touchstart") {
+    const touchEvent = event.touches[0];
+    offset.x = touchEvent.clientX - parseFloat(wishContainer.style.left || 0)
+    offset.y = touchEvent.clientY - parseFloat(wishContainer.style.top || 0)
+  }
+
   wishContainer.style.cursor = "grabbing"
 };
 
 const onDrag = (event) => {
-  if (divDrag) {
+  if (!divDrag) return;
+
+  event.preventDefault()
+
+  if (event.type === "mousemove") {
     wishContainer.style.left = event.clientX - offset.x + "px"
     wishContainer.style.top = event.clientY - offset.y + "px"
+  } else if (event.type === "touchmove") {
+    const touchEvent = event.touches[0]
+    wishContainer.style.left = touchEvent.clientX - offset.x + "px"
+    wishContainer.style.top = touchEvent.clientY - offset.y + "px"
   }
-};
+}
 
 const stopDrag = () => {
-  divDrag = false
-};
+  if (divDrag) {
+    divDrag = false;
+    wishContainer.style.cursor = "grab"
+  }
+}
 
-document.onmousedown = startDrag;
+document.onmousedown = startDrag
 document.ontouchstart = startDrag
-document.onmousemove = onDrag;
+document.onmousemove = onDrag
 document.ontouchmove = onDrag
-document.onmouseup = stopDrag;
+document.onmouseup = stopDrag
 document.ontouchend = stopDrag
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
