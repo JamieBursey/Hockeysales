@@ -847,7 +847,7 @@ const startDrag = (event) => {
     offset.x = event.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = event.clientY - parseFloat(wishContainer.style.top || 0)
   } else if (event.type === "touchstart") {
-    const touchEvent = event.touches[0];
+    const touchEvent = event.touches[1];
     offset.x = touchEvent.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = touchEvent.clientY - parseFloat(wishContainer.style.top || 0)
   }
@@ -862,7 +862,7 @@ const onDrag = (event) => {
     wishContainer.style.left = event.clientX - offset.x + "px"
     wishContainer.style.top = event.clientY - offset.y + "px"
   } else if (event.type === "touchmove") {
-    const touchEvent = event.touches[0]
+    const touchEvent = event.touches[1]
     wishContainer.style.left = touchEvent.clientX - offset.x + "px"
     wishContainer.style.top = touchEvent.clientY - offset.y + "px"
   }
