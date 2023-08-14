@@ -841,12 +841,14 @@ const startDrag = (event) => {
 
   if (wishContainer.style.display === "none") return
 
-  divDrag = true
+
 
   if (event.type === "mousedown") {
+    divDrag = true
     offset.x = event.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = event.clientY - parseFloat(wishContainer.style.top || 0)
   } else if (event.type === "touchstart") {
+    divDrag = true
     const touchEvent = event.touches[0];
     offset.x = touchEvent.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = touchEvent.clientY - parseFloat(wishContainer.style.top || 0)
