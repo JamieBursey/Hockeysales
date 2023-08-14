@@ -837,9 +837,36 @@ wishContainer.appendChild(wishHeader);
 wishContainer.appendChild(wishItemContainer);
 wishContainer.style.display = "none";
 
+let divDrag = false
+let offset = { x: 0, y: 0 }
+
+const startDrag = (event) => {
+  if (wishContainer.style.display === "none") return
+  divDrag = true
+  offset.x = event.clientX - parseFloat(wishContainer.style.left || 0)
+  offset.y = event.clientY - parseFloat(wishContainer.style.top || 0)
+  wishContainer.style.cursor = "grabbing"
+};
+
+const onDrag = (event) => {
+  if (divDrag) {
+    wishContainer.style.left = event.clientX - offset.x + "px"
+    wishContainer.style.top = event.clientY - offset.y + "px"
+  }
+};
+
+const stopDrag = () => {
+  divDrag = false
+};
+
+document.onmousedown = startDrag;
+document.onmousemove = onDrag;
+document.onmouseup = stopDrag;
+
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
     wishContainer.style.display = "block";
+
   } else {
     wishContainer.style.display = "none";
   }
