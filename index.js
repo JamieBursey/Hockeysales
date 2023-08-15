@@ -841,14 +841,12 @@ const startDrag = (event) => {
 
   if (wishContainer.style.display === "none") return
 
-
+  divDrag = true
 
   if (event.type === "mousedown") {
-    divDrag = true
     offset.x = event.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = event.clientY - parseFloat(wishContainer.style.top || 0)
   } else if (event.type === "touchstart") {
-    divDrag = true
     const touchEvent = event.touches[0];
     offset.x = touchEvent.clientX - parseFloat(wishContainer.style.left || 0)
     offset.y = touchEvent.clientY - parseFloat(wishContainer.style.top || 0)
@@ -857,6 +855,7 @@ const startDrag = (event) => {
 
 const onDrag = (event) => {
   if (!divDrag) return;
+
 
   if (event.type === "mousemove") {
     wishContainer.style.left = event.clientX - offset.x + "px"
@@ -875,11 +874,11 @@ const stopDrag = () => {
 }
 
 document.onmousedown = startDrag
-document.addEventListener("touchstart", startDrag)
 document.onmousemove = onDrag
-document.addEventListener("touchmove", onDrag)
 document.onmouseup = stopDrag
-document.addEventListener("touchend", stopDrag)
+document.ontouchstart = startDrag
+document.ontouchmove = onDrag
+document.ontouchend = stopDrag
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
     wishContainer.style.display = "block";
