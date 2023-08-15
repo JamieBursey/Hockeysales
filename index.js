@@ -861,6 +861,7 @@ const onDrag = (event) => {
     wishContainer.style.left = event.clientX - offset.x + "px"
     wishContainer.style.top = event.clientY - offset.y + "px"
   } else if (event.type === "touchmove") {
+    if (divDrag == true) { event.preventDefault() }
     const touchEvent = event.touches[0]
     wishContainer.style.left = touchEvent.clientX - offset.x + "px"
     wishContainer.style.top = touchEvent.clientY - offset.y + "px"
@@ -873,15 +874,17 @@ const stopDrag = () => {
   }
 }
 
-document.onmousedown = startDrag
-document.onmousemove = onDrag
-document.onmouseup = stopDrag
+
+wishContainer.onmousedown = startDrag
+wishContainer.onmousemove = onDrag
+wishContainer.onmouseup = stopDrag
 if (mediaQuery.matches) {
   wishContainer.ontouchstart = startDrag
   wishContainer.ontouchmove = onDrag
   wishContainer.ontouchend = stopDrag
-  console.log(document.ontouch)
 }
+
+
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
     wishContainer.style.display = "block";
