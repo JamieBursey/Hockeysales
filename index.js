@@ -348,7 +348,7 @@ homePage.href = "index.html"
 aboutElement.appendChild(homePage)
 aboutElement.appendChild(aboutPage)
 aboutElement.appendChild(contactPage)
-
+const mediaQuery = window.matchMedia("(max-width: 48rem)")
 const mediaMenu = () => {
   const mediaQuery = window.matchMedia("(max-width: 48rem)")
 
@@ -428,7 +428,7 @@ const inputPasswordDiv = document.createElement("div")
 const passwordInputElement = document.createElement("input");
 passwordInputElement.type = "password";
 passwordInputElement.placeholder = "Password";
-passwordInputElement.classList.add("userName-password");
+passwordInputElement.classList.add("signIn-Password");
 
 const logInButtonDiv = document.createElement("div");
 const signInButton = document.createElement("button");
@@ -876,9 +876,12 @@ const stopDrag = () => {
 document.onmousedown = startDrag
 document.onmousemove = onDrag
 document.onmouseup = stopDrag
-document.ontouchstart = startDrag
-document.ontouchmove = onDrag
-document.ontouchend = stopDrag
+if (mediaQuery.matches) {
+  wishContainer.ontouchstart = startDrag
+  wishContainer.ontouchmove = onDrag
+  wishContainer.ontouchend = stopDrag
+  console.log(document.ontouch)
+}
 wishBtn.onclick = () => {
   if (wishContainer.style.display === "none") {
     wishContainer.style.display = "block";

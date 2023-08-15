@@ -106,10 +106,16 @@ pd {
     height: 1rem;
     border-radius: .5rem;
     border-color: white;
-    box-shadow: #A90B0B;
+    margin-bottom: 5px;
+}
 
+.signIn-Password {
 
-
+    border: none;
+    width: 6rem;
+    height: 1rem;
+    border-radius: .5rem;
+    border-color: white;
 }
 
 
