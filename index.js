@@ -446,7 +446,6 @@ loginContainer.style.display = "none";
 signInButton.onclick = () => {
   const registeredUsers = JSON.parse(localStorage.getItem("accounts"));
 
-  console.log(registeredUsers);
   if (InputUserName.value in registeredUsers) {
     const user = registeredUsers[InputUserName.value];
 
@@ -775,7 +774,7 @@ const updateFilterItems = (filteredItems) => {
 
       authenticatedUser = localStorage.getItem("save-user")
       const user = registeredUsers[authenticatedUser];
-      console.log(user)
+
 
       const wishListArray = user.wish_list;
       if (!wishListArray.find((wishListItem) => wishListItem.id === item.id)) {
@@ -856,7 +855,6 @@ const startDrag = (event) => {
 const onDrag = (event) => {
   if (!divDrag) return;
 
-
   if (event.type === "mousemove") {
     wishContainer.style.left = event.clientX - offset.x + "px"
     wishContainer.style.top = event.clientY - offset.y + "px"
@@ -882,6 +880,7 @@ if (mediaQuery.matches) {
   wishContainer.ontouchstart = startDrag
   wishContainer.ontouchmove = onDrag
   wishContainer.ontouchend = stopDrag
+
 }
 
 
@@ -983,10 +982,6 @@ if (!localStorage.getItem("accounts")) {
   localStorage.setItem(
     "accounts",
     JSON.stringify({
-      test: {
-        password: "1",
-        wish_list: [],
-      },
     })
   );
 }
@@ -1010,7 +1005,6 @@ if (localStorage.getItem("save-user")) {
     }
   };
   loginContainer.style.display = "none"
-  console.log("firstload")
 }
 updateFilterItems(filteredArray);
 

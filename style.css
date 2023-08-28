@@ -57,10 +57,22 @@ pd {
     border-radius: 2rem;
 }
 
+.item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media (max-width:48rem) {
     p1 {
         font-size: 20px;
 
+    }
+
+    .item-details {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
     }
 
     .wishButton {
@@ -141,6 +153,7 @@ pd {
     animation: pulsate 1.5s ease-in-out infinite;
     position: relative;
     overflow: hidden;
+
 }
 
 @keyframes pulsate {
@@ -197,8 +210,24 @@ pd {
 }
 
 .aboutMe {
-    background-color: white;
-    color: black
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303030;
+    color: white;
+    font-size: larger;
+    box-shadow: 5px 5px 5px #A90B0B;
+    border-radius: 5px;
+    width: 80%;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.aboutMe p {
+    margin-left: 5px;
+    margin-right: 5px;
+
 }
 
 .about .wish-Btn {
@@ -256,7 +285,6 @@ pd {
     overflow: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
 
 }
 
@@ -305,15 +333,13 @@ pd {
 }
 
 .items-column {
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
+    padding: 25px;
     background-color: #D9D9D9;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-
 }
 
 .no-results {
@@ -371,7 +397,7 @@ pd {
         margin-top: 50px;
         overflow: auto;
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .searchBarDiv {
@@ -437,6 +463,20 @@ pd {
         color: white
     }
 
+    .aboutMe {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #303030;
+        color: white;
+        font-size: medium;
+        box-shadow: 5px 5px 5px #A90B0B;
+        border-radius: 5px;
+        width: 80%;
+        height: 200px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
 
 }
 
