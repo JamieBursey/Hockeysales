@@ -216,7 +216,7 @@ pd {
     background-color: #303030;
     color: white;
     font-size: larger;
-    box-shadow: 5px 5px 5px #A90B0B;
+    box-shadow: 5px 5px 5px rgb(169, 11, 11);
     border-radius: 5px;
     width: 80%;
     height: 150px;
