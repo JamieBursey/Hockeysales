@@ -873,14 +873,13 @@ const stopDrag = () => {
 }
 
 
-wishHeader.onmousedown = startDrag
-wishHeader.onmousemove = onDrag
-wishHeader.onmouseup = stopDrag
+wishContainer.onmousedown = startDrag
+wishContainer.onmousemove = onDrag
+wishContainer.onmouseup = stopDrag
 if (mediaQuery.matches) {
   wishHeader.ontouchstart = startDrag
   wishHeader.ontouchmove = onDrag
   wishHeader.ontouchend = stopDrag
-
 }
 
 
